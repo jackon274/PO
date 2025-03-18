@@ -7,19 +7,21 @@ public:
     double memory;
     void clearMemory();
     double readMemory();
+    //static double globalMemory = 0;
 };
 
 
 struct Kalkulator {
+private:
+
 public:
-    void add(double n);
-    void subtract(double n);
-    void multiply(double n);
-    void divide(double n);
-    void modulo(double n);
-    Kalkulator();
-//private:
     Memory mem;
+    void add(double n, Memory *memory = nullptr);
+    void subtract(double n, Memory *memory = nullptr);
+    void multiply(double n, Memory *memory = nullptr);
+    void divide(double n, Memory *memory = nullptr);
+    void modulo(double n, Memory *memory = nullptr);
+    Kalkulator();
 };
 
 
@@ -27,22 +29,32 @@ Kalkulator::Kalkulator() {}
 
 Memory::Memory() {
     memory = 0;
+    globalMemory = 0;
+
 }
 
-void Kalkulator::add(double n) {
-    mem.memory += n;
+void Kalkulator::add(double n, Memory *memory) {
+    if (memory == nullptr)
+        memory = &mem;
+    memory->memory += n;
 }
 
 
-void Kalkulator::subtract(double n) {
+void Kalkulator::subtract(double n, Memory *memory) {
+    if (memory == nullptr)
+        memory = &mem;
     mem.memory -= n;
 }
 
-void Kalkulator::multiply(double n) {
+void Kalkulator::multiply(double n, Memory *memory) {
+    if (memory == nullptr)
+        memory = &mem;
     mem.memory *= n;
 }
 
-void Kalkulator::divide(double n) {
+void Kalkulator::divide(double n, Memory *memory) {
+    if (memory == nullptr)
+        memory = &mem;
     mem.memory /= n;
 }
 
@@ -54,8 +66,12 @@ double Memory::readMemory() {
     return memory;
 }
 
-void Kalkulator::modulo(double n) {
-    mem.memory - static_cast <int> (n / mem.memory) * mem.memory;
+void Kalkulator::modulo(double n, Memory *memory) {
+    if (memory == nullptr)
+        memory = &mem;
+    double a = memory->memory;
+    a = a - static_cast <int> (n / a) * a;
+    memory->memory = a;
 }
 
 
