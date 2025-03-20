@@ -6,7 +6,7 @@ public:
     Memory();
     double memory;
     void clearMemory();
-    double readMemory();
+    double readMemory() const;
     //static double globalMemory = 0;
 };
 
@@ -29,7 +29,7 @@ Kalkulator::Kalkulator() {}
 
 Memory::Memory() {
     memory = 0;
-    globalMemory = 0;
+    //globalMemory = 0;
 
 }
 
@@ -62,7 +62,7 @@ void Memory::clearMemory() {
     memory = 0;
 }
 
-double Memory::readMemory() {
+double Memory::readMemory() const{
     return memory;
 }
 
