@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.29)
 project(Kalkulator)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -13,4 +13,4 @@ add_compile_options ( -Wmaybe-uninitialized )
 
 
 
-add_executable(Kalkulator Kalkulator.cpp)
+add_executable(Kalkulator main.cpp)

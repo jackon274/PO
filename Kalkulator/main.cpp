@@ -1,17 +1,16 @@
 ﻿#include <iostream>
 using namespace std;
 
-struct Memory {
+class Memory {
 public:
     Memory();
     double memory;
     void clearMemory();
     double readMemory() const;
-    //static double globalMemory = 0;
 };
 
 
-struct Kalkulator {
+class Kalkulator {
 private:
 
 public:
@@ -29,8 +28,6 @@ Kalkulator::Kalkulator() {}
 
 Memory::Memory() {
     memory = 0;
-    //globalMemory = 0;
-
 }
 
 void Kalkulator::add(double n, Memory *memory) {
@@ -53,6 +50,11 @@ void Kalkulator::multiply(double n, Memory *memory) {
 }
 
 void Kalkulator::divide(double n, Memory *memory) {
+    if(n == 0) {
+        cerr << "Division by zero!";
+        return;
+    }
+
     if (memory == nullptr)
         memory = &mem;
     mem.memory /= n;
@@ -67,6 +69,10 @@ double Memory::readMemory() const{
 }
 
 void Kalkulator::modulo(double n, Memory *memory) {
+    if(n == 0) {
+        cerr << "Division by zero!";
+        return;
+    }
     if (memory == nullptr)
         memory = &mem;
     double a = memory->memory;
