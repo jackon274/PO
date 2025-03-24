@@ -1,21 +1,21 @@
 ﻿#include <iostream>
 #include "Kalkulator.h"
-using namespace std;
 
 
 void menu(Kalkulator &calc) {
     int fun;
     double number;
-    cout << "Wybierz co chcesz zrobic: \n";
-    cout << "  1. Dodawanie\n";
-    cout << "  2. Odejmowanie\n";
-    cout << "  3. Mnożenie\n";
-    cout << "  4. Dzielenie\n";
-    cout << "  5. Modulo\n";
-    cout << "Wybrana funkcja: ";
-    cin >> fun;
-    cout << "Liczba: ";
-    cin >> number;
+    std::cout << "Wybierz co chcesz zrobic: \n";
+    std::cout << "  1. Dodawanie\n";
+    std::cout << "  2. Odejmowanie\n";
+    std::cout << "  3. Mnożenie\n";
+    std::cout << "  4. Dzielenie\n";
+    std::cout << "  5. Modulo\n";
+    std::cout << "  6. Wyczyść\n";
+    std::cout << "Wybrana funkcja: ";
+    std::cin >> fun;
+    std::cout << "Liczba: ";
+    std::cin >> number;
 
     switch (fun) {
     case 1:
@@ -32,11 +32,16 @@ void menu(Kalkulator &calc) {
         break;
     case 5:
         calc.modulo(number);
+        break;
+    case 6:
+            calc.clearResult();
+        break;
+
     default:
-        cout << "Bledna komenda!\n";
+        std::cout << "Bledna komenda!\n";
         break;
     }
-    cout << calc.mem.readMemory();
+    std::cout << "Wynik to: " << calc.displayResult() << std::endl;
 }
 
 
@@ -44,7 +49,8 @@ void menu(Kalkulator &calc) {
 int main()
 {
     Kalkulator calculator;
-    menu(calculator);
+    while(true)
+        menu(calculator);
     return 0;
 }
 

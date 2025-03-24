@@ -3,17 +3,17 @@
 #include "Memory.h"
 
 
-
 class Kalkulator {
-private:
-
-public:
     Memory mem;
+public:
     void add(double n, Memory *memory = nullptr);
     void subtract(double n, Memory *memory = nullptr);
     void multiply(double n, Memory *memory = nullptr);
     void divide(double n, Memory *memory = nullptr);
     void modulo(double n, Memory *memory = nullptr);
+    //void convertSystems (double n, double base);
+    void clearResult();
+    double displayResult();
     Kalkulator();
 };
 

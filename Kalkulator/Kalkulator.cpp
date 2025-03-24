@@ -1,4 +1,6 @@
 #include "Kalkulator.h"
+#include <iostream>
+using std::cerr;
 
 Kalkulator::Kalkulator() {}
 
@@ -43,3 +45,18 @@ void Kalkulator::modulo(double n, Memory *memory) {
     a = a - static_cast <int> (n / a) * a;
     memory->memory = a;
 }
+
+void Kalkulator::clearResult() {
+    mem.clearMemory();
+}
+
+double Kalkulator::displayResult() {
+    return mem.readMemory();
+}
+
+
+
+/*void Kalkulator::convertSystems(double n, double base) {
+    int val = static_cast <int> (n);
+    //do sth
+}*/

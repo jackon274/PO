@@ -9,7 +9,6 @@ add_compile_options(-Werror=parentheses)
 add_compile_options(-Werror=vla)
 add_compile_options(-Werror=array-bounds)
 add_compile_options ( -Wcast-qual )
-add_compile_options ( -Wmaybe-uninitialized )
 
 
 
