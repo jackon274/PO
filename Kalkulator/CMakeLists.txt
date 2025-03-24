@@ -13,4 +13,8 @@ add_compile_options ( -Wmaybe-uninitialized )
 
 
 
-add_executable(Kalkulator main.cpp)
+add_executable(Kalkulator main.cpp
+        Kalkulator.cpp
+        Kalkulator.h
+        Memory.cpp
+        Memory.h)
