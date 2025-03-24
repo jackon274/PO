@@ -1,4 +1,5 @@
 #include "Kalkulator.h"
+#include <cmath>
 #include <iostream>
 using std::cerr;
 
@@ -56,7 +57,19 @@ double Kalkulator::displayResult() {
 
 
 
-/*void Kalkulator::convertSystems(double n, double base) {
-    int val = static_cast <int> (n);
-    //do sth
-}*/
+void Kalkulator::convertSystems (const int n, const int base_start, const int base_end) const {
+    if (base_start <= 0 || base_end <= 0) {
+        std::cerr << "Invalid input!";
+        return;
+    }
+    if(base_start != 10) {
+        int helper = n;
+        int buf = 0;
+        int digitCount = 0;
+        while(n > 0) {
+            buf += pow(10, digitCount++);
+            helper /= 10;
+        }
+    }
+
+}

@@ -11,7 +11,7 @@ public:
     void multiply(double n, Memory *memory = nullptr);
     void divide(double n, Memory *memory = nullptr);
     void modulo(double n, Memory *memory = nullptr);
-    //void convertSystems (double n, double base);
+    void convertSystems (const int n, const int base_start, const int base_end = 10) const;
     void clearResult();
     double displayResult();
     Kalkulator();

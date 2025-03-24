@@ -49,8 +49,9 @@ void menu(Kalkulator &calc) {
 int main()
 {
     Kalkulator calculator;
-    while(true)
-        menu(calculator);
+    //while(true)
+    //    menu(calculator);
+    calculator.convertSystems(10356, 4);
     return 0;
 }
 
