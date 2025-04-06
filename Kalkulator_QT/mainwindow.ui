@@ -32,11 +32,18 @@
    <cursorShape>ArrowCursor</cursorShape>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Kalkulator</string>
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../icon.png</normaloff>../icon.png</iconset>
+    <normaloff>icon.ico</normaloff>
+    <normalon>icon.ico</normalon>
+    <disabledoff>icon.ico</disabledoff>
+    <disabledon>icon.ico</disabledon>
+    <activeoff>icon.ico</activeoff>
+    <activeon>icon.ico</activeon>
+    <selectedoff>icon.ico</selectedoff>
+    <selectedon>icon.ico</selectedon>icon.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow {
