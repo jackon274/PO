@@ -1,11 +1,14 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "kalkulator.h"
+Kalkulator calculator;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->display_sign->setVisible(false);
 }
 
 MainWindow::~MainWindow() {
@@ -14,23 +17,27 @@ MainWindow::~MainWindow() {
 
 void MainWindow::on_btn_AC_clicked()
 {
-    ui->display->display(0);
+    calculator.clearDisplayVal();
+    ui->display->display(calculator.getDisplayVal());
 }
 
 void MainWindow::on_btn_1_clicked()
 {
-    ui->display->display(1);
+    calculator.numberButtonPressed(1);
+    ui->display->display(calculator.getDisplayVal());
 }
 
 
 void MainWindow::on_btn_2_clicked()
 {
-    ui->display->display(2);
+    calculator.numberButtonPressed(2);
+    ui->display->display(calculator.getDisplayVal());
 }
 
 void MainWindow::on_btn_3_clicked()
 {
-    ui->display->display(3);
+    calculator.numberButtonPressed(3);
+    ui->display->display(calculator.getDisplayVal());
 }
 
 
@@ -38,42 +45,63 @@ void MainWindow::on_btn_3_clicked()
 
 void MainWindow::on_btn_4_clicked()
 {
-    ui->display->display(4);
+    calculator.numberButtonPressed(4);
+    ui->display->display(calculator.getDisplayVal());
 }
 
 
 void MainWindow::on_btn_5_clicked()
 {
-    ui->display->display(5);
+    calculator.numberButtonPressed(5);
+    ui->display->display(calculator.getDisplayVal());
 }
 
 
 void MainWindow::on_btn_6_clicked()
 {
-    ui->display->display(6);
+    calculator.numberButtonPressed(6);
+    ui->display->display(calculator.getDisplayVal());
 }
 
 
 void MainWindow::on_btn_7_clicked()
 {
-    ui->display->display(7);
+    calculator.numberButtonPressed(7);
+    ui->display->display(calculator.getDisplayVal());
 }
 
 
 void MainWindow::on_btn_8_clicked()
 {
-    ui->display->display(8);
+    calculator.numberButtonPressed(8);
+    ui->display->display(calculator.getDisplayVal());
 }
 
 
 void MainWindow::on_btn_9_clicked()
 {
-    ui->display->display(9);
+    calculator.numberButtonPressed(9);
+    ui->display->display(calculator.getDisplayVal());
 }
 
 
 void MainWindow::on_btn_0_clicked()
 {
-    ui->display->display(0);
+    calculator.numberButtonPressed(0);
+    ui->display->display(calculator.getDisplayVal());
+}
+
+
+void MainWindow::on_btn_add_clicked()
+{
+    ui->display->display("");
+    //dodać do jakiejś tymczasowej pamięci
+}
+
+
+void MainWindow::on_btn_subtract_clicked()
+{
+    ui->display_sign->setVisible(true);
+    ui->display_sign->display("-");
 }
 

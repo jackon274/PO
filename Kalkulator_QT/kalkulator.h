@@ -1,9 +1,13 @@
 #ifndef KALKULATOR_H
 #define KALKULATOR_H
 #include "Memory.h"
+#include <stdint.h>
 
 class Kalkulator {
     Memory mem;
+    Memory globalMemory;
+    Memory lastOperationMemory;
+    long displayVal; //temporary
 public:
     void add(double n, Memory *memory = nullptr);
     void subtract(double n, Memory *memory = nullptr);
@@ -13,6 +17,9 @@ public:
     void convertSystems (const int n, const int base_start, const int base_end = 10) const;
     void clearResult();
     double displayResult();
+    void numberButtonPressed(uint8_t number);
+    int clearDisplayVal();
+    int getDisplayVal();
     Kalkulator();
 };
 

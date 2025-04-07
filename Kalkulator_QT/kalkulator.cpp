@@ -3,7 +3,9 @@
 #include <iostream>
 using std::cerr;
 
-Kalkulator::Kalkulator() {}
+Kalkulator::Kalkulator() {
+    displayVal = 0;
+}
 
 void Kalkulator::add(double n, Memory *memory) {
     if (memory == nullptr)
@@ -55,7 +57,18 @@ double Kalkulator::displayResult() {
     return mem.readMemory();
 }
 
+void Kalkulator::numberButtonPressed(uint8_t number) {
+    displayVal *= 10;
+    displayVal += number;
+}
 
+int Kalkulator::getDisplayVal() {
+    return displayVal;
+}
+
+int Kalkulator::clearDisplayVal() {
+    displayVal = 0;
+}
 
 void Kalkulator::convertSystems (const int n, const int base_start, const int base_end) const {
     if (base_start <= 0 || base_end <= 0) {

@@ -41,6 +41,10 @@ private slots:
 
     void on_btn_0_clicked();
 
+    void on_btn_add_clicked();
+
+    void on_btn_subtract_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
