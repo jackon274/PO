@@ -171,7 +171,10 @@ void MainWindow::on_btn_equals_clicked()
 
 void MainWindow::on_btn_multiply_clicked()
 {
+    ui->label_sign->setVisible(true);
+    ui->label_sign->setText("x");
     calculator.operationStream << "*";
+    calculator.displayStream.str("");
 }
 
 
@@ -179,5 +182,11 @@ void MainWindow::on_btn_comma_clicked()
 {
     calculator.displayStream << ".";
     calculator.operationStream << ".";
+}
+
+
+void MainWindow::on_btn_pm_clicked()
+{
+
 }
 

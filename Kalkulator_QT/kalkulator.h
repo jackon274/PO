@@ -12,7 +12,7 @@ class Kalkulator {
 public:
     void add(double m, double n = 0, Memory *memory = nullptr);
     void subtract(double m, double n = 0, Memory *memory = nullptr);
-    void multiply(double n, Memory *memory = nullptr);
+    void multiply(double m, double n = 0, Memory *memory = nullptr);
     void divide(double n, Memory *memory = nullptr);
     void modulo(double n, Memory *memory = nullptr);
     void convertSystems (const int n, const int base_start, const int base_end = 10) const;

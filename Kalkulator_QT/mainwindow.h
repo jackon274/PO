@@ -53,6 +53,8 @@ private slots:
 
     void updateDisplay();
 
+    void on_btn_pm_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -4,7 +4,7 @@
 using std::cerr;
 
 Kalkulator::Kalkulator() {
-    displayVal = 0;
+    operationStream << 0;
 }
 
 
@@ -27,10 +27,16 @@ void Kalkulator::subtract(double m, double n, Memory *memory) {
         mem.memory -= n;
 }
 
-void Kalkulator::multiply(double n, Memory *memory) {
+void Kalkulator::multiply(double m, double n, Memory *memory) {
     if (memory == nullptr)
         memory = &mem;
-    mem.memory *= n;
+
+    if(m != 0 && mem.memory != 0)
+        std::cerr << "Error both first digit and memory non zero!";
+    else if (m != 0)
+        mem.memory = m * n;
+    else
+        mem.memory *= n;
 }
 
 void Kalkulator::divide(double n, Memory *memory) {
@@ -69,21 +75,12 @@ double Kalkulator::displayResult() {
     return mem.readMemory();
 }
 
-void Kalkulator::numberButtonPressed(uint8_t number) {
-    displayVal *= 10;
-    displayVal += number;
-}
-
  double Kalkulator::getMemoryVal(Memory *memory) {
      if (memory == nullptr)
          memory = &mem;
      return memory->memory;
  }
 
-// int Kalkulator::clearDisplayVal() {
-//     displayVal = 0;
-//     return 0;
-// }
 
 void Kalkulator::handleStream() {
     double tmp1, tmp2;
@@ -98,7 +95,7 @@ void Kalkulator::handleStream() {
         subtract(tmp1, tmp2);
         break;
     case '*':
-        // ....
+        multiply(tmp1, tmp2);
         break;
     default:
         std::cerr << "Error";
@@ -106,7 +103,9 @@ void Kalkulator::handleStream() {
     }
 
     operationStream.clear();
+    displayStream.clear();
     operationStream.str("");
+    displayStream.str("");
     operationStream << 0;
 
 
