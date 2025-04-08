@@ -8,17 +8,23 @@ Kalkulator::Kalkulator() {
 }
 
 
-void Kalkulator::add(double n, Memory *memory) {
+void Kalkulator::add(double m, double n, Memory *memory) {
     if (memory == nullptr)
         memory = &mem;
-    memory->memory += n;
+    memory->memory += (n + m);
 }
 
 
-void Kalkulator::subtract(double n, Memory *memory) {
+void Kalkulator::subtract(double m, double n, Memory *memory) {
     if (memory == nullptr)
         memory = &mem;
-    mem.memory -= n;
+
+    if(m != 0 && mem.memory != 0)
+        std::cerr << "Error both first digit and memory non zero!";
+    else if (m != 0)
+        mem.memory = m - n;
+    else
+        mem.memory -= n;
 }
 
 void Kalkulator::multiply(double n, Memory *memory) {
@@ -52,6 +58,11 @@ void Kalkulator::modulo(double n, Memory *memory) {
 
 void Kalkulator::clearResult() {
     mem.clearMemory();
+    displayStream.clear();
+    displayStream.clear();
+    displayStream.str("");
+    operationStream.str("");
+    operationStream << 0; //bez tego po użyciu przycisku AC pojawi się wartość 0, potem po wciśnięciu + i innej cyfry, po = pojawi się nadal 0 zamiast wyniku dodawania
 }
 
 double Kalkulator::displayResult() {
@@ -63,12 +74,42 @@ void Kalkulator::numberButtonPressed(uint8_t number) {
     displayVal += number;
 }
 
-int Kalkulator::getDisplayVal() {
-    return displayVal;
-}
+ double Kalkulator::getMemoryVal(Memory *memory) {
+     if (memory == nullptr)
+         memory = &mem;
+     return memory->memory;
+ }
 
-int Kalkulator::clearDisplayVal() {
-    displayVal = 0;
+// int Kalkulator::clearDisplayVal() {
+//     displayVal = 0;
+//     return 0;
+// }
+
+void Kalkulator::handleStream() {
+    double tmp1, tmp2;
+    char oper;
+    operationStream >> tmp1 >> oper >> tmp2;
+
+    switch (oper) {
+    case '+':
+        add(tmp1, tmp2);
+        break;
+    case '-':
+        subtract(tmp1, tmp2);
+        break;
+    case '*':
+        // ....
+        break;
+    default:
+        std::cerr << "Error";
+        break;
+    }
+
+    operationStream.clear();
+    operationStream.str("");
+    operationStream << 0;
+
+
 }
 
 void Kalkulator::convertSystems (const int n, const int base_start, const int base_end) const {

@@ -10,19 +10,18 @@ class Kalkulator {
     Memory lastOperationMemory;
     long displayVal; //temporary
 public:
-    void add(double n, Memory *memory = nullptr);
-    void subtract(double n, Memory *memory = nullptr);
+    void add(double m, double n = 0, Memory *memory = nullptr);
+    void subtract(double m, double n = 0, Memory *memory = nullptr);
     void multiply(double n, Memory *memory = nullptr);
     void divide(double n, Memory *memory = nullptr);
     void modulo(double n, Memory *memory = nullptr);
     void convertSystems (const int n, const int base_start, const int base_end = 10) const;
     void clearResult();
     double displayResult();
-    void numberButtonPressed(uint8_t number);
-    int clearDisplayVal();
-    int getDisplayVal();
+    double getMemoryVal(Memory *memory = nullptr);
     std::stringstream displayStream;
     std::stringstream operationStream;
+    void handleStream();
     Kalkulator();
 };
 

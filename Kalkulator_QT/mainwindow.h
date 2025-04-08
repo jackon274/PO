@@ -47,6 +47,12 @@ private slots:
 
     void on_btn_equals_clicked();
 
+    void on_btn_multiply_clicked();
+
+    void on_btn_comma_clicked();
+
+    void updateDisplay();
+
 private:
     Ui::MainWindow *ui;
 };

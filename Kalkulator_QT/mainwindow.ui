@@ -532,6 +532,13 @@ background-color: rgb(95, 95, 95);
          <height>60</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
 border:none;
@@ -769,26 +776,25 @@ color: rgb(255, 255, 255);</string>
      <number>7</number>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="display_sign">
+   <widget class="QLabel" name="label_sign">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>40</y>
-      <width>64</width>
-      <height>23</height>
+      <x>280</x>
+      <y>30</y>
+      <width>21</width>
+      <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">color: rgb(255,255,255);</string>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::NoFrame</enum>
-    </property>
-    <property name="digitCount">
-     <number>1</number>
-    </property>
-    <property name="value" stdset="0">
-     <double>1.000000000000000</double>
+    <property name="text">
+     <string>+</string>
     </property>
    </widget>
   </widget>
