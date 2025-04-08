@@ -2,6 +2,7 @@
 #define KALKULATOR_H
 #include "Memory.h"
 #include <stdint.h>
+#include <sstream>
 
 class Kalkulator {
     Memory mem;
@@ -20,6 +21,8 @@ public:
     void numberButtonPressed(uint8_t number);
     int clearDisplayVal();
     int getDisplayVal();
+    std::stringstream displayStream;
+    std::stringstream operationStream;
     Kalkulator();
 };
 

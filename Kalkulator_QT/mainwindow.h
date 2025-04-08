@@ -45,6 +45,8 @@ private slots:
 
     void on_btn_subtract_clicked();
 
+    void on_btn_equals_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

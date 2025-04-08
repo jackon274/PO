@@ -7,6 +7,7 @@ Kalkulator::Kalkulator() {
     displayVal = 0;
 }
 
+
 void Kalkulator::add(double n, Memory *memory) {
     if (memory == nullptr)
         memory = &mem;
