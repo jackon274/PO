@@ -1,12 +1,18 @@
 #include "Kalkulator.h"
 #include <cmath>
 #include <iostream>
+#include "aboutwindow.h"
 using std::cerr;
 
 Kalkulator::Kalkulator() {
     operationStream << 0;
 }
 
+void openEasterEggWindow() {
+    AboutWindow easterEgg;
+    easterEgg.setModal(true);
+    easterEgg.exec();
+}
 
 void Kalkulator::add(double m, double n, Memory *memory) {
     if (memory == nullptr)
@@ -86,6 +92,8 @@ void Kalkulator::handleStream() {
     double tmp1, tmp2;
     char oper;
     operationStream >> tmp1 >> oper >> tmp2;
+    if(operationStream.str() == "021+37")
+        openEasterEggWindow();
 
     switch (oper) {
     case '+':
@@ -110,6 +118,8 @@ void Kalkulator::handleStream() {
 
 
 }
+
+
 
 void Kalkulator::convertSystems (const int n, const int base_start, const int base_end) const {
     if (base_start <= 0 || base_end <= 0) {

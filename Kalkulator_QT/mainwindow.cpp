@@ -2,6 +2,7 @@
 #include "./ui_mainwindow.h"
 #include "kalkulator.h"
 #include <iostream>
+#include <QFontDatabase>
 
 Kalkulator calculator;
 
@@ -11,6 +12,15 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->label_sign->setVisible(false);
+
+    int fontID = QFontDatabase::addApplicationFont ( ":/Font/resources/SF-Pro-Rounded-Regular.otf" );
+    QString family = QFontDatabase::applicationFontFamilies(fontID).at(0);
+    QFont appleFontButtons(family);
+    appleFontButtons.setPointSize(30);
+    ui->btn_0->setFont(appleFontButtons);
+    ui->btn_add->setFont(appleFontButtons);
+    ui->btn_multiply->setFont(appleFontButtons);
+    ui->btn_1->setFont(appleFontButtons);
 }
 
 MainWindow::~MainWindow() {
