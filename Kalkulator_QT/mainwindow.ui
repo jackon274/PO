@@ -35,15 +35,8 @@
    <string>Kalkulator</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>icon.ico</normaloff>
-    <normalon>icon.ico</normalon>
-    <disabledoff>icon.ico</disabledoff>
-    <disabledon>icon.ico</disabledon>
-    <activeoff>icon.ico</activeoff>
-    <activeon>icon.ico</activeon>
-    <selectedoff>icon.ico</selectedoff>
-    <selectedon>icon.ico</selectedon>icon.ico</iconset>
+   <iconset resource="Res.qrc">
+    <normaloff>:/Fotki/resources/icon.png</normaloff>:/Fotki/resources/icon.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow {
@@ -799,6 +792,8 @@ color: rgb(255, 255, 255);</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="Res.qrc"/>
+ </resources>
  <connections/>
 </ui>
