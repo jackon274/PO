@@ -123,7 +123,6 @@ background-color: rgb(31, 31, 32);
 color: rgb(255, 255, 255);
 font:20pt;
 border-radius: 30px;
-padding-top: -5px;
 }
 
 QPushButton:hover {
@@ -261,7 +260,6 @@ background-color: rgb(31, 31, 32);
 color: rgb(255, 255, 255);
 font:20pt;
 border-radius: 30px;
-padding-top: -5px;
 }
 
 QPushButton:hover {
@@ -364,7 +362,6 @@ background-color: rgb(31, 31, 32);
 color: rgb(255, 255, 255);
 font:20pt;
 border-radius: 30px;
-padding-top: -5px;
 }
 
 QPushButton:hover {
@@ -473,7 +470,6 @@ background-color: rgb(31, 31, 32);
 color: rgb(255, 255, 255);
 font:20pt;
 border-radius: 30px;
-padding-top: -5px;
 }
 
 QPushButton:hover {
@@ -506,7 +502,6 @@ background-color: rgb(31, 31, 32);
 color: rgb(255, 255, 255);
 font:20pt;
 border-radius: 30px;
-padding-top: -5px;
 }
 
 QPushButton:hover {
@@ -579,7 +574,6 @@ background-color: rgb(31, 31, 32);
 color: rgb(255, 255, 255);
 font:20pt;
 border-radius: 30px;
-padding-top: -5px;
 }
 
 QPushButton:hover {
@@ -612,7 +606,6 @@ background-color: rgb(31, 31, 32);
 color: rgb(255, 255, 255);
 font:20pt;
 border-radius: 30px;
-padding-top: -5px;
 }
 
 QPushButton:hover {
@@ -645,7 +638,6 @@ background-color: rgb(74, 73, 77);
 color: rgb(255, 255, 255);
 font:20pt;
 border-radius: 30px;
-padding-top: -5px;
 }
 
 QPushButton:hover {
@@ -678,7 +670,6 @@ background-color: rgb(31, 31, 32);
 color: rgb(255, 255, 255);
 font:20pt;
 border-radius: 30px;
-padding-top: -5px;
 }
 
 QPushButton:hover {
@@ -711,7 +702,6 @@ background-color: rgb(31, 31, 32);
 color: rgb(255, 255, 255);
 font:20pt;
 border-radius: 30px;
-padding-top: -5px;
 }
 
 QPushButton:hover {
@@ -744,7 +734,6 @@ background-color: rgb(31, 31, 32);
 color: rgb(255, 255, 255);
 font:20pt;
 border-radius: 30px;
-padding-top: -5px;
 }
 
 QPushButton:hover {
