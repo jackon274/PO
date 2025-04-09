@@ -3,6 +3,7 @@
 #include "Memory.h"
 #include <stdint.h>
 #include <sstream>
+#define SECRET_STRING "021+37"
 
 class Kalkulator {
     Memory mem;

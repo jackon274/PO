@@ -92,7 +92,7 @@ void Kalkulator::handleStream() {
     double tmp1, tmp2;
     char oper;
     operationStream >> tmp1 >> oper >> tmp2;
-    if(operationStream.str() == "021+37")
+    if(operationStream.str() == SECRET_STRING)
         openEasterEggWindow();
 
     switch (oper) {
