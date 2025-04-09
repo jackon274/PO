@@ -81,7 +81,7 @@ color:rgb(0,0,0);
 border:none;
 background-color: rgb(251, 141, 14);
 color: rgb(255, 255, 255);
-font:20pt;
+font:25pt;
 border-radius: 30px;
 padding-top: -5px;
 }
@@ -152,7 +152,7 @@ background-color: rgb(95, 95, 95);
 border:none;
 background-color: rgb(251, 141, 14);
 color: rgb(255, 255, 255);
-font:20pt;
+font:25pt;
 border-radius: 30px;
 padding-top: -5px;
 }
@@ -185,7 +185,7 @@ background-color: rgb(244, 183, 119);
 border:none;
 background-color: rgb(251, 141, 14);
 color: rgb(255, 255, 255);
-font:20pt;
+font:25pt;
 border-radius: 30px;
 padding-top: -5px;
 }
@@ -266,6 +266,12 @@ background-color: rgb(95, 95, 95);
      </item>
      <item row="1" column="4">
       <widget class="QPushButton" name="btn_multiply">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
          <width>60</width>
@@ -283,7 +289,7 @@ background-color: rgb(95, 95, 95);
 border:none;
 background-color: rgb(251, 141, 14);
 color: rgb(255, 255, 255);
-font:20pt;
+font:25pt;
 border-radius: 30px;
 padding-top: -5px;
 }
@@ -293,7 +299,7 @@ background-color: rgb(244, 183, 119);
 }</string>
        </property>
        <property name="text">
-        <string>x</string>
+        <string>×</string>
        </property>
       </widget>
      </item>
@@ -430,7 +436,6 @@ background-color: rgb(74, 73, 77);
 color: rgb(255, 255, 255);
 font:20pt;
 border-radius: 30px;
-padding-top: -5px;
 }
 
 QPushButton:hover {
@@ -522,7 +527,7 @@ background-color: rgb(95, 95, 95);
        </property>
        <property name="font">
         <font>
-         <pointsize>20</pointsize>
+         <pointsize>25</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -532,7 +537,7 @@ background-color: rgb(95, 95, 95);
 border:none;
 background-color: rgb(251, 141, 14);
 color: rgb(255, 255, 255);
-font:20pt;
+font:25pt;
 border-radius: 30px;
 padding-top: -5px;
 }

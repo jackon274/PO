@@ -16,16 +16,13 @@ MainWindow::MainWindow(QWidget *parent)
     int fontID = QFontDatabase::addApplicationFont ( ":/Font/resources/SF-Pro-Rounded-Regular.otf" );
     QString family = QFontDatabase::applicationFontFamilies(fontID).at(0);
     QFont appleFontButtons(family);
-    appleFontButtons.setPointSize(30);
-    QFont appleFontButtonsAction(family);
-    appleFontButtonsAction.setPointSize(45);
     ui->btn_0->setFont(appleFontButtons);
-    ui->btn_add->setFont(appleFontButtonsAction);
-    ui->btn_multiply->setFont(appleFontButtonsAction);
-    ui->btn_equals->setFont(appleFontButtonsAction);
-    ui->btn_subtract->setFont(appleFontButtonsAction);
-    ui->btn_div->setFont(appleFontButtonsAction);
-    ui->btn_percent->setFont(appleFontButtonsAction);
+    ui->btn_add->setFont(appleFontButtons);
+    ui->btn_multiply->setFont(appleFontButtons);
+    ui->btn_equals->setFont(appleFontButtons);
+    ui->btn_subtract->setFont(appleFontButtons);
+    ui->btn_div->setFont(appleFontButtons);
+    ui->btn_percent->setFont(appleFontButtons);
     ui->btn_1->setFont(appleFontButtons);
     ui->btn_2->setFont(appleFontButtons);
     ui->btn_3->setFont(appleFontButtons);
@@ -36,6 +33,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->btn_8->setFont(appleFontButtons);
     ui->btn_9->setFont(appleFontButtons);
     ui->btn_comma->setFont(appleFontButtons);
+    ui->btn_AC->setFont(appleFontButtons);
 }
 
 MainWindow::~MainWindow() {
