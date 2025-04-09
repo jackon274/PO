@@ -18,6 +18,8 @@ public:
 private slots:
     void on_noclick1_clicked();
 
+    void on_noclick2_clicked();
+
 private:
     Ui::AboutWindow *ui;
 };

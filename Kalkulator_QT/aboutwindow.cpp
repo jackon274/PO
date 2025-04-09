@@ -1,6 +1,7 @@
 #include "aboutwindow.h"
 #include "ui_aboutwindow.h"
 #include <QFontDatabase>
+#include <QDesktopServices>
 #include <iostream>
 
 AboutWindow::AboutWindow(QWidget *parent)
@@ -33,5 +34,11 @@ void AboutWindow::on_noclick1_clicked()
 {
     ui->noclick1->setVisible(false);
     ui->noclick2->setVisible(true);
+}
+
+
+void AboutWindow::on_noclick2_clicked()
+{
+    QDesktopServices::openUrl(QUrl("https://youtu.be/oavMtUWDBTM", QUrl::TolerantMode));
 }
 

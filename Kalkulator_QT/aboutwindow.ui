@@ -102,10 +102,10 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>200</x>
      <y>-10</y>
-     <width>131</width>
-     <height>81</height>
+     <width>201</width>
+     <height>141</height>
     </rect>
    </property>
    <property name="text">
@@ -134,7 +134,7 @@
   <widget class="QPushButton" name="noclick2">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>110</x>
      <y>10</y>
      <width>81</width>
      <height>25</height>
