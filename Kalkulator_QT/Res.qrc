@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/Fotki">
+        <file>resources/flag.jpg</file>
+        <file>resources/POL.svg</file>
+    </qresource>
+    <qresource prefix="/Font">
+        <file>resources/SF-Pro-Rounded-Regular.otf</file>
+    </qresource>
+</RCC>
