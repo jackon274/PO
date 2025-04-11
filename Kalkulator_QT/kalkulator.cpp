@@ -151,3 +151,16 @@ void Kalkulator::convertSystems (const int n, const int base_start, const int ba
     }
 
 }
+
+void Kalkulator::handleButtonClick(char buttonPressed) {
+    if ( (buttonPressed >= '0' && buttonPressed <= '9') || buttonPressed == '.' ) {
+        displayStream << buttonPressed;
+        operationStream << buttonPressed;
+        std::cout << "Pressed " << buttonPressed << std::endl;
+    }
+    else {
+        operationStream << buttonPressed;
+        displayStream.str("");
+    }
+
+}

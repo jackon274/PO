@@ -22,6 +22,7 @@ public:
     std::stringstream operationStream;
     void handleStream();
     void handleException();
+    void handleButtonClick(char buttonPressed);
     Kalkulator();
 };
 

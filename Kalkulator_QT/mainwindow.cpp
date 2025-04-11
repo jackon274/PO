@@ -60,23 +60,20 @@ void MainWindow::on_btn_AC_clicked()
 
 void MainWindow::on_btn_1_clicked()
 {
-    calculator.displayStream << 1;
-    calculator.operationStream << 1;
+    calculator.handleButtonClick('1');
     updateDisplay();
 }
 
 
 void MainWindow::on_btn_2_clicked()
 {
-    calculator.displayStream << 2;
-    calculator.operationStream << 2;
+    calculator.handleButtonClick('2');
     updateDisplay();
 }
 
 void MainWindow::on_btn_3_clicked()
 {
-    calculator.displayStream << 3;
-    calculator.operationStream << 3;
+    calculator.handleButtonClick('3');
     updateDisplay();
 }
 
@@ -85,56 +82,49 @@ void MainWindow::on_btn_3_clicked()
 
 void MainWindow::on_btn_4_clicked()
 {
-    calculator.displayStream << 4;
-    calculator.operationStream << 4;
+    calculator.handleButtonClick('4');
     updateDisplay();
  }
 
 
 void MainWindow::on_btn_5_clicked()
 {
-    calculator.displayStream << 5;
-    calculator.operationStream << 5;
+    calculator.handleButtonClick('5');
     updateDisplay();
 }
 
 
 void MainWindow::on_btn_6_clicked()
 {
-    calculator.displayStream << 6;
-    calculator.operationStream << 6;
+    calculator.handleButtonClick('6');
     updateDisplay();
 }
 
 
 void MainWindow::on_btn_7_clicked()
 {
-    calculator.displayStream << 7;
-    calculator.operationStream << 7;
+    calculator.handleButtonClick('7');
     updateDisplay();
 }
 
 
 void MainWindow::on_btn_8_clicked()
 {
-    calculator.displayStream << 8;
-    calculator.operationStream << 8;
+    calculator.handleButtonClick('8');
     updateDisplay();
 }
 
 
 void MainWindow::on_btn_9_clicked()
 {
-    calculator.displayStream << 9;
-    calculator.operationStream << 9;
+    calculator.handleButtonClick(9);
     updateDisplay();
 }
 
 
 void MainWindow::on_btn_0_clicked()
 {
-    calculator.displayStream << 0;
-    calculator.operationStream << 0;
+    calculator.handleButtonClick('0');
     updateDisplay();
 
 }
@@ -144,8 +134,7 @@ void MainWindow::on_btn_add_clicked()
 {
     ui->label_sign->setVisible(true);
     ui->label_sign->setText("+");
-    calculator.operationStream << "+";
-    calculator.displayStream.str("");
+    calculator.handleButtonClick('+');
 }
 
 
@@ -153,15 +142,14 @@ void MainWindow::on_btn_subtract_clicked()
 {
     ui->label_sign->setVisible(true);
     ui->label_sign->setText("-");
-    calculator.operationStream << "-";
-    calculator.displayStream.str("");
+    calculator.handleButtonClick('-');
 }
 
 
 void MainWindow::on_btn_equals_clicked()
 {
     ui->label_sign->setVisible(false);
-    std::cout << std::endl << calculator.operationStream.str() << std::endl;
+    std::cout << std::endl << calculator.operationStream.str() << std::endl; //DEBUG ONLY
     calculator.handleStream();
     ui->display->display(calculator.getMemoryVal());
 
@@ -173,15 +161,13 @@ void MainWindow::on_btn_multiply_clicked()
 {
     ui->label_sign->setVisible(true);
     ui->label_sign->setText("x");
-    calculator.operationStream << "*";
-    calculator.displayStream.str("");
+    calculator.handleButtonClick('*');
 }
 
 
 void MainWindow::on_btn_comma_clicked()
 {
-    calculator.displayStream << ".";
-    calculator.operationStream << ".";
+    calculator.handleButtonClick('.');
 }
 
 
@@ -195,7 +181,6 @@ void MainWindow::on_btn_div_clicked()
 {
     ui->label_sign->setVisible(true);
     ui->label_sign->setText("÷");
-    calculator.operationStream << "/";
-    calculator.displayStream.str("");
+    calculator.handleButtonClick('/');
 }
 
