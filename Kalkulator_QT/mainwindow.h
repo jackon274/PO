@@ -57,6 +57,8 @@ private slots:
 
     void on_btn_div_clicked();
 
+    void on_btn_sqrt_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -3,6 +3,7 @@
 #include <iostream>
 #include "aboutwindow.h"
 #include "dialog.h"
+#include <cmath>
 using std::cerr;
 
 Kalkulator::Kalkulator() {
@@ -44,6 +45,15 @@ void Kalkulator::multiply(double m, double n, Memory *memory) {
         mem.memory = m * n;
     else
         mem.memory *= n;
+}
+
+void Kalkulator::square_root (double m, Memory *memory) {
+    if (memory == nullptr)
+        memory = &mem;
+
+    if(m != 0 && mem.memory != 0)
+        std::cerr << "Error both first digit and memory non zero!";
+        mem.memory = sqrt(m);
 }
 
 void Kalkulator::divide(double m, double n, Memory *memory) {
@@ -114,6 +124,8 @@ void Kalkulator::handleStream() {
         break;
     case '/':
         divide(tmp1, tmp2);
+    case '$':
+        square_root(tmp1);
     default:
         std::cerr << "Error";
         break;

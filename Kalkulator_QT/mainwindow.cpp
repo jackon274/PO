@@ -34,7 +34,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->btn_9->setFont(appleFontButtons);
     ui->btn_comma->setFont(appleFontButtons);
     ui->btn_AC->setFont(appleFontButtons);
-    ui->btn_pm->setFont(appleFontButtons);
+    ui->btn_sqrt->setFont(appleFontButtons);
 }
 
 MainWindow::~MainWindow() {
@@ -55,7 +55,6 @@ void MainWindow::on_btn_AC_clicked()
 {
     calculator.clearResult();
     updateDisplay();
-
 }
 
 void MainWindow::on_btn_1_clicked()
@@ -76,8 +75,6 @@ void MainWindow::on_btn_3_clicked()
     calculator.handleButtonClick('3');
     updateDisplay();
 }
-
-
 
 
 void MainWindow::on_btn_4_clicked()
@@ -117,7 +114,7 @@ void MainWindow::on_btn_8_clicked()
 
 void MainWindow::on_btn_9_clicked()
 {
-    calculator.handleButtonClick(9);
+    calculator.handleButtonClick('9');
     updateDisplay();
 }
 
@@ -171,16 +168,18 @@ void MainWindow::on_btn_comma_clicked()
 }
 
 
-void MainWindow::on_btn_pm_clicked()
-{
-
-}
-
-
 void MainWindow::on_btn_div_clicked()
 {
     ui->label_sign->setVisible(true);
     ui->label_sign->setText("÷");
     calculator.handleButtonClick('/');
+}
+
+
+void MainWindow::on_btn_sqrt_clicked()
+{
+    calculator.handleButtonClick('$');
+    calculator.handleStream();
+    ui->display->display(calculator.getMemoryVal());
 }
 
