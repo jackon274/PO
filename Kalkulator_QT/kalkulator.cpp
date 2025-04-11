@@ -2,6 +2,7 @@
 #include <cmath>
 #include <iostream>
 #include "aboutwindow.h"
+#include "dialog.h"
 using std::cerr;
 
 Kalkulator::Kalkulator() {
@@ -48,6 +49,9 @@ void Kalkulator::multiply(double m, double n, Memory *memory) {
 void Kalkulator::divide(double n, Memory *memory) {
     if(n == 0) {
         cerr << "Division by zero!";
+        Dialog divisionByZeroDialog;
+        divisionByZeroDialog.setModal(true);
+        divisionByZeroDialog.exec();
         return;
     }
 
@@ -59,6 +63,9 @@ void Kalkulator::divide(double n, Memory *memory) {
 void Kalkulator::modulo(double n, Memory *memory) {
     if(n == 0) {
         cerr << "Division by zero!";
+        Dialog divisionByZeroDialog;
+        divisionByZeroDialog.setModal(true);
+        divisionByZeroDialog.exec();
         return;
     }
     if (memory == nullptr)
