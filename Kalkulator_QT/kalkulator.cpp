@@ -46,26 +46,26 @@ void Kalkulator::multiply(double m, double n, Memory *memory) {
         mem.memory *= n;
 }
 
-void Kalkulator::divide(double n, Memory *memory) {
+void Kalkulator::divide(double m, double n, Memory *memory) {
     if(n == 0) {
-        cerr << "Division by zero!";
-        Dialog divisionByZeroDialog;
-        divisionByZeroDialog.setModal(true);
-        divisionByZeroDialog.exec();
+        handleException();
         return;
     }
 
     if (memory == nullptr)
         memory = &mem;
+
+    if(m != 0 && mem.memory != 0)
+        std::cerr << "Error both first digit and memory non zero!";
+    else if (m != 0)
+        mem.memory = m / n;
+    else
     mem.memory /= n;
 }
 
 void Kalkulator::modulo(double n, Memory *memory) {
     if(n == 0) {
-        cerr << "Division by zero!";
-        Dialog divisionByZeroDialog;
-        divisionByZeroDialog.setModal(true);
-        divisionByZeroDialog.exec();
+        handleException();
         return;
     }
     if (memory == nullptr)
@@ -112,6 +112,8 @@ void Kalkulator::handleStream() {
     case '*':
         multiply(tmp1, tmp2);
         break;
+    case '/':
+        divide(tmp1, tmp2);
     default:
         std::cerr << "Error";
         break;
@@ -126,7 +128,12 @@ void Kalkulator::handleStream() {
 
 }
 
-
+void Kalkulator::handleException() {
+    cerr << "Division by zero!";
+    Dialog divisionByZeroDialog;
+    divisionByZeroDialog.setModal(true);
+    divisionByZeroDialog.exec();
+}
 
 void Kalkulator::convertSystems (const int n, const int base_start, const int base_end) const {
     if (base_start <= 0 || base_end <= 0) {

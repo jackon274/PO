@@ -213,3 +213,12 @@ void MainWindow::on_btn_pm_clicked()
 
 }
 
+
+void MainWindow::on_btn_div_clicked()
+{
+    ui->label_sign->setVisible(true);
+    ui->label_sign->setText("÷");
+    calculator.operationStream << "/";
+    calculator.displayStream.str("");
+}
+

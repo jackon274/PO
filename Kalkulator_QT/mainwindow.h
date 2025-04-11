@@ -55,6 +55,8 @@ private slots:
 
     void on_btn_pm_clicked();
 
+    void on_btn_div_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
