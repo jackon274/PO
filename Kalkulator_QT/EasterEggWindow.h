@@ -4,16 +4,16 @@
 #include <QDialog>
 
 namespace Ui {
-class AboutWindow;
+class EasterEggWindow;
 }
 
-class AboutWindow : public QDialog
+class EasterEggWindow : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit AboutWindow(QWidget *parent = nullptr);
-    ~AboutWindow();
+    explicit EasterEggWindow(QWidget *parent = nullptr);
+    ~EasterEggWindow();
 
 private slots:
     void on_noclick1_clicked();
@@ -21,7 +21,7 @@ private slots:
     void on_noclick2_clicked();
 
 private:
-    Ui::AboutWindow *ui;
+    Ui::EasterEggWindow *ui;
 };
 
 #endif // EASTEREGGWINDOW_H

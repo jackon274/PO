@@ -4,9 +4,9 @@
 #include <QDesktopServices>
 #include <iostream>
 
-AboutWindow::AboutWindow(QWidget *parent)
+EasterEggWindow::EasterEggWindow(QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::AboutWindow)
+    , ui(new Ui::EasterEggWindow)
 {
     ui->setupUi(this);
     ui->noclick2->setVisible(false);
@@ -25,19 +25,19 @@ AboutWindow::AboutWindow(QWidget *parent)
 
 }
 
-AboutWindow::~AboutWindow()
+EasterEggWindow::~EasterEggWindow()
 {
     delete ui;
 }
 
-void AboutWindow::on_noclick1_clicked()
+void EasterEggWindow::on_noclick1_clicked()
 {
     ui->noclick1->setVisible(false);
     ui->noclick2->setVisible(true);
 }
 
 
-void AboutWindow::on_noclick2_clicked()
+void EasterEggWindow::on_noclick2_clicked()
 {
     QDesktopServices::openUrl(QUrl("https://youtu.be/oavMtUWDBTM", QUrl::TolerantMode));
 }
