@@ -30,7 +30,7 @@ int convertToDecimal(long input, int fromBase, int toBase) {
         input /= 10;
     }
 
-    if (toBase == 10)
+    if (toBbase == 10)
         return result_10;
 
     multiplier = 1;
@@ -49,20 +49,11 @@ int convertToDecimal(long input, int fromBase, int toBase) {
 void ConvertSystems::on_btn_convert_clicked()
 {
     convertStream << ui->value_in->text().toStdString() << " " << ui->base_in->currentText().toStdString() << " " << ui->base_out->currentText().toStdString();
-
     int baseStart, baseEnd;
     long numberToConvert;
     convertStream >> numberToConvert >> baseStart >> baseEnd;
-
-    std::cout << numberToConvert << " " << baseStart << " " << baseEnd << std::endl;
-
     ui->value_out->setText( QString::number(convertToDecimal(numberToConvert, baseStart, baseEnd) ) );
     convertStream.clear();
     convertStream.str("");
-
-
-
-
-
 }
 
