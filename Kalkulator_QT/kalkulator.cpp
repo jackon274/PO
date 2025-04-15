@@ -11,7 +11,7 @@ Kalkulator::Kalkulator() {
 }
 
 void openEasterEggWindow() {
-    AboutWindow easterEgg;
+    EasterEggWindow easterEgg;
     easterEgg.setModal(true);
     easterEgg.exec();
 }

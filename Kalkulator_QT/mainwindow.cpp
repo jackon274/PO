@@ -35,6 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->btn_comma->setFont(appleFontButtons);
     ui->btn_AC->setFont(appleFontButtons);
     ui->btn_sqrt->setFont(appleFontButtons);
+    ui->menubar->setStyleSheet ("QMenu { background-color: #444; color: white; } QMenu::item:selected { background-color:  rgb(74, 73, 77);}QMenuBar { background-color: #000000; color: white;} QMenuBar::item:selected { background-color:  rgb(74, 73, 77);}");
 }
 
 MainWindow::~MainWindow() {
@@ -175,4 +176,9 @@ void MainWindow::on_btn_sqrt_clicked()
     calculator.handleStream();
     ui->display->display(calculator.getMemoryVal());
 }
+
+void MainWindow::on_action_about_triggered() {
+    std::cout << "Hello" << std::endl;
+}
+
 
