@@ -27,6 +27,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         kalkulator.h kalkulator.cpp
         EasterEggWindow.h EasterEggWindow.cpp EasterEggWindow.ui
         Res.qrc
+        aboutwindow.h aboutwindow.cpp aboutwindow.ui
 
     )
 # Define target properties for Android with Qt 6 as:
