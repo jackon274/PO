@@ -17,12 +17,9 @@ EasterEggWindow::EasterEggWindow(QWidget *parent)
     appleFontBig.setPointSize(20);
     ui->label->setFont(appleFontBig);
     QFont appleFontSmall(family);
-    appleFontSmall.setPointSize(10);
+    appleFontSmall.setPointSize(12);
     ui->label_name->setFont(appleFontSmall);
     ui->label_author->setFont(appleFontSmall);
-    ui->label_index->setFont(appleFontSmall);
-
-
 }
 
 EasterEggWindow::~EasterEggWindow()
