@@ -190,3 +190,13 @@ void Kalkulator::handleButtonClick(char buttonPressed) {
     }
 
 }
+
+double Kalkulator::updateDisplayHelper() {
+    double tmp = 0;
+    displayStream >> tmp;
+    std::cout << std::endl << "tmp = " << tmp << std::endl;
+    displayStream.clear();
+    displayStream.str("");
+    displayStream << tmp;
+    return tmp;
+}

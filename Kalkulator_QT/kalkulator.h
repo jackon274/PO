@@ -3,6 +3,7 @@
 #include "Memory.h"
 #include <stdint.h>
 #include <sstream>
+#include "mainwindow.h"
 #define SECRET_STRING "021+37"
 
 class Kalkulator {
@@ -24,6 +25,7 @@ public:
     void handleStream();
     void handleException(char event);
     void handleButtonClick(char buttonPressed);
+    double updateDisplayHelper();
     Kalkulator();
 };
 

@@ -42,13 +42,7 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::updateDisplay() {
-    double tmp = 0;
-    calculator.displayStream >> tmp;
-    std::cout << std::endl << "tmp = " << tmp << std::endl;
-    ui->display->display(tmp);
-    calculator.displayStream.clear();
-    calculator.displayStream.str("");
-    calculator.displayStream << tmp;
+    ui->display->display(calculator.updateDisplayHelper());
 }
 
 void MainWindow::on_btn_AC_clicked()
