@@ -123,8 +123,10 @@ void Kalkulator::handleStream() {
         break;
     case '/':
         divide(tmp1, tmp2);
+        break;
     case '$':
         square_root(tmp1);
+        break;
     default:
         std::cerr << "Error";
         break;
