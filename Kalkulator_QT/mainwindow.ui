@@ -330,7 +330,7 @@ background-color: rgb(95, 95, 95);
 }</string>
        </property>
        <property name="text">
-        <string>MODE</string>
+        <string>CONV</string>
        </property>
       </widget>
      </item>

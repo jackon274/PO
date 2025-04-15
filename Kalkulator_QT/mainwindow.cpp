@@ -3,6 +3,8 @@
 #include "kalkulator.h"
 #include <iostream>
 #include <QFontDatabase>
+#include "aboutwindow.h"
+#include "convertsystems.h"
 
 Kalkulator calculator;
 
@@ -178,7 +180,17 @@ void MainWindow::on_btn_sqrt_clicked()
 }
 
 void MainWindow::on_action_about_triggered() {
-    std::cout << "Hello" << std::endl;
+    AboutWindow about;
+    about.setModal(true);
+    about.exec();
 }
 
+
+
+void MainWindow::on_btn_mode_clicked()
+{
+    ConvertSystems convertWindow;
+    convertWindow.setModal(true);
+    convertWindow.exec();
+}
 

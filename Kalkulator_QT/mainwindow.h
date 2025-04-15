@@ -53,13 +53,13 @@ private slots:
 
     void updateDisplay();
 
-    void on_btn_pm_clicked();
-
     void on_btn_div_clicked();
 
     void on_btn_sqrt_clicked();
 
     void on_action_about_triggered();
+
+    void on_btn_mode_clicked();
 
 private:
     Ui::MainWindow *ui;
