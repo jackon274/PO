@@ -30,7 +30,7 @@ int convertToDecimal(long input, int fromBase, int toBase) {
         input /= 10;
     }
 
-    if (toBbase == 10)
+    if (toBase == 10)
         return result_10;
 
     multiplier = 1;
