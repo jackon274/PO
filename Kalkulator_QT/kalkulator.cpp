@@ -4,7 +4,8 @@
 #include "aboutwindow.h"
 #include "dialog.h"
 #include <cmath>
-using std::cerr;
+#include <QSystemTrayIcon>
+#include <QString>
 
 Kalkulator::Kalkulator() {
     operationStream << 0;
@@ -58,16 +59,14 @@ void Kalkulator::square_root (double m, Memory *memory) {
 
 void Kalkulator::divide(double m, double n, Memory *memory) {
     if(n == 0) {
-        handleException();
+        handleException(1);
         return;
     }
 
     if (memory == nullptr)
         memory = &mem;
 
-    if(m != 0 && mem.memory != 0)
-        std::cerr << "Error both first digit and memory non zero!";
-    else if (m != 0)
+    if (m != 0)
         mem.memory = m / n;
     else
     mem.memory /= n;
@@ -75,7 +74,7 @@ void Kalkulator::divide(double m, double n, Memory *memory) {
 
 void Kalkulator::modulo(double n, Memory *memory) {
     if(n == 0) {
-        handleException();
+        handleException(2);
         return;
     }
     if (memory == nullptr)
@@ -140,11 +139,25 @@ void Kalkulator::handleStream() {
 
 }
 
-void Kalkulator::handleException() {
-    cerr << "Division by zero!";
-    Dialog divisionByZeroDialog;
-    divisionByZeroDialog.setModal(true);
-    divisionByZeroDialog.exec();
+void Kalkulator::handleException(char event) {
+    QString komunikat;
+    static QSystemTrayIcon trayIcon;
+
+    if (!trayIcon.isVisible()) {
+        trayIcon.setIcon(QIcon::fromTheme("dialog-information"));
+        trayIcon.setVisible(true);
+    }
+    switch (event) {
+    case 1:
+        komunikat = "Dzielenie przez zero nie jest dozwolone!";
+        break;
+    case 2:
+        komunikat = "Operacja modulo nie może przyjmować zera!";
+        break;
+    case 3:
+        komunikat = "Pierwiastek z liczby ujemnej nie jest dozwolony!";
+    }
+    trayIcon.showMessage("Błąd", komunikat, QSystemTrayIcon::Critical, 3000);
 }
 
 void Kalkulator::convertSystems (const int n, const int base_start, const int base_end) const {

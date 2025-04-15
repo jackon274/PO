@@ -22,7 +22,7 @@ public:
     std::stringstream displayStream;
     std::stringstream operationStream;
     void handleStream();
-    void handleException();
+    void handleException(char event);
     void handleButtonClick(char buttonPressed);
     Kalkulator();
 };
