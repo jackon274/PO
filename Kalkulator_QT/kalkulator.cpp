@@ -5,6 +5,7 @@
 #include <cmath>
 #include <QSystemTrayIcon>
 #include <QString>
+#include <cmath>
 
 Kalkulator::Kalkulator() {
     operationStream << 0;
@@ -71,16 +72,21 @@ void Kalkulator::divide(double m, double n, Memory *memory) {
     mem.memory /= n;
 }
 
-void Kalkulator::modulo(double n, Memory *memory) {
+void Kalkulator::modulo(double m, double n, Memory *memory) {
     if(n == 0) {
         handleException(2);
         return;
     }
     if (memory == nullptr)
         memory = &mem;
-    double a = memory->memory;
-    a = a - static_cast <int> (n / a) * a;
-    memory->memory = a;
+
+    if(m != 0 && mem.memory != 0)
+        std::cerr << "Error both first digit and memory non zero!";
+    else if (m != 0)
+        mem.memory = fmod(m, n);
+    else
+        mem.memory = fmod(mem.memory, n);
+
 }
 
 void Kalkulator::clearResult() {
@@ -125,6 +131,9 @@ void Kalkulator::handleStream() {
         break;
     case '$':
         square_root(tmp1);
+        break;
+    case '%':
+        modulo(tmp1, tmp2);
         break;
     default:
         std::cerr << "Error";

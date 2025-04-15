@@ -194,3 +194,11 @@ void MainWindow::on_btn_mode_clicked()
     convertWindow.exec();
 }
 
+
+void MainWindow::on_btn_percent_clicked()
+{
+    ui->label_sign->setVisible(true);
+    ui->label_sign->setText("%");
+    calculator.handleButtonClick('%');
+}
+

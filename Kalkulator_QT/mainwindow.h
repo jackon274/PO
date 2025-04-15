@@ -61,6 +61,8 @@ private slots:
 
     void on_btn_mode_clicked();
 
+    void on_btn_percent_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
