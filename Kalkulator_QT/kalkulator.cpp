@@ -2,7 +2,6 @@
 #include <cmath>
 #include <iostream>
 #include "aboutwindow.h"
-#include "dialog.h"
 #include <cmath>
 #include <QSystemTrayIcon>
 #include <QString>
