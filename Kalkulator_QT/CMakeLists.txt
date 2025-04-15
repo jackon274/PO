@@ -25,7 +25,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         memory.h memory.cpp
         kalkulator.h kalkulator.cpp
-        aboutwindow.h aboutwindow.cpp aboutwindow.ui
+        EasterEggWindow.h EasterEggWindow.cpp EasterEggWindow.ui
         Res.qrc
 
     )

@@ -1,5 +1,5 @@
-#include "aboutwindow.h"
-#include "ui_aboutwindow.h"
+#include "EasterEggWindow.h"
+#include "ui_EasterEggWindow.h"
 #include <QFontDatabase>
 #include <QDesktopServices>
 #include <iostream>

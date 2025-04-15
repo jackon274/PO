@@ -1,7 +1,7 @@
 #include "Kalkulator.h"
 #include <cmath>
 #include <iostream>
-#include "aboutwindow.h"
+#include "EasterEggWindow.h"
 #include <cmath>
 #include <QSystemTrayIcon>
 #include <QString>

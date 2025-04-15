@@ -1,5 +1,5 @@
-#ifndef ABOUTWINDOW_H
-#define ABOUTWINDOW_H
+#ifndef EASTEREGGWINDOW_H
+#define EASTEREGGWINDOW_H
 
 #include <QDialog>
 
@@ -24,4 +24,4 @@ private:
     Ui::AboutWindow *ui;
 };
 
-#endif // ABOUTWINDOW_H
+#endif // EASTEREGGWINDOW_H
