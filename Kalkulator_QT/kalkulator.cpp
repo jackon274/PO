@@ -49,17 +49,26 @@ void Kalkulator::multiply(double m, double n, Memory *memory) {
 }
 
 void Kalkulator::square_root (double m, Memory *memory) {
+
+    if(m < 0 || (m == 0 && mem.memory < 0)) {
+        handleException(3);
+        clearResult();
+        return;
+    }
+
     if (memory == nullptr)
         memory = &mem;
 
-    if(m != 0 && mem.memory != 0)
-        std::cerr << "Error both first digit and memory non zero!";
+    if(m != 0)
         mem.memory = sqrt(m);
+    else
+        mem.memory = sqrt(mem.memory);
 }
 
 void Kalkulator::divide(double m, double n, Memory *memory) {
     if(n == 0) {
         handleException(1);
+        clearResult();
         return;
     }
 
@@ -75,6 +84,7 @@ void Kalkulator::divide(double m, double n, Memory *memory) {
 void Kalkulator::modulo(double m, double n, Memory *memory) {
     if(n == 0) {
         handleException(2);
+        clearResult();
         return;
     }
     if (memory == nullptr)
@@ -166,6 +176,7 @@ void Kalkulator::handleException(char event) {
         break;
     case 3:
         komunikat = "Pierwiastek z liczby ujemnej nie jest dozwolony!";
+        break;
     }
     trayIcon.showMessage("Błąd", komunikat, QSystemTrayIcon::Critical, 3000);
 }
