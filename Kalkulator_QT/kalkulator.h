@@ -9,6 +9,8 @@
 class Kalkulator {
     Memory mem;
     Memory lastOperationMemory;
+    std::stringstream displayStream;
+    std::stringstream operationStream;
 public:
     void add(double m, double n = 0, Memory *memory = nullptr);
     void subtract(double m, double n = 0, Memory *memory = nullptr);
@@ -20,8 +22,6 @@ public:
     void clearResult();
     double displayResult();
     double getMemoryVal(Memory *memory = nullptr);
-    std::stringstream displayStream;
-    std::stringstream operationStream;
     void handleStream();
     void handleException(char event);
     void handleButtonClick(char buttonPressed);

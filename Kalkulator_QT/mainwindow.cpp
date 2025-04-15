@@ -140,7 +140,6 @@ void MainWindow::on_btn_subtract_clicked()
 void MainWindow::on_btn_equals_clicked()
 {
     ui->label_sign->setVisible(false);
-    std::cout << std::endl << calculator.operationStream.str() << std::endl; //DEBUG ONLY
     calculator.handleStream();
     ui->display->display(calculator.getMemoryVal());
 
