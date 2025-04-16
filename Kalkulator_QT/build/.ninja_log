@@ -1,0 +1,17 @@
+# ninja log v6
+12	1570	7665178789259078	Kalkulator_autogen/timestamp	590462ab263f0658
+12	1570	7665178789259078	Kalkulator_autogen/mocs_compilation.cpp	590462ab263f0658
+12	1570	7665178789259078	C:/Users/Jacek Konderak/Desktop/PO/Kalkulator_QT/build/Kalkulator_autogen/timestamp	590462ab263f0658
+12	1570	7665178789259078	C:/Users/Jacek Konderak/Desktop/PO/Kalkulator_QT/build/Kalkulator_autogen/mocs_compilation.cpp	590462ab263f0658
+1576	1844	7665178792677117	Kalkulator_autogen/EWIEGA46WW/qrc_Res.cpp	d06c5ace81f26bb1
+1576	1844	7665178792677117	C:/Users/Jacek Konderak/Desktop/PO/Kalkulator_QT/build/Kalkulator_autogen/EWIEGA46WW/qrc_Res.cpp	d06c5ace81f26bb1
+1854	2004	7665178792887020	CMakeFiles/Kalkulator.dir/memory.cpp.obj	43bc33e6cef84b27
+1844	6071	7665178792777240	CMakeFiles/Kalkulator.dir/Kalkulator_autogen/mocs_compilation.cpp.obj	79fb064fc5856df6
+1847	6073	7665178792807250	CMakeFiles/Kalkulator.dir/main.cpp.obj	aec83d0b7fea3909
+1865	6356	7665178792996937	CMakeFiles/Kalkulator.dir/aboutwindow.cpp.obj	558047ec31eeeeaf
+1858	6558	7665178792916980	CMakeFiles/Kalkulator.dir/kalkulator.cpp.obj	d31becd3ac21aded
+1861	6811	7665178792956959	CMakeFiles/Kalkulator.dir/EasterEggWindow.cpp.obj	888198bc19dd6f99
+1850	7013	7665178792847023	CMakeFiles/Kalkulator.dir/mainwindow.cpp.obj	8be9262b9e86a22c
+1870	7311	7665178793036914	CMakeFiles/Kalkulator.dir/convertsystems.cpp.obj	681a940e2ed958f7
+1873	9977	7665178793076889	CMakeFiles/Kalkulator.dir/Kalkulator_autogen/EWIEGA46WW/qrc_Res.cpp.obj	519998ad6f896eca
+9977	10235	7665178874118965	Kalkulator.exe	bae19b323b7f65be

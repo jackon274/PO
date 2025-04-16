@@ -1,0 +1,9 @@
+C:/Users/Jacek Konderak/Desktop/PO/Kalkulator_QT/build/CMakeFiles/Kalkulator.dir
+C:/Users/Jacek Konderak/Desktop/PO/Kalkulator_QT/build/CMakeFiles/edit_cache.dir
+C:/Users/Jacek Konderak/Desktop/PO/Kalkulator_QT/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Jacek Konderak/Desktop/PO/Kalkulator_QT/build/CMakeFiles/list_install_components.dir
+C:/Users/Jacek Konderak/Desktop/PO/Kalkulator_QT/build/CMakeFiles/install.dir
+C:/Users/Jacek Konderak/Desktop/PO/Kalkulator_QT/build/CMakeFiles/install/local.dir
+C:/Users/Jacek Konderak/Desktop/PO/Kalkulator_QT/build/CMakeFiles/install/strip.dir
+C:/Users/Jacek Konderak/Desktop/PO/Kalkulator_QT/build/CMakeFiles/Kalkulator_autogen_timestamp_deps.dir
+C:/Users/Jacek Konderak/Desktop/PO/Kalkulator_QT/build/CMakeFiles/Kalkulator_autogen.dir
