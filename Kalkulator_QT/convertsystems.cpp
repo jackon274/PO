@@ -60,14 +60,12 @@ void ConvertSystems::on_btn_convert_clicked()
     int baseStart, baseEnd;
     long numberToConvert;
     convertStream >> numberToConvert >> baseStart >> baseEnd;
-    std::cout << numberToConvert << std::endl;
     if(numberToConvert < 0) {
         static QSystemTrayIcon trayIcon;
         if (!trayIcon.isVisible()) {
             trayIcon.setIcon(QIcon(":/Fotki/resources/icon.png"));
             trayIcon.setVisible(true);
         }
-        std::cout << "ERROR!!" << std::endl;
 
         trayIcon.showMessage("Błąd", "Nie można obsłużyć liczb ujemnych", QSystemTrayIcon::Critical, 3000);
         numberToConvert = 0;

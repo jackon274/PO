@@ -202,7 +202,6 @@ void Kalkulator::handleButtonClick(char buttonPressed) {
     if ( (buttonPressed >= '0' && buttonPressed <= '9') || buttonPressed == '.' ) {
         displayStream << buttonPressed;
         operationStream << buttonPressed;
-        std::cout << "Pressed " << buttonPressed << std::endl;
     }
     else {
         operationStream << buttonPressed;
@@ -214,7 +213,6 @@ void Kalkulator::handleButtonClick(char buttonPressed) {
 double Kalkulator::updateDisplayHelper() {
     double tmp = 0;
     displayStream >> tmp;
-    std::cout << std::endl << "tmp = " << tmp << std::endl;
     displayStream.clear();
     displayStream.str("");
     displayStream << tmp;
