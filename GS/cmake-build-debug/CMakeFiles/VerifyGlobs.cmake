@@ -41,6 +41,7 @@ endif()
 # _directory_contents at /Users/jacekk/Qt/6.9.0/macos/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/jacekk/PO/GS/*.cpp")
 set(OLD_GLOB
+  "/Users/jacekk/PO/GS/SerialPort.cpp"
   "/Users/jacekk/PO/GS/build/Qt_6_9_0_for_macOS-Debug/CMakeFiles/4.0.1/CompilerIdCXX/CMakeCXXCompilerId.cpp"
   "/Users/jacekk/PO/GS/build/Qt_6_9_0_for_macOS-Debug/GS_autogen/EWIEGA46WW/moc_connectionwindow.cpp"
   "/Users/jacekk/PO/GS/build/Qt_6_9_0_for_macOS-Debug/GS_autogen/mocs_compilation.cpp"
@@ -67,6 +68,7 @@ endif()
 # _directory_contents at /Users/jacekk/Qt/6.9.0/macos/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/jacekk/PO/GS/*.h")
 set(OLD_GLOB
+  "/Users/jacekk/PO/GS/SerialPort.h"
   "/Users/jacekk/PO/GS/build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_connectionwindow.h"
   "/Users/jacekk/PO/GS/build/Qt_6_9_0_for_macOS-Debug/GS_autogen/moc_predefs.h"
   "/Users/jacekk/PO/GS/cmake-build-debug/GS_autogen/include/ui_connectionwindow.h"

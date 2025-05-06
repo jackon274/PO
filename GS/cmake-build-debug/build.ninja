@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_GS: phony || GS_autogen GS_autogen/mocs_
 build CMakeFiles/GS.dir/GS_autogen/mocs_compilation.cpp.o: CXX_COMPILER__GS_unscanned_Debug /Users/jacekk/PO/GS/cmake-build-debug/GS_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_GS
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/GS.dir/GS_autogen/mocs_compilation.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.7 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.7 -fcolor-diagnostics -Wall -Wextra -pedantic -Werror=return-type -Werror=array-bounds -Werror=parentheses -Werror=vla -Wmissing-include-dirs -Wcast-qual
   INCLUDES = -I/Users/jacekk/PO/GS/cmake-build-debug/GS_autogen/include -isystem /Users/jacekk/Qt/6.9.0/macos/lib/QtCore.framework/Headers -iframework /Users/jacekk/Qt/6.9.0/macos/lib -isystem /Users/jacekk/Qt/6.9.0/macos/mkspecs/macx-clang -isystem /Users/jacekk/Qt/6.9.0/macos/include -isystem /Users/jacekk/Qt/6.9.0/macos/lib/QtWidgets.framework/Headers -isystem /Users/jacekk/Qt/6.9.0/macos/lib/QtGui.framework/Headers
   OBJECT_DIR = CMakeFiles/GS.dir
   OBJECT_FILE_DIR = CMakeFiles/GS.dir/GS_autogen
@@ -60,7 +60,7 @@ build CMakeFiles/GS.dir/GS_autogen/mocs_compilation.cpp.o: CXX_COMPILER__GS_unsc
 build CMakeFiles/GS.dir/main.cpp.o: CXX_COMPILER__GS_unscanned_Debug /Users/jacekk/PO/GS/main.cpp || cmake_object_order_depends_target_GS
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/GS.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.7 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.7 -fcolor-diagnostics -Wall -Wextra -pedantic -Werror=return-type -Werror=array-bounds -Werror=parentheses -Werror=vla -Wmissing-include-dirs -Wcast-qual
   INCLUDES = -I/Users/jacekk/PO/GS/cmake-build-debug/GS_autogen/include -isystem /Users/jacekk/Qt/6.9.0/macos/lib/QtCore.framework/Headers -iframework /Users/jacekk/Qt/6.9.0/macos/lib -isystem /Users/jacekk/Qt/6.9.0/macos/mkspecs/macx-clang -isystem /Users/jacekk/Qt/6.9.0/macos/include -isystem /Users/jacekk/Qt/6.9.0/macos/lib/QtWidgets.framework/Headers -isystem /Users/jacekk/Qt/6.9.0/macos/lib/QtGui.framework/Headers
   OBJECT_DIR = CMakeFiles/GS.dir
   OBJECT_FILE_DIR = CMakeFiles/GS.dir
@@ -68,7 +68,15 @@ build CMakeFiles/GS.dir/main.cpp.o: CXX_COMPILER__GS_unscanned_Debug /Users/jace
 build CMakeFiles/GS.dir/connectionwindow.cpp.o: CXX_COMPILER__GS_unscanned_Debug /Users/jacekk/PO/GS/connectionwindow.cpp || cmake_object_order_depends_target_GS
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/GS.dir/connectionwindow.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.7 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.7 -fcolor-diagnostics -Wall -Wextra -pedantic -Werror=return-type -Werror=array-bounds -Werror=parentheses -Werror=vla -Wmissing-include-dirs -Wcast-qual
+  INCLUDES = -I/Users/jacekk/PO/GS/cmake-build-debug/GS_autogen/include -isystem /Users/jacekk/Qt/6.9.0/macos/lib/QtCore.framework/Headers -iframework /Users/jacekk/Qt/6.9.0/macos/lib -isystem /Users/jacekk/Qt/6.9.0/macos/mkspecs/macx-clang -isystem /Users/jacekk/Qt/6.9.0/macos/include -isystem /Users/jacekk/Qt/6.9.0/macos/lib/QtWidgets.framework/Headers -isystem /Users/jacekk/Qt/6.9.0/macos/lib/QtGui.framework/Headers
+  OBJECT_DIR = CMakeFiles/GS.dir
+  OBJECT_FILE_DIR = CMakeFiles/GS.dir
+
+build CMakeFiles/GS.dir/SerialPort.cpp.o: CXX_COMPILER__GS_unscanned_Debug /Users/jacekk/PO/GS/SerialPort.cpp || cmake_object_order_depends_target_GS
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/GS.dir/SerialPort.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.7 -fcolor-diagnostics -Wall -Wextra -pedantic -Werror=return-type -Werror=array-bounds -Werror=parentheses -Werror=vla -Wmissing-include-dirs -Wcast-qual
   INCLUDES = -I/Users/jacekk/PO/GS/cmake-build-debug/GS_autogen/include -isystem /Users/jacekk/Qt/6.9.0/macos/lib/QtCore.framework/Headers -iframework /Users/jacekk/Qt/6.9.0/macos/lib -isystem /Users/jacekk/Qt/6.9.0/macos/mkspecs/macx-clang -isystem /Users/jacekk/Qt/6.9.0/macos/include -isystem /Users/jacekk/Qt/6.9.0/macos/lib/QtWidgets.framework/Headers -isystem /Users/jacekk/Qt/6.9.0/macos/lib/QtGui.framework/Headers
   OBJECT_DIR = CMakeFiles/GS.dir
   OBJECT_FILE_DIR = CMakeFiles/GS.dir
@@ -81,7 +89,7 @@ build CMakeFiles/GS.dir/connectionwindow.cpp.o: CXX_COMPILER__GS_unscanned_Debug
 #############################################
 # Link the executable GS.app/Contents/MacOS/GS
 
-build GS.app/Contents/MacOS/GS: CXX_EXECUTABLE_LINKER__GS_Debug CMakeFiles/GS.dir/GS_autogen/mocs_compilation.cpp.o CMakeFiles/GS.dir/main.cpp.o CMakeFiles/GS.dir/connectionwindow.cpp.o | /Users/jacekk/Qt/6.9.0/macos/lib/QtWidgets.framework/Versions/A/QtWidgets /Users/jacekk/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/QtGui /Users/jacekk/Qt/6.9.0/macos/lib/QtCore.framework/Versions/A/QtCore || GS_autogen GS_autogen_timestamp_deps
+build GS.app/Contents/MacOS/GS: CXX_EXECUTABLE_LINKER__GS_Debug CMakeFiles/GS.dir/GS_autogen/mocs_compilation.cpp.o CMakeFiles/GS.dir/main.cpp.o CMakeFiles/GS.dir/connectionwindow.cpp.o CMakeFiles/GS.dir/SerialPort.cpp.o | /Users/jacekk/Qt/6.9.0/macos/lib/QtWidgets.framework/Versions/A/QtWidgets /Users/jacekk/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/QtGui /Users/jacekk/Qt/6.9.0/macos/lib/QtCore.framework/Versions/A/QtCore || GS_autogen GS_autogen_timestamp_deps
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.7
   LINK_LIBRARIES = -Wl,-rpath,/Users/jacekk/Qt/6.9.0/macos/lib  /Users/jacekk/Qt/6.9.0/macos/lib/QtWidgets.framework/Versions/A/QtWidgets  /Users/jacekk/Qt/6.9.0/macos/lib/QtGui.framework/Versions/A/QtGui  -framework AGL  -framework AppKit  -framework OpenGL  -framework ImageIO  -framework Metal  /Users/jacekk/Qt/6.9.0/macos/lib/QtCore.framework/Versions/A/QtCore  -framework IOKit  -framework DiskArbitration  -framework UniformTypeIdentifiers
   LINK_PATH = -F/Users/jacekk/Qt/6.9.0/macos/lib

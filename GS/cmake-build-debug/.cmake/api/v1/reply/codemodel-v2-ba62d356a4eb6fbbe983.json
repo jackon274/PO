@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-064aceeaeec2322e836d.json",
+					"jsonFile" : "directory-.-Debug-4d831df0ca5c9ccbd216.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "GS::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-GS-Debug-88e2d919f7dcc3a636c3.json",
+					"jsonFile" : "target-GS-Debug-7d6f7d172200f1962386.json",
 					"name" : "GS",
 					"projectIndex" : 0
 				},

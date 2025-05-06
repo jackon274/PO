@@ -393,6 +393,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/Users/jacekk/PO/GS/SerialPort.h",
+			"MU",
+			"EWIEGA46WW/moc_SerialPort.cpp",
+			null
+		],
+		[
 			"/Users/jacekk/PO/GS/connectionwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_connectionwindow.cpp",
@@ -458,6 +464,7 @@
 	"SETTINGS_FILE" : "/Users/jacekk/PO/GS/cmake-build-debug/CMakeFiles/GS_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/Users/jacekk/PO/GS/SerialPort.cpp", "MU", null ],
 		[ "/Users/jacekk/PO/GS/connectionwindow.cpp", "MU", null ],
 		[ "/Users/jacekk/PO/GS/main.cpp", "MU", null ]
 	],

@@ -27,6 +27,8 @@ set(PROJECT_SOURCES
         connectionwindow.h
         connectionwindow.ui
         ${TS_FILES}
+        SerialPort.cpp
+        SerialPort.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
