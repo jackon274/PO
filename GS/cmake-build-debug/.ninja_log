@@ -1,0 +1,12 @@
+# ninja log v6
+7058	23988	1746549253529500158	CMakeFiles/GS.dir/main.cpp.o	98b059514d6c31d9
+7057	23653	1746549253527745946	CMakeFiles/GS.dir/GS_autogen/mocs_compilation.cpp.o	c2624553eae2060e
+32	509	1746549288475233000	/Users/jacekk/PO/GS/cmake-build-debug/CMakeFiles/cmake.verify_globs	8cc1b976a0dfed7d
+424	6967	1746549253346456772	/Users/jacekk/PO/GS/cmake-build-debug/GS_autogen/mocs_compilation.cpp	8a454fb142e6aebd
+7060	24016	1746549253531293152	CMakeFiles/GS.dir/connectionwindow.cpp.o	71ff833776749512
+424	6967	1746549253346456772	GS_autogen/mocs_compilation.cpp	8a454fb142e6aebd
+424	6967	1746549253346456772	GS_autogen/timestamp	8a454fb142e6aebd
+24017	24738	1746549270488282080	GS.app/Contents/MacOS/GS	3b3d6533bf0aa87d
+424	6967	1746549253346456772	/Users/jacekk/PO/GS/cmake-build-debug/GS_autogen/timestamp	8a454fb142e6aebd
+509	2771	1746549290851646911	build.ninja	ac2a94a55053f393
+24	438	1746549291032143300	/Users/jacekk/PO/GS/cmake-build-debug/CMakeFiles/cmake.verify_globs	8cc1b976a0dfed7d
