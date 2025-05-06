@@ -6,11 +6,16 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-add_compile_options(-Wall -Wextra -pedantic -Werror=return-type -Werror=array-bounds -Werror=parentheses -Werror=vla)
+add_compile_options(-Wall -Wextra -pedantic -Werror=return-type -Werror=array-bounds -Werror=parentheses -Werror=vla -Wmissing-include-dirs -Wcast-qual)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_PREFIX_PATH "/Users/jacekk/Qt/6.9.0/macos/lib/cmake/")
+if(APPLE)
+    set(CMAKE_PREFIX_PATH "/Users/jacekk/Qt/6.9.0/macos/lib/cmake/")
+elseif (WIN32)
+    set(CMAKE_PREFIX_PATH "C:/Qt/6.9.0/mingw_64/lib/cmake/")
+endif()
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
