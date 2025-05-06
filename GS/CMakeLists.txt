@@ -6,6 +6,8 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
+add_compile_options(-Wall -Wextra -pedantic -Werror=return-type -Werror=array-bounds -Werror=parentheses -Werror=vla)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_PREFIX_PATH "/Users/jacekk/Qt/6.9.0/macos/lib/cmake/")
