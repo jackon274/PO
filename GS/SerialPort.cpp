@@ -43,7 +43,9 @@ void SerialPort::checkAvailableSerialPorts() {
 
 #endif
 
-
+#ifdef _WIN32
+void SerialPort::checkAvailableSerialPorts() {}
+#endif
 std::vector <std::string> SerialPort::getAvailableSerialPorts() {
     return availableSerialPorts;
 }
