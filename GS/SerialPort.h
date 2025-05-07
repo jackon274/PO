@@ -13,6 +13,7 @@ class SerialPort {
 public:
     void checkAvailableSerialPorts();
     std::vector <std::string> getAvailableSerialPorts();
+    SerialPort();
 };
 
 

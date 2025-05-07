@@ -47,3 +47,7 @@ void SerialPort::checkAvailableSerialPorts() {
 std::vector <std::string> SerialPort::getAvailableSerialPorts() {
     return availableSerialPorts;
 }
+
+SerialPort::SerialPort() {
+    checkAvailableSerialPorts();
+}
