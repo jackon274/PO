@@ -44,7 +44,32 @@ void SerialPort::checkAvailableSerialPorts() {
 #endif
 
 #ifdef _WIN32
-void SerialPort::checkAvailableSerialPorts() {}
+#include <windows.h>
+
+bool isPortAvailable(const std::string& portName) {
+    HANDLE hComm = CreateFileA(portName.c_str(),
+                               GENERIC_READ | GENERIC_WRITE,
+                               0,
+                               NULL,
+                               OPEN_EXISTING,
+                               0,
+                               NULL);
+    if (hComm != INVALID_HANDLE_VALUE) {
+        CloseHandle(hComm);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+void SerialPort::checkAvailableSerialPorts() {
+    for (int i = 1; i <= 256; ++i) {
+        std::string portName = "\\\\.\\COM" + std::to_string(i);
+        if (isPortAvailable(portName)) {
+            serialPorts.push_back(portName);
+        }
+    }
+}
 #endif
 std::vector <std::string> SerialPort::getAvailableSerialPorts() {
     return availableSerialPorts;
