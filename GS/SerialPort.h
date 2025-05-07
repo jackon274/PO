@@ -5,7 +5,7 @@
 #ifndef SERIALPORT_H
 #define SERIALPORT_H
 #include <vector>
-
+#include <string>
 
 
 class SerialPort {
