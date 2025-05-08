@@ -1,9 +1,0 @@
-/Users/jacekk/PO/GS/cmake-build-debug/CMakeFiles/GS.dir
-/Users/jacekk/PO/GS/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/jacekk/PO/GS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/jacekk/PO/GS/cmake-build-debug/CMakeFiles/list_install_components.dir
-/Users/jacekk/PO/GS/cmake-build-debug/CMakeFiles/install.dir
-/Users/jacekk/PO/GS/cmake-build-debug/CMakeFiles/install/local.dir
-/Users/jacekk/PO/GS/cmake-build-debug/CMakeFiles/install/strip.dir
-/Users/jacekk/PO/GS/cmake-build-debug/CMakeFiles/GS_autogen_timestamp_deps.dir
-/Users/jacekk/PO/GS/cmake-build-debug/CMakeFiles/GS_autogen.dir
