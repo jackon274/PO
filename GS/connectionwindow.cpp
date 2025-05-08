@@ -33,7 +33,7 @@ void ConnectionWindow::on_btn_refresh_clicked()
     SerialPortManager serialPortManager;
     serialPortManager.checkAvailableSerialPorts();
     for(auto port:serialPortManager.getAvailableSerialPorts()) {
-        ui->box_ports->addItem(QString::fromStdString(port->portName));
+        ui->box_ports->addItem(QString::fromStdString(port->displayName), QString::fromStdString(port->portName));
     }
 
 }
