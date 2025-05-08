@@ -64,7 +64,7 @@ void SerialPort::checkAvailableSerialPorts() {
     for (int i = 1; i <= 256; ++i) {
         std::string portName = "\\\\.\\COM" + std::to_string(i);
         if (isPortAvailable(portName)) {
-            serialPorts.push_back(portName);
+            serialPorts.push_back(new SerialPort(fullPath));
         }
     }
     availableSerialPorts = serialPorts;

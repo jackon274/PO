@@ -26,3 +26,13 @@
 296	2110	1746689683918447344	CMakeFiles/GS.dir/SerialPortManager.cpp.o	817a62c714ef94f8
 294	4436	1746689683916484888	CMakeFiles/GS.dir/connectionwindow.cpp.o	1e4cb5926335d647
 4436	4985	1746689688059195479	GS.app/Contents/MacOS/GS	c5022f6ffd8e4362
+52	163	1746690822400791337	/Users/jacekk/PO/GS/cmake-build-debug/CMakeFiles/cmake.verify_globs	8cc1b976a0dfed7d
+212	467	1746690822560831206	GS_autogen/timestamp	8a454fb142e6aebd
+212	467	1746690822560831206	GS_autogen/mocs_compilation.cpp	8a454fb142e6aebd
+212	467	1746690822560831206	/Users/jacekk/PO/GS/cmake-build-debug/GS_autogen/timestamp	8a454fb142e6aebd
+212	467	1746690822560831206	/Users/jacekk/PO/GS/cmake-build-debug/GS_autogen/mocs_compilation.cpp	8a454fb142e6aebd
+469	3448	1746690822817364976	CMakeFiles/GS.dir/SerialPort.cpp.o	c784e8e99dd2305
+472	3510	1746690822820336203	CMakeFiles/GS.dir/SerialPortManager.cpp.o	817a62c714ef94f8
+468	5652	1746690822816436655	CMakeFiles/GS.dir/connectionwindow.cpp.o	1e4cb5926335d647
+5653	6365	1746690828001243214	GS.app/Contents/MacOS/GS	c5022f6ffd8e4362
+16	79	1746690833398512772	/Users/jacekk/PO/GS/cmake-build-debug/CMakeFiles/cmake.verify_globs	8cc1b976a0dfed7d

@@ -1,6 +1,6 @@
 #include "connectionwindow.h"
 #include "./ui_connectionwindow.h"
-#include "SerialPort.h"
+#include "SerialPortManager.h"
 
 
 
@@ -30,6 +30,11 @@ void ConnectionWindow::on_btn_refresh_clicked()
     for(auto &a:sp) {
         ui->box_ports->addItem(QString::fromStdString(a));
     }*/
+    SerialPortManager serialPortManager;
+    serialPortManager.checkAvailableSerialPorts();
+    for(auto port:serialPortManager.getAvailableSerialPorts()) {
+        ui->box_ports->addItem(QString::fromStdString(port->portName));
+    }
 
 }
 
