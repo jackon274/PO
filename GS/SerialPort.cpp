@@ -9,4 +9,10 @@
 
 SerialPort::SerialPort(const std::string& name) {
     portName = name;
+    displayName = name;
+}
+
+SerialPort::SerialPort(const std::string& name, const std::string& dispName) {
+    portName = name;
+    displayName = dispName;
 }

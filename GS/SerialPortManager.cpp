@@ -38,8 +38,9 @@ void SerialPortManager::checkAvailableSerialPorts() {
     availableSerialPorts = serialPorts;
 }
 
-
 #endif
+
+
 
 #ifdef _WIN32
 #include <windows.h>
@@ -64,7 +65,7 @@ void SerialPortManager::checkAvailableSerialPorts() {
     for (int i = 1; i <= 256; ++i) {
         std::string portName = "\\\\.\\COM" + std::to_string(i);
         if (isPortAvailable(portName)) {
-            serialPorts.push_back(new SerialPort(portName));
+            serialPorts.push_back(new SerialPort(portName, ("COM" + std::to_string(i) ) ) );
         }
     }
     availableSerialPorts = serialPorts;
