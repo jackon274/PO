@@ -9,11 +9,9 @@
 
 
 class SerialPort {
-    std::vector <std::string> availableSerialPorts;
+    std::string portName;
 public:
-    void checkAvailableSerialPorts();
-    std::vector <std::string> getAvailableSerialPorts();
-    SerialPort();
+    SerialPort(const std::string& name);
 };
 
 

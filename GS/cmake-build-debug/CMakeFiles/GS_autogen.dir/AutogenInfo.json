@@ -399,6 +399,12 @@
 			null
 		],
 		[
+			"/Users/jacekk/PO/GS/SerialPortManager.h",
+			"MU",
+			"EWIEGA46WW/moc_SerialPortManager.cpp",
+			null
+		],
+		[
 			"/Users/jacekk/PO/GS/connectionwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_connectionwindow.cpp",
@@ -465,6 +471,7 @@
 	"SOURCES" : 
 	[
 		[ "/Users/jacekk/PO/GS/SerialPort.cpp", "MU", null ],
+		[ "/Users/jacekk/PO/GS/SerialPortManager.cpp", "MU", null ],
 		[ "/Users/jacekk/PO/GS/connectionwindow.cpp", "MU", null ],
 		[ "/Users/jacekk/PO/GS/main.cpp", "MU", null ]
 	],

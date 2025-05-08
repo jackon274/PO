@@ -29,6 +29,8 @@ set(PROJECT_SOURCES
         ${TS_FILES}
         SerialPort.cpp
         SerialPort.h
+        SerialPortManager.cpp
+        SerialPortManager.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

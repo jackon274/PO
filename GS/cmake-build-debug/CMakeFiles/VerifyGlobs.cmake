@@ -42,6 +42,7 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/jacekk/PO/GS/*.cpp")
 set(OLD_GLOB
   "/Users/jacekk/PO/GS/SerialPort.cpp"
+  "/Users/jacekk/PO/GS/SerialPortManager.cpp"
   "/Users/jacekk/PO/GS/cmake-build-debug/CMakeFiles/3.29.6/CompilerIdCXX/CMakeCXXCompilerId.cpp"
   "/Users/jacekk/PO/GS/cmake-build-debug/GS_autogen/EWIEGA46WW/moc_connectionwindow.cpp"
   "/Users/jacekk/PO/GS/cmake-build-debug/GS_autogen/mocs_compilation.cpp"
@@ -66,6 +67,7 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/jacekk/PO/GS/*.h")
 set(OLD_GLOB
   "/Users/jacekk/PO/GS/SerialPort.h"
+  "/Users/jacekk/PO/GS/SerialPortManager.h"
   "/Users/jacekk/PO/GS/cmake-build-debug/GS_autogen/include/ui_connectionwindow.h"
   "/Users/jacekk/PO/GS/cmake-build-debug/GS_autogen/moc_predefs.h"
   "/Users/jacekk/PO/GS/connectionwindow.h"
