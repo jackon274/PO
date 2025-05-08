@@ -11,7 +11,7 @@
 class SerialPort {
     std::string portName;
 public:
-    SerialPort(const std::string& name);
+    explicit SerialPort(const std::string& name);
 };
 
 
