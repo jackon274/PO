@@ -35,6 +35,8 @@ void SerialPortManager::checkAvailableSerialPorts() {
     }
 
     closedir(dir);
+    for(auto  port:availableSerialPorts)
+        delete port;
     availableSerialPorts = serialPorts;
 }
 
@@ -68,6 +70,8 @@ void SerialPortManager::checkAvailableSerialPorts() {
             serialPorts.push_back(new SerialPort(portName, ("COM" + std::to_string(i) ) ) );
         }
     }
+    for(auto  port:availableSerialPorts)
+        delete port;
     availableSerialPorts = serialPorts;
 }
 #endif
