@@ -43,7 +43,7 @@ void SerialPortManager::checkAvailableSerialPorts() {
 
 #ifdef _WIN32
 #include <windows.h>
-std::vector<std::string> serialPorts;
+std::vector<SerialPort *> serialPorts;
 bool isPortAvailable(const std::string& portName) {
     HANDLE hComm = CreateFileA(portName.c_str(),
                                GENERIC_READ | GENERIC_WRITE,
