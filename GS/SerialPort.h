@@ -9,8 +9,8 @@
 
 
 class SerialPort {
-    std::string portName;
 public:
+    std::string portName;
     explicit SerialPort(const std::string& name);
 };
 
