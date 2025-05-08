@@ -75,6 +75,8 @@ std::vector <SerialPort *> SerialPortManager::getAvailableSerialPorts() {
     return availableSerialPorts;
 }
 
+
+
 SerialPortManager::SerialPortManager() {
     checkAvailableSerialPorts();
 }
