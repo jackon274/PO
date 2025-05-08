@@ -77,3 +77,8 @@ std::vector <SerialPort *> SerialPortManager::getAvailableSerialPorts() {
 SerialPortManager::SerialPortManager() {
     checkAvailableSerialPorts();
 }
+
+SerialPortManager::~SerialPortManager() {
+    for (auto port:availableSerialPorts)
+        delete port;
+}
