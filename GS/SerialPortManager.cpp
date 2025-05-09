@@ -89,7 +89,7 @@ int SerialPortManager::open(SerialPort *port) {
         close(serialPortFd);
         return -1;
     }
-
+    openPort = port;
     return serialPortFd;
 }
 #endif

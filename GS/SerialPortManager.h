@@ -11,6 +11,7 @@
 class SerialPortManager {
     std::vector <SerialPort *> availableSerialPorts;
     int baudRate;
+    SerialPort *openPort;
 public:
     void checkAvailableSerialPorts();
     std::vector <SerialPort *> getAvailableSerialPorts();
