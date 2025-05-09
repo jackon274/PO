@@ -58,7 +58,7 @@ int SerialPortManager::open(SerialPort *port) {
 
     if (tcgetattr(serialPortFd, &options) != 0) {
         std::cerr << "Error getting termios attributes: " << strerror(errno) << std::endl;
-        close(serialPortFd);
+        ::close(serialPortFd);
         return -1;
     }
 
@@ -86,12 +86,19 @@ int SerialPortManager::open(SerialPort *port) {
     // Save tty settings, checking for error
     if (tcsetattr(serialPortFd, TCSANOW, &options) != 0) {
         std::cerr << "Error setting termios attributes: " << strerror(errno) << std::endl;
-        close(serialPortFd);
+        ::close(serialPortFd);
         return -1;
     }
     openPort = port;
     return serialPortFd;
 }
+
+
+int SerialPortManager::close(SerialPort *port) {
+    //do sth;
+    return 0;
+}
+
 #endif
 
 
@@ -142,4 +149,6 @@ SerialPortManager::SerialPortManager() {
 SerialPortManager::~SerialPortManager() {
     for (auto port:availableSerialPorts)
         delete port;
+    close(openPort);
+    openPort = nullptr;
 }
