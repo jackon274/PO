@@ -14,7 +14,6 @@ public:
     std::string displayName;
     explicit SerialPort(const std::string& name);
     SerialPort(const std::string& name, const std::string& dispName);
-    int open(int baudRate);
 };
 
 
