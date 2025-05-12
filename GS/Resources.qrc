@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>logo_aerospace.svg</file>
+    </qresource>
+</RCC>
