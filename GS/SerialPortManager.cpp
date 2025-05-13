@@ -63,8 +63,29 @@ int SerialPortManager::open(SerialPort *port) {
     }
 
     // Configure baud rate
-    cfsetospeed(&options, baudRate);
-    cfsetispeed(&options, baudRate);
+    switch(baudRate) {
+        case 9600:
+            cfsetospeed(&options, B9600);
+            cfsetispeed(&options, B9600);
+        break;
+        case 19200:
+            cfsetospeed(&options, B19200);
+            cfsetispeed(&options, B19200);
+        break;
+        case 38400:
+            cfsetospeed(&options, B38400);
+            cfsetispeed(&options, B38400);
+        break;
+        case 57600:
+            cfsetospeed(&options, B57600);
+            cfsetispeed(&options, B57600);
+        break;
+        case 115200:
+            cfsetospeed(&options, B115200);
+            cfsetispeed(&options, B115200);
+        break;
+    }
+
 
     // 8N1 Mode (8 data bits, no parity, 1 stop bit)
     options.c_cflag &= ~PARENB;            // Clear parity bit, disabling parity (no parity)
