@@ -17,6 +17,7 @@ public:
     std::vector <SerialPort *> getAvailableSerialPorts();
     int open(SerialPort *port);
     int close(SerialPort *port);
+    const std::string &getOpenSerialPort() const;
     SerialPortManager();
     ~SerialPortManager();
 };

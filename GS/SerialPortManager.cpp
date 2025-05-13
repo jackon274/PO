@@ -99,6 +99,10 @@ int SerialPortManager::close(SerialPort *port) {
     return 0;
 }
 
+const std::string &SerialPortManager::getOpenSerialPort() const{
+    return openPort->displayName;
+}
+
 #endif
 
 
