@@ -30,7 +30,7 @@ void SerialPortManager::checkAvailableSerialPorts() {
         std::string name = entry->d_name;
 
         // Check for typical macOS serial device prefixes
-        if (name.find("cu.") == 0) {
+        if (name.find("cu.") == 0 || name.find("ttys") == 0) {
             std::string fullPath = devPath + name;
             struct stat st;
             if (stat(fullPath.c_str(), &st) == 0 && S_ISCHR(st.st_mode)) {
@@ -109,6 +109,8 @@ int SerialPortManager::getSerialPortState() {
     return 1;
 }
 
+
+
 #endif
 
 
@@ -150,7 +152,9 @@ std::vector <SerialPort *> SerialPortManager::getAvailableSerialPorts() {
     return availableSerialPorts;
 }
 
-
+void SerialPortManager::setBaudRate(int newBaudRate) {
+    baudRate = newBaudRate;
+}
 
 SerialPortManager::SerialPortManager() {
     checkAvailableSerialPorts();
