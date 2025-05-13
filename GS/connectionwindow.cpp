@@ -52,5 +52,8 @@ void ConnectionWindow::on_btn_connect_clicked()
 {
     int baudRate = ui->box_baudrate->currentText().toInt();
     serialPortManager.setBaudRate(baudRate);
+    SerialPort* selectedPort = ui->box_ports->currentData().value<SerialPort*>();
+    std::cout << selectedPort->displayName << std::endl; //debug only
+    serialPortManager.open(selectedPort);
 }
 
