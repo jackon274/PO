@@ -103,6 +103,12 @@ const std::string &SerialPortManager::getOpenSerialPort() const{
     return openPort->displayName;
 }
 
+int SerialPortManager::getSerialPortState() {
+    if(openPort == nullptr)
+        return 0;
+    return 1;
+}
+
 #endif
 
 

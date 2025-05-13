@@ -18,6 +18,7 @@ public:
     int open(SerialPort *port);
     int close(SerialPort *port);
     const std::string &getOpenSerialPort() const;
+    int getSerialPortState();
     SerialPortManager();
     ~SerialPortManager();
 };
