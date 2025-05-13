@@ -13,7 +13,15 @@
   <property name="windowTitle">
    <string>ConnectionWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="centralwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>491</width>
+     <height>152</height>
+    </rect>
+   </property>
    <widget class="QComboBox" name="box_ports">
     <property name="geometry">
      <rect>
@@ -37,7 +45,7 @@
      <string>Refresh</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btn_connect">
     <property name="geometry">
      <rect>
       <x>360</x>
@@ -96,7 +104,16 @@
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>3</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

@@ -21,6 +21,8 @@ private slots:
     void on_btn_refresh_clicked();
 
 
+    void on_btn_connect_clicked();
+
 private:
     Ui::ConnectionWindow *ui;
 };
