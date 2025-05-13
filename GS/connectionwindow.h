@@ -1,7 +1,7 @@
 #ifndef CONNECTIONWINDOW_H
 #define CONNECTIONWINDOW_H
 
-#include <QMainWindow>
+#include <QDialog>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -9,18 +9,17 @@ class ConnectionWindow;
 }
 QT_END_NAMESPACE
 
-class ConnectionWindow : public QMainWindow
+class ConnectionWindow : public QDialog
 {
     Q_OBJECT
 
 public:
-    ConnectionWindow(QWidget *parent = nullptr);
+    explicit ConnectionWindow(QWidget *parent = nullptr);
     ~ConnectionWindow();
 
 private slots:
     void on_btn_refresh_clicked();
 
-    void on_pushButton_clicked();
 
 private:
     Ui::ConnectionWindow *ui;

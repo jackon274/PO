@@ -5,7 +5,7 @@
 
 
 ConnectionWindow::ConnectionWindow(QWidget *parent)
-    : QMainWindow(parent)
+    : QDialog(parent)
     , ui(new Ui::ConnectionWindow)
 {
     ui->setupUi(this);
@@ -13,6 +13,7 @@ ConnectionWindow::ConnectionWindow(QWidget *parent)
     ui->btn_refresh->setEnabled(false);
     ui->box_ports->addItem("Simulation");
 #endif
+    ui->btn_refresh->setText(tr("Refresh"));
 }
 
 ConnectionWindow::~ConnectionWindow()
@@ -35,12 +36,6 @@ void ConnectionWindow::on_btn_refresh_clicked()
     for(auto port:serialPortManager.getAvailableSerialPorts()) {
         ui->box_ports->addItem(QString::fromStdString(port->displayName), QString::fromStdString(port->portName));
     }
-
-}
-
-
-void ConnectionWindow::on_pushButton_clicked()
-{
 
 }
 
