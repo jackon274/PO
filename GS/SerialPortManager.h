@@ -16,9 +16,9 @@ public:
     void checkAvailableSerialPorts();
     std::vector <SerialPort *> getAvailableSerialPorts();
     int open(SerialPort *port);
-    int close(SerialPort *port);
+    int close();
     const std::string &getOpenSerialPort() const;
-    int getSerialPortState();
+    int getSerialPortState() const;
     void setBaudRate(int newBaudRate);
 
     ssize_t serialReceive(SerialPort *port, uint8_t *buffer, size_t buffer_size);

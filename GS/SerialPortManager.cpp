@@ -94,7 +94,7 @@ int SerialPortManager::open(SerialPort *port) {
 }
 
 
-int SerialPortManager::close(SerialPort *port) {
+int SerialPortManager::close() {
     //do sth;
     return 0;
 }
@@ -103,7 +103,7 @@ const std::string &SerialPortManager::getOpenSerialPort() const{
     return openPort->displayName;
 }
 
-int SerialPortManager::getSerialPortState() {
+int SerialPortManager::getSerialPortState() const{
     if(openPort == nullptr)
         return 0;
     return 1;
@@ -163,6 +163,6 @@ SerialPortManager::SerialPortManager() {
 SerialPortManager::~SerialPortManager() {
     for (auto port:availableSerialPorts)
         delete port;
-    close(openPort);
+    close();
     openPort = nullptr;
 }
