@@ -20,7 +20,7 @@ public:
     const std::string &getOpenSerialPort() const;
     int getSerialPortState() const;
     void setBaudRate(int newBaudRate);
-
+    std::vector<uint8_t> uartReceive();
     ssize_t serialReceive(SerialPort *port, uint8_t *buffer, size_t buffer_size);
 
     SerialPortManager();

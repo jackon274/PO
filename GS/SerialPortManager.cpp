@@ -130,6 +130,22 @@ int SerialPortManager::getSerialPortState() const{
     return 1;
 }
 
+std::vector<uint8_t> SerialPortManager::uartReceive() {
+    int maxBytes = 256;
+    std::vector<uint8_t> buffer(maxBytes);
+
+    ssize_t bytesRead = read(openPort->serialPortFd, buffer.data(), maxBytes);
+    if (bytesRead < 0) {
+        if (errno != EAGAIN && errno != EWOULDBLOCK) {
+            perror("UART read error");
+        }
+        return {}; // return empty vector on error
+    }
+
+    buffer.resize(bytesRead); // shrink to actual size
+    return buffer;
+}
+
 
 
 #endif
