@@ -13,9 +13,9 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
+SerialPortManager serialPortManager;
 void MainWindow::on_btn_connect_clicked() {
-    ConnectionWindow window;
+    ConnectionWindow window(serialPortManager);
     window.setModal(true);
     window.exec();
 }

@@ -2,7 +2,7 @@
 #define CONNECTIONWINDOW_H
 
 #include <QDialog>
-
+#include "SerialPortManager.h"
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class ConnectionWindow;
@@ -12,9 +12,9 @@ QT_END_NAMESPACE
 class ConnectionWindow : public QDialog
 {
     Q_OBJECT
-
+    SerialPortManager &serialPortManager;
 public:
-    explicit ConnectionWindow(QWidget *parent = nullptr);
+    explicit ConnectionWindow(SerialPortManager &manager, QWidget *parent = nullptr);
     ~ConnectionWindow();
 
 private slots:

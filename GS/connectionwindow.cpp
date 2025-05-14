@@ -8,8 +8,7 @@
 
 
 
-ConnectionWindow::ConnectionWindow(QWidget *parent)
-    : QDialog(parent)
+ConnectionWindow::ConnectionWindow(SerialPortManager &manager, QWidget *parent): QDialog(parent), serialPortManager(manager)
     , ui(new Ui::ConnectionWindow)
 {
     ui->setupUi(this);
@@ -19,10 +18,11 @@ ConnectionWindow::ConnectionWindow(QWidget *parent)
     ui->box_ports->addItem("Simulation");
 #endif
 ui->btn_connect->setEnabled(false);
+    //&serialPortManager = manager;
 
 
 }
-SerialPortManager serialPortManager;
+
 
 ConnectionWindow::~ConnectionWindow()
 {
@@ -56,4 +56,5 @@ void ConnectionWindow::on_btn_connect_clicked()
     std::cout << selectedPort->displayName << std::endl; //debug only
     serialPortManager.open(selectedPort);
 }
+
 
