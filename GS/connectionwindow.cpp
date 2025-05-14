@@ -58,3 +58,9 @@ void ConnectionWindow::on_btn_connect_clicked()
 }
 
 
+
+void ConnectionWindow::on_btn_disconnect_clicked()
+{
+
+}
+
