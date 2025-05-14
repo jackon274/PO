@@ -17,8 +17,8 @@ ConnectionWindow::ConnectionWindow(SerialPortManager &manager, QWidget *parent):
     ui->btn_refresh->setEnabled(false);
     ui->box_ports->addItem("Simulation");
 #endif
-ui->btn_connect->setEnabled(false);
-    //&serialPortManager = manager;
+    ui->btn_connect->setEnabled(false);
+    ui->btn_disconnect->setEnabled(false);
 
 
 }
