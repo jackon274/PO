@@ -111,6 +111,7 @@ int SerialPortManager::open(SerialPort *port) {
         return -1;
     }
     openPort = port;
+    port->serialPortFd = serialPortFd;
     return serialPortFd;
 }
 
@@ -131,6 +132,10 @@ int SerialPortManager::getSerialPortState() const{
 }
 
 std::vector<uint8_t> SerialPortManager::uartReceive() {
+    if (!openPort) {
+        std::cerr << "Error: openPort is null in uartReceive().\n";
+        return {};
+    }
     int maxBytes = 256;
     std::vector<uint8_t> buffer(maxBytes);
 
