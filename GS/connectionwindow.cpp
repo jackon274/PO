@@ -58,13 +58,16 @@ void ConnectionWindow::on_btn_connect_clicked()
     }
     std::cout << selectedPort->displayName << std::endl; //debug only
     serialPortManager.open(selectedPort);
+    ui->btn_connect->setEnabled(false);
+    ui->btn_disconnect->setEnabled(true);
 }
 
 
 
 void ConnectionWindow::on_btn_disconnect_clicked()
 {
-
+    ui->btn_connect->setEnabled(true);
+    ui->btn_disconnect->setEnabled(false);
 }
 
 
