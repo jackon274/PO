@@ -5,7 +5,7 @@
 
 #include "./ui_connectionwindow.h"
 #include "SerialPortManager.h"
-
+#include <iomanip>
 
 
 ConnectionWindow::ConnectionWindow(SerialPortManager &manager, QWidget *parent): QDialog(parent), serialPortManager(manager)
@@ -64,6 +64,29 @@ void ConnectionWindow::on_btn_connect_clicked()
 
 void ConnectionWindow::on_btn_disconnect_clicked()
 {
+
+}
+
+
+void ConnectionWindow::on_btn_read_clicked()
+{
+    std::vector<uint8_t> data = serialPortManager.uartReceive();
+
+    if (!data.empty()) {
+        // Output to stdout
+        std::string text(data.begin(), data.end());
+        std::cout << "Received text: "; //
+        std::cout << text << std::endl;
+
+        std::cout << "Received " << data.size() << " bytes: ";
+
+        for (uint8_t byte : data) {
+            std::cout << std::hex << std::uppercase << std::setw(2)
+                      << std::setfill('0') << static_cast<int>(byte) << " ";
+        }
+        std::cout << std::dec << std::endl;  // Reset to decimal
+
+    }
 
 }
 

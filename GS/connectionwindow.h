@@ -25,6 +25,8 @@ private slots:
 
     void on_btn_disconnect_clicked();
 
+    void on_btn_read_clicked();
+
 private:
     Ui::ConnectionWindow *ui;
 };
