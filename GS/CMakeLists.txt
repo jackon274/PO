@@ -31,6 +31,8 @@ set(PROJECT_SOURCES
         SerialPort.h
         SerialPortManager.cpp
         SerialPortManager.h
+        DataFrame.cpp
+        DataFrame.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
