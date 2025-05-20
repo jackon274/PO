@@ -16,6 +16,8 @@ class DataFrame {
     uint16_t radiation_cpm;
     uint8_t humidity_percent;
     uint32_t checksum;
+    uint8_t flags;
+    uint8_t elapsed_time;
 
 };
 
