@@ -18,6 +18,8 @@ endif()
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
+find_package(Qt6 REQUIRED COMPONENTS WebEngineWidgets)
+
 
 set(TS_FILES GS_pl_PL.ts)
 
@@ -67,6 +69,8 @@ else()
 endif()
 
 target_link_libraries(GS PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(GS PRIVATE Qt6::WebEngineWidgets)
+
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
