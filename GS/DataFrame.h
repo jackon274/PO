@@ -8,17 +8,17 @@
 
 
 class DataFrame {
-    int16_t temperature_outside;
-    int16_t temperature_inside;
+    uint32_t frame_count;
+    uint32_t elapsed_time;
     int32_t longitude;
     int32_t latitude;
     uint32_t height;
-    uint16_t radiation_cpm;
+    int16_t temperature_outside;
+    int16_t temperature_inside;
     uint8_t humidity_percent;
-    uint32_t checksum;
+    uint16_t radiation_cpm;
     uint8_t flags;
-    uint8_t elapsed_time;
-
+    uint32_t checksum;
 };
 
 
