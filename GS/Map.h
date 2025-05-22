@@ -6,9 +6,20 @@
 #define MAP_H
 
 
+#include <QApplication>
+#include <QWebEngineView>
+#include <QWebEnginePage>
+#include <QWebEngineSettings>
+
+
 
 class Map {
-
+    float longitude;
+    float latitude;
+    const QString sourceFile = "/Users/jacekk/MapTest/map.html";
+    public:
+    QWebEngineView* view;
+    Map(QWebEngineView* ptrView);
 };
 
 
