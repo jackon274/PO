@@ -4,12 +4,17 @@
 #include "Map.h"
 #include "ui_mainwindow.h"
 #include "connectionwindow.h"
+#include <QPainterPath>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QPainterPath path;
+    path.addRoundedRect(ui->map->rect(), 10, 10);
+    ui->map->setMask(QRegion(path.toFillPolygon().toPolygon()));
     Map map(ui->map);
 }
 
