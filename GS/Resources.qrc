@@ -2,4 +2,7 @@
     <qresource prefix="/Images">
         <file>logo_aerospace.svg</file>
     </qresource>
+    <qresource prefix="/Translations">
+        <file>GS_pl_PL.qm</file>
+    </qresource>
 </RCC>
