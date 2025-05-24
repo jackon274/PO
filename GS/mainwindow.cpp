@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-
+#include <QGraphicsDropShadowEffect>
 #include <QWebEngineView>
 #include "Map.h"
 #include "ui_mainwindow.h"
@@ -94,7 +94,7 @@ void MainWindow::on_btn_graph_clicked() {
     highlightSelectedButtonLabel(2);
 }
 
-void MainWindow::on_btn_config_clicked(){
+void MainWindow::on_btn_config_clicked() {
     ui->widget_content->setCurrentIndex(3);
     highlightSelectedButtonLabel(3);
 }
