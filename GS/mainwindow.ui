@@ -45,42 +45,6 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QWidget" name="widget_map" native="true">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>120</y>
-      <width>951</width>
-      <height>551</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QWidget {
-    border-radius: 15px;
-    background-color: rgb(255, 255, 255);
-}</string>
-    </property>
-    <widget class="QWebEngineView" name="map" native="true">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>931</width>
-       <height>531</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QWebEngineView {
-    border-radius: 20px;
-    border: 1px solid #cccccc;
-    background-color: transparent;
-}</string>
-     </property>
-    </widget>
-   </widget>
    <widget class="QWidget" name="widget_sidebar" native="true">
     <property name="geometry">
      <rect>
@@ -494,11 +458,47 @@ QPushButton:hover {
      </layout>
     </widget>
    </widget>
+   <widget class="QStackedWidget" name="widget_content">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>120</y>
+      <width>950</width>
+      <height>550</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}</string>
+    </property>
+    <widget class="QWidget" name="page_map">
+     <widget class="QWebEngineView" name="map" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>931</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWebEngineView {
+    border-radius: 20px;
+    border: 1px solid #cccccc;
+    background-color: transparent;
+}</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2"/>
+   </widget>
    <zorder>widget_sidebar_labels</zorder>
    <zorder>logo</zorder>
-   <zorder>widget_map</zorder>
    <zorder>widget_connection</zorder>
    <zorder>widget_sidebar</zorder>
+   <zorder>widget_content</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
