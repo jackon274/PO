@@ -10,6 +10,14 @@
     <height>716</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>.AppleSystemUIFont</family>
+   </font>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -37,19 +45,6 @@
     </property>
     <property name="scaledContents">
      <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_connect">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>40</y>
-      <width>101</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Connection</string>
     </property>
    </widget>
    <widget class="QWidget" name="widget" native="true">
@@ -100,6 +95,56 @@
     background-color: rgb(255, 255, 255);
 }</string>
     </property>
+   </widget>
+   <widget class="QWidget" name="widget_3" native="true">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>10</y>
+      <width>541</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}</string>
+    </property>
+    <widget class="QPushButton" name="btn_connect">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>30</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #5C2D91; 
+    color: white;
+    border: none;
+   border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 15px;
+    padding: 8px 16px;
+}
+
+QPushButton:hover {
+	background-color: #f5f1fb;
+	color: #5C2D91;
+	border: 2px solid #5C2D91;
+}</string>
+     </property>
+     <property name="text">
+      <string>Connection</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
