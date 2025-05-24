@@ -7,6 +7,6 @@
 Map::Map(QWebEngineView* ptrView) {
     view = ptrView;
     view->settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, true);
-    view->load(QUrl::fromLocalFile(sourceFile));
+    view->load(QUrl::fromLocalFile(QFileInfo(filePath).absoluteFilePath()));
     view->show();
 }

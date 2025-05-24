@@ -10,13 +10,14 @@
 #include <QWebEngineView>
 #include <QWebEnginePage>
 #include <QWebEngineSettings>
+#include <QFileInfo>
 
 
 
 class Map {
     float longitude;
     float latitude;
-    const QString sourceFile = "/Users/jacekk/MapTest/map.html";
+    QString filePath = QCoreApplication::applicationDirPath() + "/../Resources/map.html";
     public:
     QWebEngineView* view;
     Map(QWebEngineView* ptrView);

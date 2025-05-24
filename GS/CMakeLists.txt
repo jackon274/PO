@@ -12,6 +12,11 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 if(APPLE)
     set(CMAKE_PREFIX_PATH "/Users/jacekk/Qt/6.9.0/macos/lib/cmake/")
+
+    set(RESOURCE_DIR "${CMAKE_BINARY_DIR}/GS.app/Contents/Resources")
+    file(MAKE_DIRECTORY ${RESOURCE_DIR})
+    configure_file(map.html ${RESOURCE_DIR}/map.html COPYONLY)
+
 elseif (WIN32)
     set(CMAKE_PREFIX_PATH "C:/Qt/6.9.0/mingw_64/lib/cmake/")
 endif()
