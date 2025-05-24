@@ -73,35 +73,32 @@ void MainWindow::on_btn_connect_clicked() {
     window.exec();
 }
 
-void MainWindow::on_btn_info_clicked() {
-
+void MainWindow::on_btn_menu_toggled(bool checked) {
+    ui->widget_sidebar_labels->setVisible(checked);
 }
 
-void MainWindow::on_btn_menu_toggled(bool checked)
-{
-    for (auto label:sidebarButtonLabels) {
-        ui->widget_sidebar_labels->setVisible(checked);
-    }
-}
-
-
-void MainWindow::on_btn_map_clicked()
-{
+void MainWindow::on_btn_map_clicked() {
     ui->widget_content->setCurrentIndex(0);
     highlightSelectedButtonLabel(0);
 }
 
-
-void MainWindow::on_btn_stats_clicked()
-{
+void MainWindow::on_btn_stats_clicked() {
     ui->widget_content->setCurrentIndex(1);
     highlightSelectedButtonLabel(1);
 }
 
-
-void MainWindow::on_btn_graph_clicked()
-{
+void MainWindow::on_btn_graph_clicked() {
     ui->widget_content->setCurrentIndex(2);
     highlightSelectedButtonLabel(2);
 }
 
+void MainWindow::on_btn_info_clicked() {
+    ui->widget_content->setCurrentIndex(3);
+    highlightSelectedButtonLabel(3);
+
+}
+
+void MainWindow::on_btn_settings_clicked() {
+    ui->widget_content->setCurrentIndex(4);
+    highlightSelectedButtonLabel(4);
+}

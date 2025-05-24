@@ -33,6 +33,8 @@ private slots:
 
     void on_btn_graph_clicked();
 
+    void on_btn_settings_clicked();
+
 private:
     Ui::MainWindow *ui;
     std::vector <QPushButton *> sidebarButtons;
