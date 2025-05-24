@@ -39,12 +39,14 @@ MainWindow::MainWindow(QWidget *parent)
     sidebarButtons.push_back(ui->btn_map);
     sidebarButtons.push_back(ui->btn_stats);
     sidebarButtons.push_back(ui->btn_graph);
+    sidebarButtons.push_back(ui->btn_config);
     sidebarButtons.push_back(ui->btn_info);
     sidebarButtons.push_back(ui->btn_settings);
 
     sidebarButtonLabels.push_back(ui->label_map);
     sidebarButtonLabels.push_back(ui->label_stats);
     sidebarButtonLabels.push_back(ui->label_graph);
+    sidebarButtonLabels.push_back(ui->label_config);
     sidebarButtonLabels.push_back(ui->label_info);
     sidebarButtonLabels.push_back(ui->label_settings);
 
@@ -92,13 +94,18 @@ void MainWindow::on_btn_graph_clicked() {
     highlightSelectedButtonLabel(2);
 }
 
-void MainWindow::on_btn_info_clicked() {
+void MainWindow::on_btn_config_clicked(){
     ui->widget_content->setCurrentIndex(3);
     highlightSelectedButtonLabel(3);
+}
+
+void MainWindow::on_btn_info_clicked() {
+    ui->widget_content->setCurrentIndex(4);
+    highlightSelectedButtonLabel(4);
 
 }
 
 void MainWindow::on_btn_settings_clicked() {
-    ui->widget_content->setCurrentIndex(4);
-    highlightSelectedButtonLabel(4);
+    ui->widget_content->setCurrentIndex(5);
+    highlightSelectedButtonLabel(5);
 }
