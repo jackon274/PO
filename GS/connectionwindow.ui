@@ -41,6 +41,9 @@
       <height>32</height>
      </rect>
     </property>
+    <property name="locale">
+     <locale language="Polish" country="Poland"/>
+    </property>
     <property name="text">
      <string>Refresh</string>
     </property>
