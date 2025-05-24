@@ -19,6 +19,8 @@ private slots:
 
     void on_btn_connect_clicked();
 
+    void on_btn_info_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
