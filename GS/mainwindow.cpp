@@ -13,7 +13,10 @@ QString sidebarButtonStyle = R"(
 
     }
     QPushButton:checked {
-        color: blue;
+        color: #5C2D91;
+    }
+    QPushButton:hover {
+        color:#7D57A7;
     }
 )";
 
@@ -26,13 +29,22 @@ MainWindow::MainWindow(QWidget *parent)
     path.addRoundedRect(ui->map->rect(), 10, 10);
     ui->map->setMask(QRegion(path.toFillPolygon().toPolygon()));
     Map map(ui->map);
+
+    ui->widget_sidebar_labels->setVisible(false);
     QButtonGroup *group = new QButtonGroup;
-    std::vector <QPushButton *> sidebarButtons;
-    sidebarButtons.push_back(ui->btn_map);
+
     sidebarButtons.push_back(ui->btn_map);
     sidebarButtons.push_back(ui->btn_graph);
     sidebarButtons.push_back(ui->btn_info);
     sidebarButtons.push_back(ui->btn_settings);
+
+    sidebarButtonLabels.push_back(ui->label_menu);
+    sidebarButtonLabels.push_back(ui->label_3);
+    sidebarButtonLabels.push_back(ui->label_map);
+    sidebarButtonLabels.push_back(ui->label_graph);
+    sidebarButtonLabels.push_back(ui->label_info);
+    sidebarButtonLabels.push_back(ui->label_settings);
+
 
     for (auto button:sidebarButtons) {
         group->addButton(button);
@@ -56,3 +68,11 @@ void MainWindow::on_btn_connect_clicked() {
 void MainWindow::on_btn_info_clicked() {
 
 }
+
+void MainWindow::on_btn_menu_toggled(bool checked)
+{
+    for (auto label:sidebarButtonLabels) {
+        ui->widget_sidebar_labels->setVisible(checked);
+    }
+}
+

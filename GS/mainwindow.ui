@@ -46,6 +46,9 @@
     </property>
    </widget>
    <widget class="QWidget" name="widget_map" native="true">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -81,11 +84,17 @@
    <widget class="QWidget" name="widget_sidebar" native="true">
     <property name="geometry">
      <rect>
-      <x>-1</x>
+      <x>0</x>
       <y>0</y>
-      <width>161</width>
-      <height>701</height>
+      <width>60</width>
+      <height>700</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="styleSheet">
      <string notr="true">QWidget {
@@ -105,7 +114,7 @@
        <height>701</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
+     <layout class="QVBoxLayout" name="layout_icons">
       <property name="spacing">
        <number>30</number>
       </property>
@@ -131,6 +140,9 @@
         </property>
         <property name="text">
          <string notr="true"></string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -166,8 +178,9 @@
         
 }
 QPushButton:checked {
-        color:rgb(37, 0, 255)
-}</string>
+        color:rgb(37, 0, 255);
+}
+</string>
         </property>
         <property name="text">
          <string notr="true"></string>
@@ -253,16 +266,85 @@ QPushButton:checked {
       </item>
      </layout>
     </widget>
+   </widget>
+   <widget class="QWidget" name="widget_connection" native="true">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>10</y>
+      <width>541</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}</string>
+    </property>
+    <widget class="QPushButton" name="btn_connect">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>30</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #5C2D91; 
+    color: white;
+    border: none;
+   border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 15px;
+    padding: 8px 16px;
+}
+
+QPushButton:hover {
+	background-color: #f5f1fb;
+	color: #5C2D91;
+	border: 2px solid #5C2D91;
+}</string>
+     </property>
+     <property name="text">
+      <string>Connection</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_sidebar_labels" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>151</width>
+      <height>700</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}</string>
+    </property>
     <widget class="QWidget" name="verticalLayoutWidget_2">
      <property name="geometry">
       <rect>
-       <x>65</x>
+       <x>50</x>
        <y>0</y>
-       <width>101</width>
+       <width>91</width>
        <height>701</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <layout class="QVBoxLayout" name="layout_text">
       <property name="spacing">
        <number>30</number>
       </property>
@@ -412,56 +494,11 @@ QPushButton:checked {
      </layout>
     </widget>
    </widget>
-   <widget class="QWidget" name="widget_connection" native="true">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>10</y>
-      <width>541</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QWidget {
-    border-radius: 15px;
-    background-color: rgb(255, 255, 255);
-}</string>
-    </property>
-    <widget class="QPushButton" name="btn_connect">
-     <property name="geometry">
-      <rect>
-       <x>390</x>
-       <y>30</y>
-       <width>111</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="cursor">
-      <cursorShape>PointingHandCursor</cursorShape>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-    background-color: #5C2D91; 
-    color: white;
-    border: none;
-   border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 15px;
-    padding: 8px 16px;
-}
-
-QPushButton:hover {
-	background-color: #f5f1fb;
-	color: #5C2D91;
-	border: 2px solid #5C2D91;
-}</string>
-     </property>
-     <property name="text">
-      <string>Connection</string>
-     </property>
-    </widget>
-   </widget>
+   <zorder>widget_sidebar_labels</zorder>
+   <zorder>logo</zorder>
+   <zorder>widget_map</zorder>
+   <zorder>widget_connection</zorder>
+   <zorder>widget_sidebar</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
