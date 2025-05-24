@@ -152,7 +152,7 @@ QPushButton:checked {
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="btn_stats">
         <property name="font">
          <font>
           <family>Material Icons Round</family>
@@ -331,6 +331,9 @@ QPushButton:hover {
           <pointsize>20</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0,0,0);</string>
+        </property>
         <property name="text">
          <string>Menu</string>
         </property>
@@ -365,13 +368,16 @@ QPushButton:hover {
           <pointsize>20</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0,0,0);</string>
+        </property>
         <property name="text">
          <string>Map</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_3">
+       <widget class="QLabel" name="label_stats">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -383,8 +389,11 @@ QPushButton:hover {
           <pointsize>20</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0,0,0);</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>Stats</string>
         </property>
        </widget>
       </item>
@@ -400,6 +409,9 @@ QPushButton:hover {
          <font>
           <pointsize>20</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0,0,0);</string>
         </property>
         <property name="text">
          <string>Graph</string>
@@ -431,6 +443,9 @@ QPushButton:hover {
          <font>
           <pointsize>20</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0,0,0);</string>
         </property>
         <property name="text">
          <string>About</string>
@@ -472,6 +487,9 @@ QPushButton:hover {
     border-radius: 15px;
     background-color: rgb(255, 255, 255);
 }</string>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page_map">
      <widget class="QWebEngineView" name="map" native="true">

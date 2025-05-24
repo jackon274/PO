@@ -20,6 +20,9 @@ QString sidebarButtonStyle = R"(
     }
 )";
 
+QString sidebarTextStyleSelected = R"(color: #5C2D91;)";
+QString sidebarTextStyleUnselected = R"(color: rgb(0,0,0);)";
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -34,13 +37,13 @@ MainWindow::MainWindow(QWidget *parent)
     QButtonGroup *group = new QButtonGroup;
 
     sidebarButtons.push_back(ui->btn_map);
+    sidebarButtons.push_back(ui->btn_stats);
     sidebarButtons.push_back(ui->btn_graph);
     sidebarButtons.push_back(ui->btn_info);
     sidebarButtons.push_back(ui->btn_settings);
 
-    sidebarButtonLabels.push_back(ui->label_menu);
-    sidebarButtonLabels.push_back(ui->label_3);
     sidebarButtonLabels.push_back(ui->label_map);
+    sidebarButtonLabels.push_back(ui->label_stats);
     sidebarButtonLabels.push_back(ui->label_graph);
     sidebarButtonLabels.push_back(ui->label_info);
     sidebarButtonLabels.push_back(ui->label_settings);
@@ -57,7 +60,12 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-SerialPortManager serialPortManager;
+
+void MainWindow::highlightSelectedButtonLabel(int index) {
+    for(auto label:sidebarButtonLabels)
+        label->setStyleSheet(sidebarTextStyleUnselected);
+    sidebarButtonLabels.at(index)->setStyleSheet(sidebarTextStyleSelected);
+}
 
 void MainWindow::on_btn_connect_clicked() {
     ConnectionWindow window(serialPortManager);
@@ -74,5 +82,26 @@ void MainWindow::on_btn_menu_toggled(bool checked)
     for (auto label:sidebarButtonLabels) {
         ui->widget_sidebar_labels->setVisible(checked);
     }
+}
+
+
+void MainWindow::on_btn_map_clicked()
+{
+    ui->widget_content->setCurrentIndex(0);
+    highlightSelectedButtonLabel(0);
+}
+
+
+void MainWindow::on_btn_stats_clicked()
+{
+    ui->widget_content->setCurrentIndex(1);
+    highlightSelectedButtonLabel(1);
+}
+
+
+void MainWindow::on_btn_graph_clicked()
+{
+    ui->widget_content->setCurrentIndex(2);
+    highlightSelectedButtonLabel(2);
 }
 
