@@ -15,12 +15,12 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
     
-        var map = L.map('map').setView([52.0, 21.0], 13);  // Initial center
+        var map = L.map('map').setView([51.24646878179333, 22.50843829144234], 13);  // Initial center
         L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        var marker = L.marker([52.0, 21.0]).addTo(map); // Initial marker position
+        var marker = L.marker([51.24646878179333, 22.50843829144234]).addTo(map); // Initial marker position
 
         function updatePosition(lat, lon) {
             marker.setLatLng([lat, lon]);
