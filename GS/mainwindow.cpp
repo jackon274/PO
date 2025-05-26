@@ -58,6 +58,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
     sidebarButtons.at(0)->setChecked(true);
     highlightSelectedButtonLabel(0);
+    ui->label_connection_status->setText("");
 }
 
 MainWindow::~MainWindow()
