@@ -72,6 +72,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::SerialPortConnected() const {
     ui->label_serial_port_name->setText(QString::fromStdString(serialPortManager.getOpenSerialPort()));
+    ui->label_connection_status->setText("");
 }
 
 void MainWindow::highlightSelectedButtonLabel(int index) {
