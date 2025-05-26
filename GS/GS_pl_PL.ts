@@ -77,64 +77,106 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="312"/>
-        <source>MainWindow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="20"/>
-        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="312"/>
+        <location filename="mainwindow.ui" line="38"/>
+        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="427"/>
+        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="427"/>
         <source>Ground Station</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="280"/>
-        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="314"/>
-        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="314"/>
+        <location filename="mainwindow.ui" line="222"/>
+        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="429"/>
+        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="429"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="314"/>
+        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="430"/>
+        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="430"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="431"/>
+        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="431"/>
+        <source>Serial Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="326"/>
+        <source>Disconnected</source>
+        <translation>Rozłączono</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="367"/>
+        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="432"/>
+        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="432"/>
         <source>Connection</source>
         <translation>Połączenie</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="338"/>
-        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="315"/>
-        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="315"/>
+        <location filename="mainwindow.ui" line="428"/>
+        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="433"/>
+        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="433"/>
         <source>Menu</source>
         <translation>Menu</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="375"/>
-        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="316"/>
-        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="316"/>
+        <location filename="mainwindow.ui" line="465"/>
+        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="434"/>
+        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="434"/>
         <source>Map</source>
         <translation>Mapa</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="396"/>
-        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="317"/>
-        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="317"/>
+        <location filename="mainwindow.ui" line="486"/>
+        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="435"/>
+        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="435"/>
         <source>Stats</source>
         <translation>Dane</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="417"/>
-        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="318"/>
-        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="318"/>
+        <location filename="mainwindow.ui" line="507"/>
+        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="436"/>
+        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="436"/>
         <source>Graph</source>
         <translation>Wykresy</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="451"/>
-        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="319"/>
-        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="319"/>
+        <location filename="mainwindow.ui" line="525"/>
+        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="437"/>
+        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="437"/>
+        <source>Config</source>
+        <translation>Konfiguracja</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="559"/>
+        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="438"/>
+        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="438"/>
         <source>About</source>
         <translation>Informacje</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="469"/>
-        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="320"/>
-        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="320"/>
+        <location filename="mainwindow.ui" line="577"/>
+        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="439"/>
+        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="439"/>
         <source>Settings</source>
         <translation>Ustawienia</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="663"/>
+        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="440"/>
+        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="440"/>
+        <source> Enter TEST Mode </source>
+        <translation>Tryb TEST</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="694"/>
+        <location filename="build/Qt_6_9_0_for_macOS-Debug/GS_autogen/include/ui_mainwindow.h" line="441"/>
+        <location filename="cmake-build-debug/GS_autogen/include/ui_mainwindow.h" line="441"/>
+        <source>PushButton</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mapa</source>
