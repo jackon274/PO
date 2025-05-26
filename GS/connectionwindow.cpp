@@ -29,6 +29,8 @@ ConnectionWindow::~ConnectionWindow()
     delete ui;
 }
 
+//void ConnectionWindow::signalSerialPortConnected() const {}
+
 
 void ConnectionWindow::on_btn_refresh_clicked()
 {
@@ -60,6 +62,7 @@ void ConnectionWindow::on_btn_connect_clicked()
     serialPortManager.open(selectedPort);
     ui->btn_connect->setEnabled(false);
     ui->btn_disconnect->setEnabled(true);
+    emit signalSerialPortConnected();
 }
 
 

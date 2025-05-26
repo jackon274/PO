@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "SerialPortManager.h"
+#include <string>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class ConnectionWindow;
@@ -16,6 +17,9 @@ class ConnectionWindow : public QDialog
 public:
     explicit ConnectionWindow(SerialPortManager &manager, QWidget *parent = nullptr);
     ~ConnectionWindow();
+
+    signals:
+    void signalSerialPortConnected() const;
 
 private slots:
     void on_btn_refresh_clicked();

@@ -5,6 +5,7 @@
 #include <QPushButton>
 #include <QLabel>
 #include "SerialPortManager.h"
+#include "connectionwindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -19,6 +20,8 @@ public:
     ~MainWindow();
 
 private slots:
+    void SerialPortConnected() const;
+
     void highlightSelectedButtonLabel(int index);
 
     void on_btn_connect_clicked();
@@ -42,6 +45,7 @@ private:
     std::vector <QPushButton *> sidebarButtons;
     std::vector <QLabel *> sidebarButtonLabels;
     SerialPortManager serialPortManager;
+    ConnectionWindow window;
 };
 
 #endif // MAINWINDOW_H

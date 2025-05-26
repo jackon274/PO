@@ -25,13 +25,17 @@ QString sidebarTextStyleUnselected = R"(color: rgb(0,0,0);)";
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    , ui(new Ui::MainWindow),
+    window (serialPortManager)
 {
     ui->setupUi(this);
+
     QPainterPath path;
     path.addRoundedRect(ui->map->rect(), 10, 10);
     ui->map->setMask(QRegion(path.toFillPolygon().toPolygon()));
     Map map(ui->map);
+
+    connect (&window, &ConnectionWindow::signalSerialPortConnected, this, &MainWindow::SerialPortConnected);
 
     ui->widget_sidebar_labels->setVisible(false);
     QButtonGroup *group = new QButtonGroup;
@@ -66,6 +70,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::SerialPortConnected() const {
+    ui->label_serial_port_name->setText(QString::fromStdString(serialPortManager.getOpenSerialPort()));
+}
+
 void MainWindow::highlightSelectedButtonLabel(int index) {
     for(auto label:sidebarButtonLabels)
         label->setStyleSheet(sidebarTextStyleUnselected);
@@ -73,7 +81,6 @@ void MainWindow::highlightSelectedButtonLabel(int index) {
 }
 
 void MainWindow::on_btn_connect_clicked() {
-    ConnectionWindow window(serialPortManager);
     window.setModal(true);
     window.exec();
 }
