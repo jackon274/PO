@@ -19,6 +19,17 @@ class DataFrame {
     uint16_t radiation_cpm;
     uint8_t flags;
     uint32_t checksum;
+    public:
+    uint32_t get_frame_count() const;
+    uint32_t get_elapsed_time() const;
+    float get_longitude() const;
+    float get_latitude() const;
+    float get_height_meters() const;
+    float get_temperature_outside_centigrade() const;
+    float get_temperature_inside_centigrade() const;
+    float get_humidity_percent() const;
+    int get_radiation_cpm() const;
+    int get_checksum() const;
 };
 
 
