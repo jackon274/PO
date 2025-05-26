@@ -38,7 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect (&window, &ConnectionWindow::signalSerialPortConnected, this, &MainWindow::SerialPortConnected);
 
     ui->widget_sidebar_labels->setVisible(false);
-    QButtonGroup *group = new QButtonGroup;
+    sidebarButtonsGroup = new QButtonGroup;
 
     sidebarButtons.push_back(ui->btn_map);
     sidebarButtons.push_back(ui->btn_stats);
@@ -56,7 +56,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     for (auto button:sidebarButtons) {
-        group->addButton(button);
+        sidebarButtonsGroup->addButton(button);
         button->setCheckable(true);
         button->setStyleSheet(sidebarButtonStyle);
     }
@@ -67,6 +67,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    delete sidebarButtonsGroup;
     delete ui;
 }
 

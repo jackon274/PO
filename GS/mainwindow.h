@@ -44,6 +44,7 @@ private:
     Ui::MainWindow *ui;
     std::vector <QPushButton *> sidebarButtons;
     std::vector <QLabel *> sidebarButtonLabels;
+    QButtonGroup *sidebarButtonsGroup;
     SerialPortManager serialPortManager;
     ConnectionWindow window;
 };
