@@ -274,10 +274,10 @@ QPushButton:checked {
    <widget class="QWidget" name="widget_connection" native="true">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>25</y>
+      <x>525</x>
+      <y>30</y>
       <width>440</width>
-      <height>70</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -292,7 +292,7 @@ QPushButton:checked {
        <x>0</x>
        <y>0</y>
        <width>441</width>
-       <height>71</height>
+       <height>61</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
@@ -376,7 +376,7 @@ QPushButton:hover {
      <rect>
       <x>10</x>
       <y>0</y>
-      <width>160</width>
+      <width>171</width>
       <height>700</height>
      </rect>
     </property>
@@ -394,7 +394,7 @@ QPushButton:hover {
       <rect>
        <x>50</x>
        <y>0</y>
-       <width>101</width>
+       <width>111</width>
        <height>701</height>
       </rect>
      </property>
@@ -696,9 +696,9 @@ QPushButton:hover {
      </widget>
     </widget>
    </widget>
+   <zorder>logo</zorder>
    <zorder>widget_content</zorder>
    <zorder>widget_sidebar_labels</zorder>
-   <zorder>logo</zorder>
    <zorder>widget_connection</zorder>
    <zorder>widget_sidebar</zorder>
   </widget>
