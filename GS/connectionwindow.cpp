@@ -1,8 +1,5 @@
 #include "connectionwindow.h"
-
 #include <iostream>
-#include <ostream>
-
 #include "./ui_connectionwindow.h"
 #include "SerialPortManager.h"
 #include <iomanip>
@@ -24,34 +21,23 @@ ConnectionWindow::ConnectionWindow(SerialPortManager &manager, QWidget *parent):
 }
 
 
-ConnectionWindow::~ConnectionWindow()
-{
+ConnectionWindow::~ConnectionWindow() {
     delete ui;
 }
 
-//void ConnectionWindow::signalSerialPortConnected() const {}
 
-
-void ConnectionWindow::on_btn_refresh_clicked()
-{
+void ConnectionWindow::on_btn_refresh_clicked() {
     ui->btn_connect->setEnabled(true);
     ui->box_ports->clear();
     ui->box_ports->addItem("Simulation", QVariant::fromValue(nullptr));
-    /*serialPort.checkAvailableSerialPorts();
-    std::vector <std::string> sp = serialPort.getAvailableSerialPorts();
-    for(auto &a:sp) {
-        ui->box_ports->addItem(QString::fromStdString(a));
-    }*/
+
     serialPortManager.checkAvailableSerialPorts();
     for(auto port:serialPortManager.getAvailableSerialPorts()) {
         ui->box_ports->addItem(QString::fromStdString(port->displayName), QVariant::fromValue(port));
     }
-
 }
 
-
-void ConnectionWindow::on_btn_connect_clicked()
-{
+void ConnectionWindow::on_btn_connect_clicked() {
     int baudRate = ui->box_baudrate->currentText().toInt();
     serialPortManager.setBaudRate(baudRate);
     SerialPort* selectedPort = ui->box_ports->currentData().value<SerialPort*>();
@@ -66,16 +52,13 @@ void ConnectionWindow::on_btn_connect_clicked()
 }
 
 
-
-void ConnectionWindow::on_btn_disconnect_clicked()
-{
+void ConnectionWindow::on_btn_disconnect_clicked() {
     ui->btn_connect->setEnabled(true);
     ui->btn_disconnect->setEnabled(false);
 }
 
 
-void ConnectionWindow::on_btn_read_clicked()
-{
+void ConnectionWindow::on_btn_read_clicked() {
     std::vector<uint8_t> data = serialPortManager.uartReceive();
 
     if (!data.empty()) {
@@ -91,8 +74,5 @@ void ConnectionWindow::on_btn_read_clicked()
                       << std::setfill('0') << static_cast<int>(byte) << " ";
         }
         std::cout << std::dec << std::endl;  // Reset to decimal
-
     }
-
 }
-

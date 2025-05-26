@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include <QGraphicsDropShadowEffect>
-#include <QWebEngineView>
 #include "Map.h"
 #include "ui_mainwindow.h"
 #include "connectionwindow.h"
