@@ -219,7 +219,7 @@ QPushButton:checked {
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="text">
-         <string></string>
+         <string notr="true"></string>
         </property>
        </widget>
       </item>
@@ -311,7 +311,7 @@ QPushButton:checked {
          </font>
         </property>
         <property name="text">
-         <string></string>
+         <string notr="true"></string>
         </property>
        </widget>
       </item>
@@ -323,7 +323,7 @@ QPushButton:checked {
          </font>
         </property>
         <property name="text">
-         <string>Serial Port</string>
+         <string>Disconnected</string>
         </property>
        </widget>
       </item>
