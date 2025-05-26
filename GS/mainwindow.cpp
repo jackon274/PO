@@ -56,6 +56,8 @@ MainWindow::MainWindow(QWidget *parent)
         button->setCheckable(true);
         button->setStyleSheet(sidebarButtonStyle);
     }
+    sidebarButtons.at(0)->setChecked(true);
+    highlightSelectedButtonLabel(0);
 }
 
 MainWindow::~MainWindow()
