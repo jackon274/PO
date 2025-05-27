@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
+    <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="3" type="long" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a66c7b91-2a92-41d0-9655-caa9f9832c54" name="Changes" comment="Add symbol on serial port connection">
+      <change afterPath="$PROJECT_DIR$/../GroundStation/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/.idea/QtSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/.idea/editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/inc/DataFrame.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/inc/SerialPortManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/inc/connectionwindow.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/resources/GS_pl_PL.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/resources/MaterialIconsRound.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/resources/logo_aerospace.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/resources/map.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/src/Map.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/src/SerialPort.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/src/SerialPortManager.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/src/connectionwindow.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/src/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/ui/connectionwindow.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GroundStation/ui/mainwindow.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GS.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/QtSettings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/DataFrame.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/Map.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/SerialPort.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/SerialPortManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/connectionwindow.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/mainwindow.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/GS_pl_PL.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/MaterialIconsRound.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Resources.qrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/logo_aerospace.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFrame.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SerialPort.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SerialPortManager.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/connectionwindow.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mainwindow.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/connectionwindow.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/mainwindow.ui" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jackon274&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jackon274/PO.git&quot;,
+    &quot;accountId&quot;: &quot;d1a973e2-ce1c-43a2-a9b4-cdbd46dd17b9&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../GroundStation/src/DataFrame.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../GroundStation/src/connectionwindow.cpp" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2024" />
+    <option name="minorVersion" value="2.4" />
+    <option name="productBranch" value="Classic" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2wjJlZX2tH5KmVthZKTjX1Weadt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;CMake Application.GS.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jacekk/PO/GS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CPPToolchains&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a66c7b91-2a92-41d0-9655-caa9f9832c54" name="Changes" comment="" />
+      <created>1746549203377</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746549203377</updated>
+      <workItem from="1746549206637" duration="194000" />
+      <workItem from="1746549558305" duration="709000" />
+      <workItem from="1746557291723" duration="1662000" />
+      <workItem from="1746563158032" duration="263000" />
+      <workItem from="1746626149002" duration="483000" />
+      <workItem from="1746627291521" duration="108000" />
+      <workItem from="1746637786468" duration="1338000" />
+      <workItem from="1746688905209" duration="1832000" />
+      <workItem from="1746691069055" duration="1522000" />
+      <workItem from="1746693378702" duration="268000" />
+      <workItem from="1746702465414" duration="2919000" />
+      <workItem from="1746728453673" duration="91000" />
+      <workItem from="1746799963314" duration="267000" />
+      <workItem from="1746800249923" duration="2123000" />
+      <workItem from="1747034048124" duration="768000" />
+      <workItem from="1747041231630" duration="1189000" />
+      <workItem from="1747057191917" duration="260000" />
+      <workItem from="1747057461269" duration="164000" />
+      <workItem from="1747057696863" duration="21000" />
+      <workItem from="1747058133383" duration="13000" />
+      <workItem from="1747058150980" duration="834000" />
+      <workItem from="1747059248224" duration="142000" />
+      <workItem from="1747119673399" duration="771000" />
+      <workItem from="1747126274863" duration="2045000" />
+      <workItem from="1747130141089" duration="205000" />
+      <workItem from="1747131079965" duration="13000" />
+      <workItem from="1747143813065" duration="3239000" />
+      <workItem from="1747153002510" duration="1487000" />
+      <workItem from="1747206801896" duration="4947000" />
+      <workItem from="1747245209823" duration="921000" />
+      <workItem from="1747252181566" duration="95000" />
+      <workItem from="1747252328489" duration="10000" />
+      <workItem from="1747252381815" duration="2225000" />
+      <workItem from="1747303228563" duration="763000" />
+      <workItem from="1747660925138" duration="734000" />
+      <workItem from="1747756372805" duration="1120000" />
+      <workItem from="1747766443423" duration="643000" />
+      <workItem from="1747919113823" duration="1386000" />
+      <workItem from="1747925533686" duration="18000" />
+      <workItem from="1747925611464" duration="5000" />
+      <workItem from="1747931552950" duration="20000" />
+      <workItem from="1747933111291" duration="1168000" />
+      <workItem from="1747934698826" duration="139000" />
+      <workItem from="1747942685739" duration="61000" />
+      <workItem from="1747942869064" duration="289000" />
+      <workItem from="1747943246577" duration="1663000" />
+      <workItem from="1747945857526" duration="463000" />
+      <workItem from="1748079811920" duration="161000" />
+      <workItem from="1748080352249" duration="973000" />
+      <workItem from="1748089464967" duration="148000" />
+      <workItem from="1748089762446" duration="446000" />
+      <workItem from="1748090231311" duration="322000" />
+      <workItem from="1748100002364" duration="190000" />
+      <workItem from="1748100215382" duration="20000" />
+      <workItem from="1748101080801" duration="491000" />
+      <workItem from="1748103178804" duration="1936000" />
+      <workItem from="1748105257850" duration="1189000" />
+      <workItem from="1748106915110" duration="131000" />
+      <workItem from="1748107921200" duration="288000" />
+      <workItem from="1748108291666" duration="128000" />
+      <workItem from="1748108587173" duration="625000" />
+      <workItem from="1748111145791" duration="723000" />
+      <workItem from="1748112074700" duration="657000" />
+      <workItem from="1748116319971" duration="223000" />
+      <workItem from="1748116772568" duration="895000" />
+      <workItem from="1748118781388" duration="312000" />
+      <workItem from="1748119652165" duration="1194000" />
+      <workItem from="1748245806390" duration="2688000" />
+      <workItem from="1748264609035" duration="500000" />
+      <workItem from="1748269302360" duration="5425000" />
+      <workItem from="1748288683802" duration="1001000" />
+      <workItem from="1748289876233" duration="24000" />
+      <workItem from="1748289913219" duration="8000" />
+      <workItem from="1748289950390" duration="1391000" />
+      <workItem from="1748291776292" duration="82000" />
+      <workItem from="1748327859975" duration="282000" />
+      <workItem from="1748336619477" duration="1242000" />
+      <workItem from="1748338001898" duration="2035000" />
+      <workItem from="1748340494926" duration="82000" />
+    </task>
+    <task id="LOCAL-00001" summary="Create data frame class">
+      <option name="closed" value="true" />
+      <created>1747661479753</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747661479753</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add data to DataFrame class">
+      <option name="closed" value="true" />
+      <created>1747757272368</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747757272368</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update telemetry data frame">
+      <option name="closed" value="true" />
+      <created>1747767028306</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747767028307</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Rearrange data in data frame">
+      <option name="closed" value="true" />
+      <created>1747919422931</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747919422931</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add Map class">
+      <option name="closed" value="true" />
+      <created>1747933219479</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747933219479</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update CMake to support QWebEngine">
+      <option name="closed" value="true" />
+      <created>1747933456970</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747933456970</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update Map class">
+      <option name="closed" value="true" />
+      <created>1747945460087</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747945460087</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add support for displaying map">
+      <option name="closed" value="true" />
+      <created>1747945511665</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747945511665</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Make Map work properly on macOS">
+      <option name="closed" value="true" />
+      <created>1748081297761</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1748081297761</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add text labels color animation">
+      <option name="closed" value="true" />
+      <created>1748112729088</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1748112729088</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Update translations">
+      <option name="closed" value="true" />
+      <created>1748116568221</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1748116568221</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add animation for all buttons">
+      <option name="closed" value="true" />
+      <created>1748117459787</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1748117459787</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Set default tab">
+      <option name="closed" value="true" />
+      <created>1748247386013</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1748247386013</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add getters for data in DataFrame class">
+      <option name="closed" value="true" />
+      <created>1748258224973</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1748258224973</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add signalling on successful serial connection">
+      <option name="closed" value="true" />
+      <created>1748285795598</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1748285795598</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fix memory leak">
+      <option name="closed" value="true" />
+      <created>1748286619696</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1748286619696</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Change map default point">
+      <option name="closed" value="true" />
+      <created>1748286641476</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1748286641476</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Cleanup">
+      <option name="closed" value="true" />
+      <created>1748286925215</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1748286925216</updated>
+    </task>
+    <task id="LOCAL-00019" summary="UI Fixes">
+      <option name="closed" value="true" />
+      <created>1748287385692</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1748287385692</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Update translations">
+      <option name="closed" value="true" />
+      <created>1748287835778</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1748287835779</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Mark strings non-translatable">
+      <option name="closed" value="true" />
+      <created>1748288001968</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1748288001968</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Add symbol on serial port connection">
+      <option name="closed" value="true" />
+      <created>1748288310088</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1748288310088</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create data frame class" />
+    <MESSAGE value="Add data to DataFrame class" />
+    <MESSAGE value="Update telemetry data frame" />
+    <MESSAGE value="Rearrange data in data frame" />
+    <MESSAGE value="Add Map class" />
+    <MESSAGE value="Update CMake to support QWebEngine" />
+    <MESSAGE value="Update Map class" />
+    <MESSAGE value="Add support for displaying map" />
+    <MESSAGE value="Make Map work properly on macOS" />
+    <MESSAGE value="Add text labels color animation" />
+    <MESSAGE value="Add animation for all buttons" />
+    <MESSAGE value="Set default tab" />
+    <MESSAGE value="Add getters for data in DataFrame class" />
+    <MESSAGE value="Add signalling on successful serial connection" />
+    <MESSAGE value="Fix memory leak" />
+    <MESSAGE value="Change map default point" />
+    <MESSAGE value="Cleanup" />
+    <MESSAGE value="UI Fixes" />
+    <MESSAGE value="Update translations" />
+    <MESSAGE value="Mark strings non-translatable" />
+    <MESSAGE value="Add symbol on serial port connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add symbol on serial port connection" />
+  </component>
+</project>
