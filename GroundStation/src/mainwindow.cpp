@@ -24,11 +24,12 @@ QString sidebarButtonStyle = R"(
 QString sidebarTextStyleSelected = R"(color: #5C2D91; font-weight: bold;)";
 QString sidebarTextStyleUnselected = R"(color: rgb(0,0,0); font-weight: normal;)";
 
-MainWindow::MainWindow(QTranslator *ptrTranslator, QWidget *parent)
+MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow),
     window (serialPortManager),
-    translator(ptrTranslator)
+    translator(ptrTranslator),
+    application(ptrApp)
 {
     ui->setupUi(this);
 
@@ -130,6 +131,13 @@ void MainWindow::on_btn_settings_clicked() {
 void MainWindow::on_box_languages_currentIndexChanged(int index) {
     QString langCode = ui->box_languages->itemData(index).toString();
     if (langCode == "en") {
+        application->removeTranslator(translator);
+        ui->retranslateUi(this);
+    }
+    if (langCode == "pl") {
+        translator->load(":/Translations/GS_pl_PL.qm");
+        application->installTranslator(translator);
+        ui->retranslateUi(this);
     }
 }
 

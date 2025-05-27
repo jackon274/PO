@@ -16,10 +16,9 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-    QTranslator *translator;
 
 public:
-    explicit MainWindow(QTranslator *ptrTranslator, QWidget *parent = nullptr);
+    explicit MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -53,6 +52,8 @@ private:
     QButtonGroup *sidebarButtonsGroup;
     SerialPortManager serialPortManager;
     ConnectionWindow window;
+    QTranslator *translator;
+    QApplication *application;
 };
 
 #endif // MAINWINDOW_H

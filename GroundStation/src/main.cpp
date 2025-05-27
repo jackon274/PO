@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    MainWindow w(&translator);
+    MainWindow w(&translator, &a);
     w.show();
     return a.exec();
 }
