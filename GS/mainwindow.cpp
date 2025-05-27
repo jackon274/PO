@@ -1,4 +1,6 @@
 #include "mainwindow.h"
+
+#include <iostream>
 #include <QGraphicsDropShadowEffect>
 #include "Map.h"
 #include "ui_mainwindow.h"
@@ -19,13 +21,14 @@ QString sidebarButtonStyle = R"(
     }
 )";
 
-QString sidebarTextStyleSelected = R"(color: #5C2D91;)";
-QString sidebarTextStyleUnselected = R"(color: rgb(0,0,0);)";
+QString sidebarTextStyleSelected = R"(color: #5C2D91; font-weight: bold;)";
+QString sidebarTextStyleUnselected = R"(color: rgb(0,0,0); font-weight: normal;)";
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(QTranslator *ptrTranslator, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow),
-    window (serialPortManager)
+    window (serialPortManager),
+    translator(ptrTranslator)
 {
     ui->setupUi(this);
 
@@ -62,6 +65,9 @@ MainWindow::MainWindow(QWidget *parent)
     sidebarButtons.at(0)->setChecked(true);
     highlightSelectedButtonLabel(0);
     ui->label_connection_status->setText("");
+
+    ui->box_languages->addItem("Polish", "pl");
+    ui->box_languages->addItem("English", "en");
 }
 
 MainWindow::~MainWindow()
@@ -120,3 +126,10 @@ void MainWindow::on_btn_settings_clicked() {
     ui->widget_content->setCurrentIndex(5);
     highlightSelectedButtonLabel(5);
 }
+
+void MainWindow::on_box_languages_currentIndexChanged(int index) {
+    QString langCode = ui->box_languages->itemData(index).toString();
+    if (langCode == "en") {
+    }
+}
+

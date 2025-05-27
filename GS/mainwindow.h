@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QPushButton>
 #include <QLabel>
+#include <QTranslator>
+
 #include "SerialPortManager.h"
 #include "connectionwindow.h"
 
@@ -14,12 +16,14 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+    QTranslator *translator;
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QTranslator *ptrTranslator, QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
+
     void SerialPortConnected() const;
 
     void highlightSelectedButtonLabel(int index);
@@ -39,6 +43,8 @@ private slots:
     void on_btn_settings_clicked();
 
     void on_btn_config_clicked();
+
+    void on_box_languages_currentIndexChanged(int index);
 
 private:
     Ui::MainWindow *ui;
