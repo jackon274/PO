@@ -13,11 +13,11 @@ uint32_t DataFrame::get_elapsed_time() const {
 }
 
 float DataFrame::get_longitude() const {
-    return static_cast <float> (longitude) / (10^7);
+    return static_cast <float> (longitude) / (10e7);
 }
 
 float DataFrame::get_latitude() const {
-    return static_cast <float> (latitude) / (10^7);
+    return static_cast <float> (latitude) / (10e7);
 }
 
 float DataFrame::get_height_meters() const {

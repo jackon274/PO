@@ -1,6 +1,6 @@
 #include "connectionwindow.h"
 #include <iostream>
-#include "./ui_connectionwindow.h"
+#include "ui_connectionwindow.h"
 #include "SerialPortManager.h"
 #include <iomanip>
 
