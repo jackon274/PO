@@ -4,7 +4,7 @@
 
 #include "Parser.h"
 
-void Parser::parseLine(std::vector<uint8_t> &receivedData) {
+void Parser::parseLine(std::vector <uint8_t> &receivedData) {
     std::vector <std::string> lines;
     std::vector <uint8_t>::iterator lineBegin = receivedData.end();
     std::vector <uint8_t>::iterator lineEnd = receivedData.end();
@@ -12,11 +12,9 @@ void Parser::parseLine(std::vector<uint8_t> &receivedData) {
     for (auto a = receivedData.begin(); a != receivedData.end(); a++) {
         if(*a == '+') {
             lineBegin = a;
-            //std::cout << "Found line begin!";
         }
         else if(*a == '\r') {
             lineEnd = a;
-            //std::cout << "Found line end!";
             if (lineBegin != receivedData.end()) {
                 std::string line(lineBegin, lineEnd);
                 lines.push_back(line);
@@ -37,24 +35,13 @@ void Parser::parseLine(std::vector<uint8_t> &receivedData) {
         }
     }
 
-    //Wyświetl odebrane linie
-    for (auto &a:linesTest) {
-        std::cout << "LINIA TEST: " << a << std::endl;
-    }
-    for (auto &a:linesLog) {
-        std::cout << "LINIA LOG: " << a << std::endl;
-    }
-    for (auto &a:linesInfo) {
-        std::cout << "LINIA INFO: " << a << std::endl;
-    }
 
-
-    // Linie TEST:
     for (auto &a:linesTest) {
         while(a.size() > 0) {
             auto separator1 = a.find(':');
             auto separator2 = a.find(',');
             std::string key, value;
+
             if(a.substr(0, a.find('"')) == "RX ") {
                 key = "RX";
                 size_t dataFrameBegin = a.find('"') + 1;
@@ -65,15 +52,21 @@ void Parser::parseLine(std::vector<uint8_t> &receivedData) {
                 key = a.substr(0, separator1);
                 value = a.substr(separator1 + 1, separator2 - separator1 - 1);
             }
+
+            if (key == "RXLRPKT")
+                break;
+            if (key.size() > 6)
+                break;
+
+            parameters.at(key) = stoi(value);
             std::cout << "KEY: " << key;
-            std::cout << ",  VALUE: " << value << std::endl;
+            std::cout << ",  VALUE: " << value;
+            std::cout << "  VALUE MAP: " << parameters.at(key) << std::endl;
 
             if(separator2 == std::string::npos) {
                 break;
             }
-
             a = a.substr(separator2 + 2);
-            //std::cout << "Pozostala ramka: " << a << std::endl;
         }
     }
 
