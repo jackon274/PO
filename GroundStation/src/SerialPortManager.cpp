@@ -151,10 +151,10 @@ const std::string &SerialPortManager::getOpenSerialPort() const{
     return openPort->displayName;
 }
 
-int SerialPortManager::getSerialPortState() const{
+bool SerialPortManager::getSerialPortState() const{
     if(openPort == nullptr)
-        return 0;
-    return 1;
+        return false;
+    return true;
 }
 
 
@@ -239,6 +239,14 @@ void SerialPortManager::checkAvailableSerialPorts() {
     availableSerialPorts = serialPorts;
 }
 #endif
+bool SerialPortManager::operator=(SerialPortState state) const {
+    switch(state) {
+        case SERIAL_PORT_OPENED:
+            return getSerialPortState();
+        break;
+    }
+}
+
 std::vector <SerialPort *> SerialPortManager::getAvailableSerialPorts() {
     return availableSerialPorts;
 }
