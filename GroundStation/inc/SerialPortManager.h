@@ -17,7 +17,7 @@ public:
     enum SerialPortState {
         SERIAL_PORT_OPENED
     };
-    bool operator= (SerialPortState state) const;
+    bool operator== (SerialPortState state) const;
     std::vector <SerialPort *> getAvailableSerialPorts();
     void checkAvailableSerialPorts();
     void setBaudRate(int newBaudRate);

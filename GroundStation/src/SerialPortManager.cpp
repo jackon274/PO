@@ -239,7 +239,7 @@ void SerialPortManager::checkAvailableSerialPorts() {
     availableSerialPorts = serialPorts;
 }
 #endif
-bool SerialPortManager::operator=(SerialPortState state) const {
+bool SerialPortManager::operator==(SerialPortState state) const {
     switch(state) {
         case SERIAL_PORT_OPENED:
             return getSerialPortState();
