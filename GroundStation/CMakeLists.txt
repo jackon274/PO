@@ -45,8 +45,6 @@ set(PROJECT_SOURCES
         inc/Map.h
         resources/QCustomPlot/qcustomplot.cpp
         resources/QCustomPlot/qcustomplot.h
-        src/Graph.cpp
-        inc/Graph.h
         src/Parser.cpp
         inc/Parser.h
 )
