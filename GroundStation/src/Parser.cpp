@@ -59,9 +59,15 @@ void Parser::parseLine(std::vector <uint8_t> &receivedData) {
                 break;
 
             parameters.at(key) = stoi(value);
-            std::cout << "KEY: " << key;
-            std::cout << ",  VALUE: " << value;
-            std::cout << "  VALUE MAP: " << parameters.at(key) << std::endl;
+            //std::cout << "KEY: " << key;
+            //std::cout << ",  VALUE: " << value;
+            //debug only
+
+            for(auto [key, val] : parameters) {
+                std::cout << "KEY: " << key;
+                std::cout << ",  VALUE: " << val;
+                std::cout << std::endl;
+            }
 
             if(separator2 == std::string::npos) {
                 break;
