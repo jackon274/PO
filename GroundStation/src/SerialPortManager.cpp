@@ -14,7 +14,6 @@
 #include <termios.h>
 #include <unistd.h>
 
-
 void SerialPortManager::checkAvailableSerialPorts() {
     const std::string devPath = "/dev/";
     std::vector<SerialPort *> serialPorts;
@@ -62,7 +61,6 @@ int SerialPortManager::open(SerialPort *port) {
         return -1;
     }
 
-    // Configure baud rate
     switch(baudRate) {
         case 9600:
             cfsetospeed(&options, B9600);
@@ -110,14 +108,42 @@ int SerialPortManager::open(SerialPort *port) {
         ::close(serialPortFd);
         return -1;
     }
+
+    // Convert to FILE stream
+    fileUART = fdopen(serialPortFd, "r+");
+    if (!fileUART) {
+        perror("Failed to open FILE stream");
+        ::close(serialPortFd);
+        return 1;
+    }
+
+    // Disable buffering
+    setvbuf(fileUART, NULL, _IONBF, 0);
     openPort = port;
     port->serialPortFd = serialPortFd;
-    return serialPortFd;
+    return 0;
 }
 
 
 int SerialPortManager::close() {
     //do sth;
+    return 0;
+}
+
+int SerialPortManager::send(const std::string &message) {
+    int len = message.length();
+    if(len > 250)
+        return -1;
+    if(fileUART == nullptr)
+        return -1;
+    const char* messageCString = message.c_str();
+    int elementsWritten = fwrite(messageCString, sizeof(char), len, fileUART);
+    if (elementsWritten != len) {
+        fflush(fileUART);
+        int ch;
+        while ((ch = fgetc(fileUART)) != EOF);
+        clearerr(fileUART);
+    }
     return 0;
 }
 
@@ -131,13 +157,14 @@ int SerialPortManager::getSerialPortState() const{
     return 1;
 }
 
-std::vector<uint8_t> SerialPortManager::uartReceive() {
+
+/*std::vector <uint8_t> SerialPortManager::receive() {
     if (!openPort) {
         std::cerr << "Error: openPort is null in uartReceive().\n";
         return {};
     }
     int maxBytes = 256;
-    std::vector<uint8_t> buffer(maxBytes);
+    std::vector <uint8_t> buffer(maxBytes);
 
     ssize_t bytesRead = read(openPort->serialPortFd, buffer.data(), maxBytes);
     if (bytesRead < 0) {
@@ -148,6 +175,28 @@ std::vector<uint8_t> SerialPortManager::uartReceive() {
     }
 
     buffer.resize(bytesRead); // shrink to actual size
+    return buffer;
+}*/
+
+std::vector <uint8_t> SerialPortManager::receive() {
+    if (!openPort || !fileUART) {
+        std::cerr << "Error" << std::endl;
+        return {};
+    }
+    std::vector <uint8_t> buffer(20024);
+    size_t bytesRead = fread(buffer.data(), 1, 1024, fileUART);
+
+    if (bytesRead == 0) {
+        if (feof(fileUART)) {
+            std::cerr << "EOF reached on UART stream\n";
+            clearerr(fileUART);
+        } else if (ferror(fileUART)) {
+            perror("UART fread error");
+            clearerr(fileUART);
+        }
+        return {};
+    }
+    buffer.resize(bytesRead);
     return buffer;
 }
 

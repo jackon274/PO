@@ -4,16 +4,20 @@
 #include <QDialog>
 #include "SerialPortManager.h"
 #include <string>
+#include "Parser.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class ConnectionWindow;
 }
 QT_END_NAMESPACE
 
+
 class ConnectionWindow : public QDialog
 {
     Q_OBJECT
     SerialPortManager &serialPortManager;
+    Parser parser;
 public:
     explicit ConnectionWindow(SerialPortManager &manager, QWidget *parent = nullptr);
     ~ConnectionWindow();

@@ -63,8 +63,9 @@ MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget
         button->setCheckable(true);
         button->setStyleSheet(sidebarButtonStyle);
     }
-    sidebarButtons.at(0)->setChecked(true);
-    highlightSelectedButtonLabel(0);
+    int startPage = ui->widget_content->currentIndex();
+    sidebarButtons.at(startPage)->setChecked(true);
+    highlightSelectedButtonLabel(startPage);
     ui->label_connection_status->setText("");
 
     ui->box_languages->addItem("Polish", "pl");
@@ -139,5 +140,21 @@ void MainWindow::on_box_languages_currentIndexChanged(int index) {
         application->installTranslator(translator);
         ui->retranslateUi(this);
     }
+}
+
+
+
+void MainWindow::on_btn_testmode_clicked() {
+    serialPortManager.send("AT+MODE=TEST");
+}
+
+
+void MainWindow::on_btn_configuration_clicked() {
+    serialPortManager.send("AT+TEST=RFCFG,868,SF12,125,12,15,14,ON,OFF,OFF\r\n");
+}
+
+
+void MainWindow::on_btn_rx_mode_clicked() {
+    serialPortManager.send("AT+TEST=RXLRPKT");
 }
 

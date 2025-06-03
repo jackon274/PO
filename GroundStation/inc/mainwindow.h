@@ -45,6 +45,12 @@ private slots:
 
     void on_box_languages_currentIndexChanged(int index);
 
+    void on_btn_testmode_clicked();
+
+    void on_btn_configuration_clicked();
+
+    void on_btn_rx_mode_clicked();
+
 private:
     Ui::MainWindow *ui;
     std::vector <QPushButton *> sidebarButtons;

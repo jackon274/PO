@@ -3,7 +3,7 @@
 #include "ui_connectionwindow.h"
 #include "SerialPortManager.h"
 #include <iomanip>
-
+#include <QSystemTrayIcon>
 
 ConnectionWindow::ConnectionWindow(SerialPortManager &manager, QWidget *parent): QDialog(parent), serialPortManager(manager)
     , ui(new Ui::ConnectionWindow)
@@ -16,7 +16,6 @@ ConnectionWindow::ConnectionWindow(SerialPortManager &manager, QWidget *parent):
 #endif
     ui->btn_connect->setEnabled(false);
     ui->btn_disconnect->setEnabled(false);
-
 
 }
 
@@ -45,10 +44,21 @@ void ConnectionWindow::on_btn_connect_clicked() {
         return;
     }
     std::cout << selectedPort->displayName << std::endl; //debug only
-    serialPortManager.open(selectedPort);
-    ui->btn_connect->setEnabled(false);
-    ui->btn_disconnect->setEnabled(true);
-    emit signalSerialPortConnected();
+    if(serialPortManager.open(selectedPort) == 0) {
+        ui->btn_connect->setEnabled(false);
+        ui->btn_disconnect->setEnabled(true);
+        emit signalSerialPortConnected();
+    }
+    else {
+        QString komunikat = "Nie udało się otworzyć portu!";
+        static QSystemTrayIcon trayIcon;
+
+        if (!trayIcon.isVisible()) {
+            trayIcon.setIcon(QIcon::fromTheme("dialog-information"));
+            trayIcon.setVisible(true);
+        }
+        trayIcon.showMessage("Błąd", komunikat, QSystemTrayIcon::Critical, 3000);
+    }
 }
 
 
@@ -59,20 +69,7 @@ void ConnectionWindow::on_btn_disconnect_clicked() {
 
 
 void ConnectionWindow::on_btn_read_clicked() {
-    std::vector<uint8_t> data = serialPortManager.uartReceive();
+    std::vector<uint8_t> data = serialPortManager.receive();
 
-    if (!data.empty()) {
-        // Output to stdout
-        std::string text(data.begin(), data.end());
-        std::cout << "Received text: "; //
-        std::cout << text << std::endl;
-
-        std::cout << "Received " << data.size() << " bytes: ";
-
-        for (uint8_t byte : data) {
-            std::cout << std::hex << std::uppercase << std::setw(2)
-                      << std::setfill('0') << static_cast<int>(byte) << " ";
-        }
-        std::cout << std::dec << std::endl;  // Reset to decimal
-    }
+    parser.parseLine(data);
 }

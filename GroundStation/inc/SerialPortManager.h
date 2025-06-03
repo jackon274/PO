@@ -12,16 +12,17 @@ class SerialPortManager {
     std::vector <SerialPort *> availableSerialPorts;
     int baudRate;
     SerialPort *openPort;
+    FILE * fileUART;
 public:
-    void checkAvailableSerialPorts();
     std::vector <SerialPort *> getAvailableSerialPorts();
+    void checkAvailableSerialPorts();
+    void setBaudRate(int newBaudRate);
     int open(SerialPort *port);
     int close();
+    int send(const std::string &message);
+    std::vector <uint8_t> receive();
     const std::string &getOpenSerialPort() const;
     int getSerialPortState() const;
-    void setBaudRate(int newBaudRate);
-    std::vector<uint8_t> uartReceive();
-    ssize_t serialReceive(SerialPort *port, uint8_t *buffer, size_t buffer_size);
 
     SerialPortManager();
     ~SerialPortManager();

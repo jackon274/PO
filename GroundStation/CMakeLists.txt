@@ -43,6 +43,12 @@ set(PROJECT_SOURCES
         inc/DataFrame.h
         src/Map.cpp
         inc/Map.h
+        resources/QCustomPlot/qcustomplot.cpp
+        resources/QCustomPlot/qcustomplot.h
+        src/Graph.cpp
+        inc/Graph.h
+        src/Parser.cpp
+        inc/Parser.h
 )
 
 
@@ -83,9 +89,10 @@ target_link_libraries(GroundStation PRIVATE Qt6::WebEngineWidgets)
 
 
 target_include_directories(GroundStation PRIVATE
-        ${CMAKE_CURRENT_BINARY_DIR}  # For generated Qt files (ui_*.h)
-        ${CMAKE_CURRENT_SOURCE_DIR}/inc  # Your custom headers
-        ${CMAKE_CURRENT_SOURCE_DIR}/src  # Sometimes needed if headers are included from src/
+        ${CMAKE_CURRENT_BINARY_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/inc
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
+        ${CMAKE_CURRENT_SOURCE_DIR}/resources/QCustomPlot
 )
 
 

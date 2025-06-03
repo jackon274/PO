@@ -1,0 +1,80 @@
+//
+// Created by Jacek Konderak on 30/05/2025.
+//
+
+#include "Parser.h"
+
+void Parser::parseLine(std::vector<uint8_t> &receivedData) {
+    std::vector <std::string> lines;
+    std::vector <uint8_t>::iterator lineBegin = receivedData.end();
+    std::vector <uint8_t>::iterator lineEnd = receivedData.end();
+
+    for (auto a = receivedData.begin(); a != receivedData.end(); a++) {
+        if(*a == '+') {
+            lineBegin = a;
+            //std::cout << "Found line begin!";
+        }
+        else if(*a == '\r') {
+            lineEnd = a;
+            //std::cout << "Found line end!";
+            if (lineBegin != receivedData.end()) {
+                std::string line(lineBegin, lineEnd);
+                lines.push_back(line);
+            }
+        }
+
+    }
+
+    for (auto &a:lines) {
+        if(a.substr(0, 5) == "+TEST") {
+            linesTest.push_back(a.substr(7));
+        }
+        else if(a.substr(0, 5) == "+LOG:") {
+            linesLog.push_back(a.substr(6));
+        }
+        else if(a.substr(0, 5) == "+INFO") {
+            linesInfo.push_back(a.substr(7));
+        }
+    }
+
+    //Wyświetl odebrane linie
+    for (auto &a:linesTest) {
+        std::cout << "LINIA TEST: " << a << std::endl;
+    }
+    for (auto &a:linesLog) {
+        std::cout << "LINIA LOG: " << a << std::endl;
+    }
+    for (auto &a:linesInfo) {
+        std::cout << "LINIA INFO: " << a << std::endl;
+    }
+
+
+    // Linie TEST:
+    for (auto &a:linesTest) {
+        while(a.size() > 0) {
+            auto separator1 = a.find(':');
+            auto separator2 = a.find(',');
+            std::string key, value;
+            if(a.substr(0, a.find('"')) == "RX ") {
+                key = "RX";
+                size_t dataFrameBegin = a.find('"') + 1;
+                size_t dataFrameEnd = a.rfind('"');
+                value = a.substr(dataFrameBegin, dataFrameEnd - dataFrameBegin);
+            }
+            else {
+                key = a.substr(0, separator1);
+                value = a.substr(separator1 + 1, separator2 - separator1 - 1);
+            }
+            std::cout << "KEY: " << key;
+            std::cout << ",  VALUE: " << value << std::endl;
+
+            if(separator2 == std::string::npos) {
+                break;
+            }
+
+            a = a.substr(separator2 + 2);
+            //std::cout << "Pozostala ramka: " << a << std::endl;
+        }
+    }
+
+}
