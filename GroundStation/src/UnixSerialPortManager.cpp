@@ -2,7 +2,7 @@
 // Created by Jacek Konderak on 08/05/2025.
 //
 
-#include "SerialPortManager.h"
+#include "UnixSerialPortManager.h"
 #include "SerialPort.h"
 #include <iostream>
 
@@ -14,7 +14,7 @@
 #include <termios.h>
 #include <unistd.h>
 
-void SerialPortManager::checkAvailableSerialPorts() {
+void UnixSerialPortManager::checkAvailableSerialPorts() {
     const std::string devPath = "/dev/";
     std::vector<SerialPort *> serialPorts;
 
@@ -46,7 +46,7 @@ void SerialPortManager::checkAvailableSerialPorts() {
 
 
 
-int SerialPortManager::open(SerialPort *port) {
+int UnixSerialPortManager::open(SerialPort *port) {
     int serialPortFd = ::open(port->portName.c_str(), O_RDWR | O_NOCTTY | O_NDELAY);
 
     if(serialPortFd < 0)
@@ -125,12 +125,12 @@ int SerialPortManager::open(SerialPort *port) {
 }
 
 
-int SerialPortManager::close() {
+int UnixSerialPortManager::close() {
     //do sth;
     return 0;
 }
 
-int SerialPortManager::send(const std::string &message) {
+int UnixSerialPortManager::send(const std::string &message) {
     int len = message.length();
     if(len > 250)
         return -1;
@@ -147,11 +147,11 @@ int SerialPortManager::send(const std::string &message) {
     return 0;
 }
 
-const std::string &SerialPortManager::getOpenSerialPort() const{
+const std::string &UnixSerialPortManager::getOpenSerialPort() const{
     return openPort->displayName;
 }
 
-bool SerialPortManager::getSerialPortState() const{
+bool UnixSerialPortManager::getSerialPortState() const{
     if(openPort == nullptr)
         return false;
     return true;
@@ -178,7 +178,7 @@ bool SerialPortManager::getSerialPortState() const{
     return buffer;
 }*/
 
-std::vector <uint8_t> SerialPortManager::receive() {
+std::vector <uint8_t> UnixSerialPortManager::receive() {
     if (!openPort || !fileUART) {
         std::cerr << "Error" << std::endl;
         return {};
@@ -239,7 +239,7 @@ void SerialPortManager::checkAvailableSerialPorts() {
     availableSerialPorts = serialPorts;
 }
 #endif
-bool SerialPortManager::operator==(SerialPortState state) const {
+bool UnixSerialPortManager::operator==(SerialPortState state) const {
     switch(state) {
         case SERIAL_PORT_OPENED:
             return getSerialPortState();
@@ -247,19 +247,19 @@ bool SerialPortManager::operator==(SerialPortState state) const {
     }
 }
 
-std::vector <SerialPort *> SerialPortManager::getAvailableSerialPorts() {
+std::vector <SerialPort *> UnixSerialPortManager::getAvailableSerialPorts() {
     return availableSerialPorts;
 }
 
-void SerialPortManager::setBaudRate(int newBaudRate) {
+void UnixSerialPortManager::setBaudRate(int newBaudRate) {
     baudRate = newBaudRate;
 }
 
-SerialPortManager::SerialPortManager() {
+UnixSerialPortManager::UnixSerialPortManager() {
     checkAvailableSerialPorts();
 }
 
-SerialPortManager::~SerialPortManager() {
+UnixSerialPortManager::~UnixSerialPortManager() {
     for (auto port:availableSerialPorts)
         delete port;
     close();

@@ -54,6 +54,7 @@ set(PROJECT_SOURCES
         resources/QCustomPlot/qcustomplot.h
         src/Parser.cpp
         inc/Parser.h
+        inc/ISerialPort.h
 )
 
 
