@@ -44,8 +44,8 @@ set(PROJECT_SOURCES
         ${TS_FILES}
         src/SerialPort.cpp
         inc/SerialPort.h
-        src/SerialPortManager.cpp
-        inc/SerialPortManager.h
+        src/UnixSerialPortManager.cpp
+        inc/UnixSerialPortManager.h
         src/DataFrame.cpp
         inc/DataFrame.h
         src/Map.cpp
@@ -55,6 +55,9 @@ set(PROJECT_SOURCES
         src/Parser.cpp
         inc/Parser.h
         inc/ISerialPort.h
+        inc/SerialPortCreator.h
+        src/ErrorNotifier.cpp
+        inc/ErrorNotifier.h
 )
 
 
