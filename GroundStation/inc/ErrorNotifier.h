@@ -6,8 +6,10 @@
 #define ERRORNOTIFIER_H
 
 #include <string>
+#include "ErrorCode.h"
 
 class ErrorNotifier {
+  ErrorCode errorCode;
   std::string errorOpenPort = "Failed to open selected serial port!";
   std::string errorTermiosGetAttributes = "Error getting termios attributes";
   std::string errorTermiosSetAttributes = "Error setting termios attributes";
@@ -15,13 +17,8 @@ class ErrorNotifier {
   std::string errorUnknown = "Unknown error occurred";
   std::string messageBoxTitle = "Error";
 public:
-  enum ErrorCode {
-    PORT_OPEN_FAILED,
-    TERMIOS_GET_ATTRIBUTES_FAILED,
-    TERMIOS_SET_ATTRIBUTES_FAILED,
-    FILE_OPEN_FAILED
-  };
-  void notify(ErrorCode code);
+  void notify();
+  explicit ErrorNotifier(ErrorCode code): errorCode(code) {};
 };
 
 

@@ -5,7 +5,7 @@
 #include "ErrorNotifier.h"
 #include <QSystemTrayIcon>
 
-void ErrorNotifier::notify(ErrorCode code) {
+void ErrorNotifier::notify() {
     QString komunikat;
     static QSystemTrayIcon trayIcon;
     if (!trayIcon.isVisible()) {
@@ -14,7 +14,7 @@ void ErrorNotifier::notify(ErrorCode code) {
     }
 
 
-    switch (code) {
+    switch (errorCode) {
         case PORT_OPEN_FAILED:
         komunikat = QString::fromStdString(errorOpenPort);
             break;

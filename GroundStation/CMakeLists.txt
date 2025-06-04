@@ -58,6 +58,8 @@ set(PROJECT_SOURCES
         inc/SerialPortCreator.h
         src/ErrorNotifier.cpp
         inc/ErrorNotifier.h
+        inc/AppException.h
+        inc/ErrorCode.h
 )
 
 

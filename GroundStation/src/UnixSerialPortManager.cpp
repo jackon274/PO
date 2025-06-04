@@ -5,6 +5,7 @@
 #include "UnixSerialPortManager.h"
 #include "SerialPort.h"
 #include <iostream>
+#include "AppException.h"
 
 #ifdef __APPLE__
 
@@ -50,15 +51,16 @@ int UnixSerialPortManager::open(SerialPort *port) {
     int serialPortFd = ::open(port->portName.c_str(), O_RDWR | O_NOCTTY | O_NDELAY);
 
     if(serialPortFd < 0)
-        std::cerr << "Error opening serial port";
+        throw AppException(PORT_OPEN_FAILED);
+        //std::cerr << "Error opening serial port";
 
     struct termios options;
     memset(&options, 0, sizeof options);
 
     if (tcgetattr(serialPortFd, &options) != 0) {
-        std::cerr << "Error getting termios attributes: " << strerror(errno) << std::endl;
+        //std::cerr << "Error getting termios attributes: " << strerror(errno) << std::endl;
         ::close(serialPortFd);
-        return -1;
+        throw AppException(TERMIOS_GET_ATTRIBUTES_FAILED);
     }
 
     switch(baudRate) {
@@ -106,7 +108,7 @@ int UnixSerialPortManager::open(SerialPort *port) {
     if (tcsetattr(serialPortFd, TCSANOW, &options) != 0) {
         std::cerr << "Error setting termios attributes: " << strerror(errno) << std::endl;
         ::close(serialPortFd);
-        return -1;
+        throw AppException(TERMIOS_SET_ATTRIBUTES_FAILED);
     }
 
     // Convert to FILE stream
@@ -114,7 +116,7 @@ int UnixSerialPortManager::open(SerialPort *port) {
     if (!fileUART) {
         perror("Failed to open FILE stream");
         ::close(serialPortFd);
-        return 1;
+        throw AppException(FILE_OPEN_FAILED);
     }
 
     // Disable buffering
