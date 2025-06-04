@@ -3,9 +3,11 @@
 #include "ui_connectionwindow.h"
 #include "SerialPortCreator.h"
 #include <QSystemTrayIcon>
+#include "ErrorNotifier.h"
+#include "AppException.h"
 
 ConnectionWindow::ConnectionWindow(QWidget *parent): QDialog(parent)
-    , ui(new Ui::ConnectionWindow)
+                                                     , ui(new Ui::ConnectionWindow)
 {
     ui->setupUi(this);
     qRegisterMetaType<SerialPort*>();
@@ -44,20 +46,15 @@ void ConnectionWindow::on_btn_connect_clicked() {
         return;
     }
     std::cout << selectedPort->displayName << std::endl; //debug only
-    if(serialPort->open(selectedPort) == 0) {
+    try {
+        serialPort->open(selectedPort);
         ui->btn_connect->setEnabled(false);
         ui->btn_disconnect->setEnabled(true);
         emit signalSerialPortConnected();
     }
-    else {
-        /*QString komunikat = "Nie udało się otworzyć portu!";
-        static QSystemTrayIcon trayIcon;
-
-        if (!trayIcon.isVisible()) {
-            trayIcon.setIcon(QIcon::fromTheme("dialog-information"));
-            trayIcon.setVisible(true);
-        }
-        trayIcon.showMessage("Błąd", komunikat, QSystemTrayIcon::Critical, 3000);*/
+    catch (AppException e) {
+        ErrorNotifier notifier {e.code()};
+        notifier.notify();
     }
 }
 
