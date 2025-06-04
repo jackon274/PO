@@ -1,15 +1,15 @@
 #include "connectionwindow.h"
 #include <iostream>
 #include "ui_connectionwindow.h"
-#include "SerialPortManager.h"
-#include <iomanip>
+#include "SerialPortCreator.h"
 #include <QSystemTrayIcon>
 
-ConnectionWindow::ConnectionWindow(SerialPortManager &manager, QWidget *parent): QDialog(parent), serialPortManager(manager)
+ConnectionWindow::ConnectionWindow(QWidget *parent): QDialog(parent)
     , ui(new Ui::ConnectionWindow)
 {
     ui->setupUi(this);
     qRegisterMetaType<SerialPort*>();
+    serialPort = createSerialPort();
 #ifdef _WIN32
     ui->btn_refresh->setEnabled(false);
     ui->box_ports->addItem("Simulation");
@@ -30,21 +30,21 @@ void ConnectionWindow::on_btn_refresh_clicked() {
     ui->box_ports->clear();
     ui->box_ports->addItem("Simulation", QVariant::fromValue(nullptr));
 
-    serialPortManager.checkAvailableSerialPorts();
-    for(auto port:serialPortManager.getAvailableSerialPorts()) {
+    serialPort->checkAvailableSerialPorts();
+    for(auto port:serialPort->getAvailableSerialPorts()) {
         ui->box_ports->addItem(QString::fromStdString(port->displayName), QVariant::fromValue(port));
     }
 }
 
 void ConnectionWindow::on_btn_connect_clicked() {
     int baudRate = ui->box_baudrate->currentText().toInt();
-    serialPortManager.setBaudRate(baudRate);
+    serialPort->setBaudRate(baudRate);
     SerialPort* selectedPort = ui->box_ports->currentData().value<SerialPort*>();
     if(selectedPort == nullptr) {
         return;
     }
     std::cout << selectedPort->displayName << std::endl; //debug only
-    if(serialPortManager.open(selectedPort) == 0) {
+    if(serialPort->open(selectedPort) == 0) {
         ui->btn_connect->setEnabled(false);
         ui->btn_disconnect->setEnabled(true);
         emit signalSerialPortConnected();
@@ -69,7 +69,7 @@ void ConnectionWindow::on_btn_disconnect_clicked() {
 
 
 void ConnectionWindow::on_btn_read_clicked() {
-    std::vector<uint8_t> data = serialPortManager.receive();
+    std::vector<uint8_t> data = serialPort->receive();
 
     parser.parseLine(data);
 }

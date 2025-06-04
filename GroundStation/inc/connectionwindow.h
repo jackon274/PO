@@ -2,7 +2,7 @@
 #define CONNECTIONWINDOW_H
 
 #include <QDialog>
-#include "SerialPortManager.h"
+#include "UnixSerialPortManager.h"
 #include <string>
 #include "Parser.h"
 
@@ -16,10 +16,10 @@ QT_END_NAMESPACE
 class ConnectionWindow : public QDialog
 {
     Q_OBJECT
-    SerialPortManager &serialPortManager;
-    Parser parser;
+    ISerialPort *serialPort;
+    UARTParser parser;
 public:
-    explicit ConnectionWindow(SerialPortManager &manager, QWidget *parent = nullptr);
+    explicit ConnectionWindow(QWidget *parent = nullptr);
     ~ConnectionWindow();
 
     signals:
