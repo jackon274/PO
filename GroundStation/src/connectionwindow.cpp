@@ -50,14 +50,14 @@ void ConnectionWindow::on_btn_connect_clicked() {
         emit signalSerialPortConnected();
     }
     else {
-        QString komunikat = "Nie udało się otworzyć portu!";
+        /*QString komunikat = "Nie udało się otworzyć portu!";
         static QSystemTrayIcon trayIcon;
 
         if (!trayIcon.isVisible()) {
             trayIcon.setIcon(QIcon::fromTheme("dialog-information"));
             trayIcon.setVisible(true);
         }
-        trayIcon.showMessage("Błąd", komunikat, QSystemTrayIcon::Critical, 3000);
+        trayIcon.showMessage("Błąd", komunikat, QSystemTrayIcon::Critical, 3000);*/
     }
 }
 
