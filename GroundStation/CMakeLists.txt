@@ -2,6 +2,14 @@ cmake_minimum_required(VERSION 3.16)
 
 project(GroundStation VERSION 0.1 LANGUAGES CXX)
 
+include(FetchContent)
+
+FetchContent_Declare(fmt
+        GIT_REPOSITORY https://github.com/fmtlib/fmt.git
+        GIT_TAG master
+)
+FetchContent_MakeAvailable(fmt)
+
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -26,7 +34,6 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt6 REQUIRED COMPONENTS WebEngineWidgets)
 
-
 set(TS_FILES resources/GroundStation_pl_PL.ts)
 
 set(PROJECT_SOURCES
@@ -50,7 +57,6 @@ set(PROJECT_SOURCES
 )
 
 
-
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(GroundStation
         MANUAL_FINALIZATION
@@ -64,7 +70,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 # For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 
     qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
-
 
 else()
     if(ANDROID)
@@ -84,7 +89,7 @@ endif()
 
 target_link_libraries(GroundStation PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(GroundStation PRIVATE Qt6::WebEngineWidgets)
-
+target_link_libraries(GroundStation PRIVATE fmt::fmt)
 
 target_include_directories(GroundStation PRIVATE
         ${CMAKE_CURRENT_BINARY_DIR}
@@ -92,7 +97,6 @@ target_include_directories(GroundStation PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         ${CMAKE_CURRENT_SOURCE_DIR}/resources/QCustomPlot
 )
-
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
