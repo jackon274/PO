@@ -128,7 +128,7 @@ int UnixSerialPortManager::open(SerialPort *port) {
 
 
 int UnixSerialPortManager::close() {
-    //do sth;
+    openPort = nullptr;
     return 0;
 }
 
@@ -245,6 +245,9 @@ bool UnixSerialPortManager::operator==(SerialPortState state) const {
     switch(state) {
         case SERIAL_PORT_OPENED:
             return getSerialPortState();
+        break;
+        case SERIAL_PORT_CLOSED:
+            return !getSerialPortState();
         break;
     }
 }

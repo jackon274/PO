@@ -28,7 +28,8 @@ public:
 
 
     enum SerialPortState {
-        SERIAL_PORT_OPENED
+        SERIAL_PORT_OPENED,
+        SERIAL_PORT_CLOSED
     };
     virtual bool operator== (SerialPortState state) const = 0;
 };

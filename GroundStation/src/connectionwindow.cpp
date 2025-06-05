@@ -1,17 +1,17 @@
 #include "connectionwindow.h"
 #include <iostream>
 #include "ui_connectionwindow.h"
-#include "SerialPortCreator.h"
 #include <QSystemTrayIcon>
 #include "ErrorNotifier.h"
 #include "AppException.h"
 
-ConnectionWindow::ConnectionWindow(QWidget *parent): QDialog(parent)
+ConnectionWindow::ConnectionWindow(ISerialPort *port, QWidget *parent): QDialog(parent)
                                                      , ui(new Ui::ConnectionWindow)
 {
     ui->setupUi(this);
     qRegisterMetaType<SerialPort*>();
-    serialPort = createSerialPort();
+    serialPort = port;
+
 #ifdef _WIN32
     ui->btn_refresh->setEnabled(false);
     ui->box_ports->addItem("Simulation");
@@ -60,6 +60,7 @@ void ConnectionWindow::on_btn_connect_clicked() {
 
 
 void ConnectionWindow::on_btn_disconnect_clicked() {
+    serialPort->close();
     ui->btn_connect->setEnabled(true);
     ui->btn_disconnect->setEnabled(false);
 }

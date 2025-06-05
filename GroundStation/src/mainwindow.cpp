@@ -9,6 +9,9 @@
 #include <QButtonGroup>
 #include <vector>
 #include <QStyleFactory>
+#include <QTimer>
+
+#include "SerialPortCreator.h"
 
 QString sidebarButtonStyle = R"(
     QPushButton {
@@ -28,12 +31,11 @@ QString sidebarTextStyleUnselected = R"(color: rgb(0,0,0); font-weight: normal;)
 MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow),
-    window (),
+    window (serialPort = createSerialPort()),
     translator(ptrTranslator),
     application(ptrApp)
 {
     ui->setupUi(this);
-
     QPainterPath path;
     path.addRoundedRect(ui->map->rect(), 10, 10);
     ui->map->setMask(QRegion(path.toFillPolygon().toPolygon()));
@@ -71,6 +73,12 @@ MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget
 
     ui->box_languages->addItem("Polish", "pl");
     ui->box_languages->addItem("English", "en");
+    ui->box_languages->setStyle(QStyleFactory::create("Fusion"));
+
+    QTimer *timer = new QTimer(this);
+    timer->setInterval(1000);
+    connect(timer, SIGNAL(timeout()), this, SLOT(timerSlot()));
+    timer->start();
 }
 
 MainWindow::~MainWindow()
@@ -80,7 +88,7 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::SerialPortConnected() const {
-    ui->label_serial_port_name->setText(QString::fromStdString(serialPortManager.getOpenSerialPort()));
+    ui->label_serial_port_name->setText(QString::fromStdString(serialPort->getOpenSerialPort()));
     ui->label_connection_status->setText("");
 }
 
@@ -146,16 +154,21 @@ void MainWindow::on_box_languages_currentIndexChanged(int index) {
 
 
 void MainWindow::on_btn_testmode_clicked() {
-    serialPortManager.send("AT+MODE=TEST");
+    serialPort->send("AT+MODE=TEST");
 }
 
 
 void MainWindow::on_btn_configuration_clicked() {
-    serialPortManager.send("AT+TEST=RFCFG,868,SF12,125,12,15,14,ON,OFF,OFF\r\n");
+    serialPort->send("AT+TEST=RFCFG,868,SF12,125,12,15,14,ON,OFF,OFF\r\n");
 }
 
 
 void MainWindow::on_btn_rx_mode_clicked() {
-    serialPortManager.send("AT+TEST=RXLRPKT");
+    serialPort->send("AT+TEST=RXLRPKT");
 }
 
+void MainWindow::timerSlot() {
+    if (*serialPort == ISerialPort::SERIAL_PORT_OPENED) {
+        std::cout << "OPEN PORT SIM READ" << std::endl;
+    }
+}

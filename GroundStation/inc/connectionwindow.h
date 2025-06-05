@@ -19,7 +19,7 @@ class ConnectionWindow : public QDialog
     ISerialPort *serialPort;
     UARTParser parser;
 public:
-    explicit ConnectionWindow(QWidget *parent = nullptr);
+    explicit ConnectionWindow(ISerialPort *port, QWidget *parent = nullptr);
     ~ConnectionWindow();
 
     signals:

@@ -6,7 +6,7 @@
 #include <QLabel>
 #include <QTranslator>
 
-#include "UnixSerialPortManager.h"
+#include "ISerialPort.h"
 #include "connectionwindow.h"
 
 namespace Ui {
@@ -51,12 +51,14 @@ private slots:
 
     void on_btn_rx_mode_clicked();
 
+    void timerSlot();
+
 private:
     Ui::MainWindow *ui;
     std::vector <QPushButton *> sidebarButtons;
     std::vector <QLabel *> sidebarButtonLabels;
     QButtonGroup *sidebarButtonsGroup;
-    UnixSerialPortManager serialPortManager;
+    ISerialPort *serialPort;
     ConnectionWindow window;
     QTranslator *translator;
     QApplication *application;
