@@ -8,6 +8,7 @@
 #include <QPainterPath>
 #include <QButtonGroup>
 #include <vector>
+#include <QStyleFactory>
 
 QString sidebarButtonStyle = R"(
     QPushButton {
@@ -27,7 +28,7 @@ QString sidebarTextStyleUnselected = R"(color: rgb(0,0,0); font-weight: normal;)
 MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow),
-    window (serialPortManager),
+    window (),
     translator(ptrTranslator),
     application(ptrApp)
 {

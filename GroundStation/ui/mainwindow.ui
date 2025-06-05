@@ -612,7 +612,7 @@ QPushButton:hover {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="page_map">
      <widget class="QWebEngineView" name="map" native="true">
@@ -636,7 +636,7 @@ QPushButton:hover {
     <widget class="QWidget" name="page_info"/>
     <widget class="QWidget" name="page_graph"/>
     <widget class="QWidget" name="page_config">
-     <widget class="QPushButton" name="btn_test2">
+     <widget class="QPushButton" name="btn_testmode">
       <property name="geometry">
        <rect>
         <x>280</x>
@@ -652,13 +652,13 @@ QPushButton:hover {
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-    background-color: #5C2D91; 
-    color: white;
+    background-color: rgba(92, 45, 145, 0.16);
+    color: #5C2D91;
     border: none;
    border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
     border-top-right-radius: 4px;
-    border-bottom-right-radius: 15px;
+    border-bottom-right-radius: 4px;
     padding: 8px 16px;
 }
 
@@ -703,18 +703,321 @@ QPushButton:hover {
        <string>PushButton</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="btn_rx_mode">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>100</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: rgba(92, 45, 145, 0.16);
+    color: #5C2D91;
+    border: none;
+   border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 8px 16px;
+}
+
+QPushButton:hover {
+	background-color: #f5f1fb;
+	color: #5C2D91;
+	border: 2px solid #5C2D91;
+}</string>
+      </property>
+      <property name="text">
+       <string>RX mode</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_configuration">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>100</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: rgba(92, 45, 145, 0.16);
+    color: #5C2D91;
+    border: none;
+   border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 8px 16px;
+}
+
+QPushButton:hover {
+	background-color: #f5f1fb;
+	color: #5C2D91;
+	border: 2px solid #5C2D91;
+}</string>
+      </property>
+      <property name="text">
+       <string>Send Config</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_about"/>
     <widget class="QWidget" name="page_settings">
-     <widget class="QComboBox" name="box_languages">
+     <widget class="QWidget" name="horizontalLayoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>100</y>
-        <width>111</width>
-        <height>32</height>
+        <x>190</x>
+        <y>40</y>
+        <width>641</width>
+        <height>491</height>
        </rect>
       </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>80</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="rightMargin">
+            <number>10</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_lang">
+             <property name="font">
+              <font>
+               <family>Proximus</family>
+               <pointsize>20</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Language</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QComboBox" name="box_languages">
+             <property name="font">
+              <font>
+               <family>Proximus</family>
+               <pointsize>-1</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QComboBox {
+        background-color: #ffffff;
+        color: #5C2D91;
+        padding: 5px 2px;
+        border: none;
+        font-size: 20px;
+    }
+    QComboBox::drop-down {
+        subcontrol-origin: padding;
+        subcontrol-position: top right;
+        width: 45px;
+        border-left: none;
+    }
+    QComboBox::down-arrow {
+        image: url(:/Images/dropdown_arrow.svg);  
+        width: 25px;
+        height: 25px;
+    }
+    QComboBox QAbstractItemView {
+		color: #000000;
+		font-weight: normal;
+		selection-color: #000000;
+   		padding: 4px;
+    		margin: 2px;
+    }</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_7"/>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5"/>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4"/>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <property name="leftMargin">
+              <number>10</number>
+             </property>
+             <property name="rightMargin">
+              <number>10</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label_theme">
+               <property name="font">
+                <font>
+                 <family>Proximus</family>
+                 <pointsize>20</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Theme</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_5">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QComboBox" name="boz_theme">
+               <property name="font">
+                <font>
+                 <pointsize>-1</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QComboBox {
+        background-color: #ffffff;
+        color: #5C2D91;
+        padding: 5px 10px;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        font-size: 15px;
+    }
+    QComboBox::drop-down {
+        subcontrol-origin: padding;
+        subcontrol-position: top right;
+        width: 25px;
+        border-left: 1px solid #cccccc;
+    }
+    QComboBox::down-arrow {
+        image: url(:/Images/dropdown_arrow.svg);  
+        width: 25px;
+        height: 25px;
+    }
+    QComboBox QAbstractItemView {
+		background-color: #ffffff;
+		selection-background-color: #d0d0d0;
+		selection-color: #000000;
+		border: none;
+		border-radius: 8px;
+   		padding: 4px;
+    		margin: 2px;
+    }</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Light</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Dark</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_12"/>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_11"/>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_10"/>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_9"/>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
      </widget>
     </widget>
    </widget>

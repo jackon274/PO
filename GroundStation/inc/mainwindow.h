@@ -6,7 +6,7 @@
 #include <QLabel>
 #include <QTranslator>
 
-#include "SerialPortManager.h"
+#include "UnixSerialPortManager.h"
 #include "connectionwindow.h"
 
 namespace Ui {
@@ -56,7 +56,7 @@ private:
     std::vector <QPushButton *> sidebarButtons;
     std::vector <QLabel *> sidebarButtonLabels;
     QButtonGroup *sidebarButtonsGroup;
-    SerialPortManager serialPortManager;
+    UnixSerialPortManager serialPortManager;
     ConnectionWindow window;
     QTranslator *translator;
     QApplication *application;
