@@ -202,45 +202,9 @@ std::vector <uint8_t> UnixSerialPortManager::receive() {
     return buffer;
 }
 
-
-
 #endif
 
 
-
-
-
-#ifdef _WIN32
-#include <windows.h>
-std::vector<SerialPort *> serialPorts;
-bool isPortAvailable(const std::string& portName) {
-    HANDLE hComm = CreateFileA(portName.c_str(),
-                               GENERIC_READ | GENERIC_WRITE,
-                               0,
-                               NULL,
-                               OPEN_EXISTING,
-                               0,
-                               NULL);
-    if (hComm != INVALID_HANDLE_VALUE) {
-        CloseHandle(hComm);
-        return true;
-    } else {
-        return false;
-    }
-}
-
-void SerialPortManager::checkAvailableSerialPorts() {
-    for (int i = 1; i <= 256; ++i) {
-        std::string portName = "\\\\.\\COM" + std::to_string(i);
-        if (isPortAvailable(portName)) {
-            serialPorts.push_back(new SerialPort(portName, ("COM" + std::to_string(i) ) ) );
-        }
-    }
-    for(auto  port:availableSerialPorts)
-        delete port;
-    availableSerialPorts = serialPorts;
-}
-#endif
 bool UnixSerialPortManager::operator==(SerialPortState state) const {
     switch(state) {
         case SERIAL_PORT_OPENED:
