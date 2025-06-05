@@ -169,6 +169,7 @@ void MainWindow::on_btn_rx_mode_clicked() {
 
 void MainWindow::timerSlot() {
     if (*serialPort == ISerialPort::SERIAL_PORT_OPENED) {
-        std::cout << "OPEN PORT SIM READ" << std::endl;
+        std::vector<uint8_t> data = serialPort->receive();
+        parser.parseLine(data);
     }
 }

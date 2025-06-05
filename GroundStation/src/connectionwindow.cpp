@@ -67,7 +67,5 @@ void ConnectionWindow::on_btn_disconnect_clicked() {
 
 
 void ConnectionWindow::on_btn_read_clicked() {
-    std::vector<uint8_t> data = serialPort->receive();
 
-    parser.parseLine(data);
 }

@@ -62,6 +62,7 @@ private:
     ConnectionWindow window;
     QTranslator *translator;
     QApplication *application;
+    UARTParser parser;
 };
 
 #endif // MAINWINDOW_H
