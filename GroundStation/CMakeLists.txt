@@ -62,6 +62,8 @@ set(PROJECT_SOURCES
         inc/ErrorCode.h
         src/IDataParser.cpp
         inc/IDataParser.h
+        UIStyler.cpp
+        UIStyler.h
 )
 
 
