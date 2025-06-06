@@ -4,7 +4,7 @@
 
 #include "UIStyler.h"
 
-void UIStyler::highlightSelectedButtonLabel(int index) {
+void UIStyler::highlightSelectedButtonLabel(const int index) const {
     for(auto label:sidebarButtonLabels)
         label->setStyleSheet(sidebarTextStyleUnselected);
     sidebarButtonLabels.at(index)->setStyleSheet(sidebarTextStyleSelected);
@@ -13,6 +13,8 @@ void UIStyler::highlightSelectedButtonLabel(int index) {
 UIStyler::UIStyler(Ui::MainWindow *ptrUi) {
     ui = ptrUi;
     sidebarButtonsGroup = new QButtonGroup;
+    materialIconsRoundFont = QFont(QFontDatabase::applicationFontFamilies(materialIconsRoundFontID).at(0));
+    materialIconsRoundFont.setPixelSize(30);
 }
 
 UIStyler::~UIStyler() {
@@ -34,10 +36,11 @@ void UIStyler::applyStyle() {
     sidebarButtonLabels.push_back(ui->label_info);
     sidebarButtonLabels.push_back(ui->label_settings);
 
-    for (auto button:sidebarButtons) {
+    for (auto const &button:sidebarButtons) {
         sidebarButtonsGroup->addButton(button);
         button->setCheckable(true);
         button->setStyleSheet(sidebarButtonStyle);
+        button->setFont(materialIconsRoundFont);
     }
     int startPage = ui->widget_content->currentIndex();
     sidebarButtons.at(startPage)->setChecked(true);

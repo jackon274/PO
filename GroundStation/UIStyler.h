@@ -11,10 +11,11 @@
 
 class UIStyler {
     Ui::MainWindow *ui;
-    int materialFontID = QFontDatabase::addApplicationFont(":/Fonts/MaterialIconsRound.otf");
+    int materialIconsRoundFontID = QFontDatabase::addApplicationFont(":/Fonts/MaterialIconsRound.otf");
     QButtonGroup *sidebarButtonsGroup;
     std::vector <QPushButton *> sidebarButtons;
     std::vector <QLabel *> sidebarButtonLabels;
+    QFont materialIconsRoundFont;
 
     QString sidebarButtonStyle = R"(
     QPushButton { }
@@ -32,7 +33,7 @@ public:
     explicit UIStyler(Ui::MainWindow* ptrUi);
     ~UIStyler();
     void applyStyle();
-    void highlightSelectedButtonLabel(int index);
+    void highlightSelectedButtonLabel(const int index) const;
 };
 
 
