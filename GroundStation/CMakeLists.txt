@@ -60,6 +60,8 @@ set(PROJECT_SOURCES
         inc/ErrorNotifier.h
         inc/AppException.h
         inc/ErrorCode.h
+        src/IDataParser.cpp
+        inc/IDataParser.h
 )
 
 
