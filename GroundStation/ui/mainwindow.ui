@@ -617,7 +617,7 @@ QPushButton:hover {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page_map">
      <widget class="QWebEngineView" name="map" native="true">
@@ -664,7 +664,7 @@ QPushButton:hover {
           <number>15</number>
          </property>
          <item>
-          <widget class="QLabel" name="label_icon_temperature_in">
+          <widget class="QLabel" name="label_temperature_in_icon">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -1008,7 +1008,7 @@ QPushButton:hover {
           <number>15</number>
          </property>
          <item>
-          <widget class="QLabel" name="label_temperature_out_icom">
+          <widget class="QLabel" name="label_temperature_out_icon">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -1697,7 +1697,7 @@ QPushButton:hover {
           <number>10</number>
          </property>
          <item>
-          <widget class="QLabel" name="label_13">
+          <widget class="QLabel" name="label_graph2_icon">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -1716,7 +1716,7 @@ QPushButton:hover {
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_lang_5">
+          <widget class="QLabel" name="label_graph2_text">
            <property name="font">
             <font>
              <family>Proximus</family>
@@ -1742,7 +1742,7 @@ QPushButton:hover {
           </spacer>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox_4"/>
+          <widget class="QComboBox" name="box_graph2"/>
          </item>
         </layout>
        </item>
@@ -1755,7 +1755,7 @@ QPushButton:hover {
           <number>10</number>
          </property>
          <item>
-          <widget class="QLabel" name="label_9">
+          <widget class="QLabel" name="label_theme_icon">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -1774,7 +1774,7 @@ QPushButton:hover {
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_theme">
+          <widget class="QLabel" name="label_theme_text">
            <property name="font">
             <font>
              <family>Proximus</family>
@@ -1800,7 +1800,7 @@ QPushButton:hover {
           </spacer>
          </item>
          <item>
-          <widget class="QComboBox" name="boz_theme">
+          <widget class="QComboBox" name="box_theme">
            <property name="font">
             <font>
              <pointsize>-1</pointsize>
@@ -1860,7 +1860,7 @@ QPushButton:hover {
           <number>10</number>
          </property>
          <item>
-          <widget class="QLabel" name="label_12">
+          <widget class="QLabel" name="label_graph1_icon">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -1879,7 +1879,7 @@ QPushButton:hover {
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_lang_4">
+          <widget class="QLabel" name="label_graph1_text">
            <property name="font">
             <font>
              <family>Proximus</family>
@@ -1905,7 +1905,7 @@ QPushButton:hover {
           </spacer>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox_2"/>
+          <widget class="QComboBox" name="box_graph1"/>
          </item>
         </layout>
        </item>
@@ -1918,7 +1918,7 @@ QPushButton:hover {
           <number>10</number>
          </property>
          <item>
-          <widget class="QLabel" name="label_8">
+          <widget class="QLabel" name="label_languages_icon">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -1937,7 +1937,7 @@ QPushButton:hover {
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_lang">
+          <widget class="QLabel" name="label_languages_text">
            <property name="font">
             <font>
              <family>Proximus</family>
@@ -2010,7 +2010,7 @@ QPushButton:hover {
           <number>10</number>
          </property>
          <item>
-          <widget class="QLabel" name="label_10">
+          <widget class="QLabel" name="label_units_icon">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -2029,7 +2029,7 @@ QPushButton:hover {
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_lang_2">
+          <widget class="QLabel" name="label_units_text">
            <property name="font">
             <font>
              <family>Proximus</family>
@@ -2055,7 +2055,7 @@ QPushButton:hover {
           </spacer>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox">
+          <widget class="QComboBox" name="box_units">
            <property name="styleSheet">
             <string notr="true">QComboBox {
         background-color: #ffffff;
@@ -2110,7 +2110,7 @@ width: 60px;
           <number>10</number>
          </property>
          <item>
-          <widget class="QLabel" name="label_14">
+          <widget class="QLabel" name="label_graph3_icon">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -2129,7 +2129,7 @@ width: 60px;
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_lang_6">
+          <widget class="QLabel" name="label_graph3_text">
            <property name="font">
             <font>
              <family>Proximus</family>
@@ -2155,7 +2155,7 @@ width: 60px;
           </spacer>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox_3"/>
+          <widget class="QComboBox" name="box_graph3"/>
          </item>
         </layout>
        </item>
@@ -2168,7 +2168,7 @@ width: 60px;
           <number>10</number>
          </property>
          <item>
-          <widget class="QLabel" name="label_15">
+          <widget class="QLabel" name="label_graph4_icon">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -2187,7 +2187,7 @@ width: 60px;
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_lang_7">
+          <widget class="QLabel" name="label_graph4_text">
            <property name="font">
             <font>
              <family>Proximus</family>
@@ -2213,7 +2213,7 @@ width: 60px;
           </spacer>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox_5"/>
+          <widget class="QComboBox" name="box_graph4"/>
          </item>
         </layout>
        </item>

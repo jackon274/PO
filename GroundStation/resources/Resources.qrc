@@ -8,5 +8,6 @@
     </qresource>
     <qresource prefix="/Fonts">
         <file>MaterialIconsRound.otf</file>
+        <file>Proximus-Regular.ttf</file>
     </qresource>
 </RCC>

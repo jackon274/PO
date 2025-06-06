@@ -12,10 +12,20 @@
 class UIStyler {
     Ui::MainWindow *ui;
     int materialIconsRoundFontID = QFontDatabase::addApplicationFont(":/Fonts/MaterialIconsRound.otf");
+    int proximusRegularFontID = QFontDatabase::addApplicationFont(":/Fonts/Proximus-Regular.ttf");
+
     QButtonGroup *sidebarButtonsGroup;
     std::vector <QPushButton *> sidebarButtons;
     std::vector <QLabel *> sidebarButtonLabels;
+    std::vector <QLabel *> settingsLabels;
+    std::vector <QLabel *> statsLabelsText;
+    std::vector <QLabel *> statsLabelsValue;
+    std::vector <QLabel *> statsLabelsIcon;
+    std::vector <QLabel *> statsLabelsUnits;
+    std::vector <QLabel *> settingsLabelsText;
+    std::vector <QLabel *> settingsLabelsIcon;
     QFont materialIconsRoundFont;
+    QFont proximusRegularFont;
 
     QString sidebarButtonStyle = R"(
     QPushButton { }
