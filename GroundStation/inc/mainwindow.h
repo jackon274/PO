@@ -5,7 +5,7 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QTranslator>
-
+#include "../UIStyler.h"
 #include "ISerialPort.h"
 #include "connectionwindow.h"
 
@@ -24,8 +24,6 @@ public:
 private slots:
 
     void SerialPortConnected() const;
-
-    void highlightSelectedButtonLabel(int index);
 
     void on_btn_connect_clicked();
 
@@ -55,9 +53,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    std::vector <QPushButton *> sidebarButtons;
-    std::vector <QLabel *> sidebarButtonLabels;
-    QButtonGroup *sidebarButtonsGroup;
+    UIStyler styler;
     ISerialPort *serialPort;
     ConnectionWindow window;
     QTranslator *translator;
