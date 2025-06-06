@@ -71,8 +71,8 @@ MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget
     highlightSelectedButtonLabel(startPage);
     ui->label_connection_status->setText("");
 
-    ui->box_languages->addItem("Polish", "pl");
-    ui->box_languages->addItem("English", "en");
+    ui->box_languages->addItem(tr("Polish"), "pl");
+    ui->box_languages->addItem(tr("English"), "en");
     ui->box_languages->setStyle(QStyleFactory::create("Fusion"));
 
     QTimer *timer = new QTimer(this);
@@ -145,7 +145,7 @@ void MainWindow::on_box_languages_currentIndexChanged(int index) {
         ui->retranslateUi(this);
     }
     if (langCode == "pl") {
-        translator->load(":/Translations/GS_pl_PL.qm");
+        translator->load(":/Translations/GroundStation_pl_PL.qm");
         application->installTranslator(translator);
         ui->retranslateUi(this);
     }

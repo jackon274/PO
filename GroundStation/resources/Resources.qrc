@@ -4,7 +4,7 @@
         <file>dropdown_arrow.svg</file>
     </qresource>
     <qresource prefix="/Translations">
-        <file>GS_pl_PL.qm</file>
+        <file>GroundStation_pl_PL.qm</file>
     </qresource>
     <qresource prefix="/Fonts">
         <file>MaterialIconsRound.otf</file>
