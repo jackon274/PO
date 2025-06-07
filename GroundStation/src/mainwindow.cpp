@@ -1,19 +1,14 @@
 #include "mainwindow.h"
-
 #include <iostream>
-#include <QGraphicsDropShadowEffect>
 #include "Map.h"
 #include "ui_mainwindow.h"
 #include "connectionwindow.h"
-#include <QPainterPath>
-#include <QButtonGroup>
 #include <vector>
-#include <QStyleFactory>
 #include <QTimer>
 #include "SerialPortCreator.h"
 #include "PlotWidgetController.h"
 #include "DataType.h"
-#include "DataSeries.h"
+
 
 MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget *parent)
     : QMainWindow(parent)
