@@ -14,7 +14,6 @@
 #include "PlotWidgetController.h"
 #include "DataType.h"
 #include "DataSeries.h"
-#include "GraphManager.h"
 
 MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget *parent)
     : QMainWindow(parent)
@@ -29,9 +28,11 @@ MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget
     Map map(ui->map);
 
     connect (&window, &ConnectionWindow::signalSerialPortConnected, this, &MainWindow::SerialPortConnected);
-    GraphManager manager;
-    manager.addPlotWidgetController(ui->widget_graph1, ui->label_title_graph1, TEMPERATURE_IN);
-    manager.addPlotWidgetController(ui->widget_graph3, ui->label_title_graph2, HUMIDITY);
+    manager.addPlotWidgetController(ui->widget_graph1, ui->label_title_graph1, ui->box_graph1->currentData().value<DataType>());
+    manager.addPlotWidgetController(ui->widget_graph2, ui->label_title_graph2, ui->box_graph2->currentData().value<DataType>());
+    manager.addPlotWidgetController(ui->widget_graph3, ui->label_title_graph3, ui->box_graph3->currentData().value<DataType>());
+    manager.addPlotWidgetController(ui->widget_graph4, ui->label_title_graph4, ui->box_graph4->currentData().value<DataType>());
+
     QTimer *timer = new QTimer(this);
     timer->setInterval(1000);
     connect(timer, SIGNAL(timeout()), this, SLOT(timerSlot()));
@@ -123,3 +124,20 @@ void MainWindow::timerSlot() {
         parser.parseLine(data);
     }
 }
+
+void MainWindow::on_box_graph1_currentIndexChanged(int index) {
+    manager.updatePlotWidgetController(0, ui->box_graph1->currentData().value<DataType>());
+}
+
+void MainWindow::on_box_graph2_activated(int index) {
+    manager.updatePlotWidgetController(1, ui->box_graph2->currentData().value<DataType>());
+}
+
+void MainWindow::on_box_graph3_activated(int index) {
+    manager.updatePlotWidgetController(2, ui->box_graph3->currentData().value<DataType>());
+}
+
+void MainWindow::on_box_graph4_activated(int index) {
+    manager.updatePlotWidgetController(3, ui->box_graph4->currentData().value<DataType>());
+}
+

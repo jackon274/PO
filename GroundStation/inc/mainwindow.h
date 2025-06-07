@@ -8,6 +8,8 @@
 #include "UIStyler.h"
 #include "ISerialPort.h"
 #include "connectionwindow.h"
+#include "PlotWidgetController.h"
+#include "GraphManager.h"
 
 namespace Ui {
 class MainWindow;
@@ -51,6 +53,14 @@ private slots:
 
     void timerSlot();
 
+    void on_box_graph1_currentIndexChanged(int index);
+
+    void on_box_graph2_activated(int index);
+
+    void on_box_graph3_activated(int index);
+
+    void on_box_graph4_activated(int index);
+
 private:
     Ui::MainWindow *ui;
     UIStyler styler;
@@ -59,6 +69,7 @@ private:
     QTranslator *translator;
     QApplication *application;
     UARTParser parser;
+    GraphManager manager;
 };
 
 #endif // MAINWINDOW_H

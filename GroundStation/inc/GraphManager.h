@@ -11,13 +11,15 @@
 #include "PlotWidgetController.h"
 
 class GraphManager {
-    std::map <DataType, DataSeries*> dataSeries;
+    std::unordered_map <DataType, DataSeries*> dataSeries;
     /*std::vector <PlotWidgetController> plotWidgetControllers;
     std::vector <QCustomPlot*> plots;*/
     std::unordered_map <PlotWidgetController*, DataType> controllersTypes;
+    std::vector <PlotWidgetController*> plotWidgetControllerPointers;
     public:
       GraphManager();
     void addPlotWidgetController(QCustomPlot *ptrPlot, QLabel *ptrLabel, DataType type);
+    void updatePlotWidgetController(int index, DataType type);
 };
 
 

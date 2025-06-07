@@ -3,7 +3,7 @@
 //
 
 #include "GraphManager.h"
-
+#include <iostream>
 GraphManager::GraphManager() {
     dataSeries.insert({TEMPERATURE_IN, new DataSeries(TEMPERATURE_IN)});
     dataSeries.insert({TEMPERATURE_OUT, new DataSeries(TEMPERATURE_OUT)});
@@ -13,5 +13,15 @@ GraphManager::GraphManager() {
 }
 
 void GraphManager::addPlotWidgetController(QCustomPlot *ptrPlot, QLabel *ptrLabel, DataType type) {
-    controllersTypes.insert({new PlotWidgetController(ptrPlot, dataSeries.at(type), ptrLabel), type});
+    PlotWidgetController* ptrPlotWidgetController = new PlotWidgetController(ptrPlot, dataSeries.at(type), ptrLabel);
+    controllersTypes.insert({ptrPlotWidgetController, type});
+    plotWidgetControllerPointers.push_back(ptrPlotWidgetController);
+}
+
+void GraphManager::updatePlotWidgetController(int index, DataType type) {
+    if(index >= plotWidgetControllerPointers.size()) {
+        std::cout << "RETURN!";
+        return;
+    }
+    plotWidgetControllerPointers.at(index)->updateDataSeries(dataSeries.at(type));
 }

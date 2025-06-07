@@ -617,7 +617,7 @@ QPushButton:hover {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page_map">
      <widget class="QWebEngineView" name="map" native="true">
@@ -1418,14 +1418,14 @@ QPushButton:hover {
           </widget>
          </item>
          <item>
-          <widget class="QCustomPlot" name="widget_graph_2" native="true"/>
+          <widget class="QCustomPlot" name="widget_graph2" native="true"/>
          </item>
         </layout>
        </item>
        <item row="1" column="1">
         <layout class="QVBoxLayout" name="verticalLayout_8">
          <item>
-          <widget class="QLabel" name="label_graph4">
+          <widget class="QLabel" name="label_title_graph4">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
              <horstretch>0</horstretch>

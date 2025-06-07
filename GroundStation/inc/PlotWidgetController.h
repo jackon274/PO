@@ -20,6 +20,7 @@ QLabel *titleLabel = nullptr;
 
 public:
     PlotWidgetController(QCustomPlot *ptrPlot, DataSeries *ptrSeries, QLabel *ptrLabel);
+    void updateDataSeries(DataSeries *series);
 };
 
 
