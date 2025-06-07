@@ -14,6 +14,7 @@
 #include "PlotWidgetController.h"
 #include "DataType.h"
 #include "DataSeries.h"
+#include "GraphManager.h"
 
 MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget *parent)
     : QMainWindow(parent)
@@ -28,8 +29,9 @@ MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget
     Map map(ui->map);
 
     connect (&window, &ConnectionWindow::signalSerialPortConnected, this, &MainWindow::SerialPortConnected);
-    DataSeries series1 (TEMPERATURE_IN);
-    PlotWidgetController(ui->widget_graph1, &series1, ui->label_title_graph1);
+    GraphManager manager;
+    manager.addPlotWidgetController(ui->widget_graph1, ui->label_title_graph1, TEMPERATURE_IN);
+    manager.addPlotWidgetController(ui->widget_graph3, ui->label_title_graph2, HUMIDITY);
     QTimer *timer = new QTimer(this);
     timer->setInterval(1000);
     connect(timer, SIGNAL(timeout()), this, SLOT(timerSlot()));

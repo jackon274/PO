@@ -69,6 +69,8 @@ set(PROJECT_SOURCES
         src/DataSeries.cpp
         inc/DataType.h
         inc/DataSeries.h
+        src/GraphManager.cpp
+        inc/GraphManager.h
 )
 
 

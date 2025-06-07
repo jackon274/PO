@@ -12,4 +12,9 @@ enum DataType {
     HUMIDITY,
     RADIATION
     };
+
+enum UnitSystem {
+    METRIC,
+    IMPERIAL
+};
 #endif //DATATYPE_H
