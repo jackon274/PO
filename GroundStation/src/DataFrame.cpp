@@ -4,42 +4,61 @@
 
 #include "DataFrame.h"
 
-uint32_t DataFrame::get_frame_count() const {
-    return frame_count;
+
+uint32_t DataFrame::getFrameCount() const {
+    return frameCount;
 }
 
-uint32_t DataFrame::get_elapsed_time() const {
-    return elapsed_time;
+uint32_t DataFrame::getElapsedTime() const {
+    return elapsedTime;
 }
 
-float DataFrame::get_longitude() const {
+float DataFrame::getLongitude() const {
     return static_cast <float> (longitude) / (10e7);
 }
 
-float DataFrame::get_latitude() const {
+float DataFrame::getLatitude() const {
     return static_cast <float> (latitude) / (10e7);
 }
 
-float DataFrame::get_altitude_meters() const {
-    return static_cast <float> (height) / 100;
+float DataFrame::getAltitudeMeters() const {
+    return static_cast <float> (altitude) / 100;
 }
 
-float DataFrame::get_temperature_outside_centigrade() const {
-    return static_cast <float> (temperature_outside) / 100;
+float DataFrame::getTemperatureOutsideCentigrade() const {
+    return static_cast <float> (temperatureOutside) / 100;
 }
 
-float DataFrame::get_temperature_inside_centigrade() const {
-    return static_cast <float> (temperature_inside) / 100;
+float DataFrame::getTemperatureInsideCentigrade() const {
+    return static_cast <float> (temperatureInside) / 100;
 }
 
-float DataFrame::get_humidity_percent() const {
-    return static_cast <float> (humidity_percent) / 2;
+float DataFrame::getHumidityPercent() const {
+    return static_cast <float> (relativeHumidity) / 2;
 }
 
-int DataFrame::get_radiation_cpm() const {
-    return radiation_cpm;
+int DataFrame::getRadiationCPM() const {
+    return ionizingRadiationCPM;
 }
 
-int DataFrame::get_checksum() const {
+int DataFrame::getChecksum() const {
     return checksum;
+}
+
+DataFrame::DataFrame() {
+    dataPointers.push_back(&frameCount);
+    dataPointers.push_back(&elapsedTime);
+    dataPointers.push_back(&longitude);
+    dataPointers.push_back(&latitude);
+    dataPointers.push_back(&altitude);
+    dataPointers.push_back(&temperatureOutside);
+    dataPointers.push_back(&temperatureInside);
+    dataPointers.push_back(&relativeHumidity);
+    dataPointers.push_back(&ionizingRadiationCPM);
+    dataPointers.push_back(&flags);
+    dataPointers.push_back(&checksum);
+}
+
+const std::vector<DataFrame::PointerVariant> &DataFrame::getDataPointers() const {
+    return dataPointers;
 }

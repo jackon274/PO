@@ -5,31 +5,38 @@
 #ifndef DATAFRAME_H
 #define DATAFRAME_H
 #include <cstdint>
+#include <variant>
+#include <vector>
 
 
 class DataFrame {
-    uint32_t frame_count;
-    uint32_t elapsed_time;
+    uint32_t frameCount;
+    uint32_t elapsedTime;
     int32_t longitude;
     int32_t latitude;
-    uint32_t height;
-    int16_t temperature_outside;
-    int16_t temperature_inside;
-    uint8_t humidity_percent;
-    uint16_t radiation_cpm;
+    uint32_t altitude;
+    int16_t temperatureOutside;
+    int16_t temperatureInside;
+    uint8_t relativeHumidity;
+    uint16_t ionizingRadiationCPM;
     uint8_t flags;
     uint32_t checksum;
+    using PointerVariant = std::variant<uint8_t*, int16_t*, uint16_t*, int32_t*, uint32_t*>;
+    std::vector <PointerVariant> dataPointers;
     public:
-    uint32_t get_frame_count() const;
-    uint32_t get_elapsed_time() const;
-    float get_longitude() const;
-    float get_latitude() const;
-    float get_altitude_meters() const;
-    float get_temperature_outside_centigrade() const;
-    float get_temperature_inside_centigrade() const;
-    float get_humidity_percent() const;
-    int get_radiation_cpm() const;
-    int get_checksum() const;
+    uint32_t getFrameCount() const;
+    uint32_t getElapsedTime() const;
+    float getLongitude() const;
+    float getLatitude() const;
+    float getAltitudeMeters() const;
+    float getTemperatureOutsideCentigrade() const;
+    float getTemperatureInsideCentigrade() const;
+    float getHumidityPercent() const;
+    int getRadiationCPM() const;
+    int getChecksum() const;
+    DataFrame();
+    const std::vector <PointerVariant> &getDataPointers() const;
+
 };
 
 

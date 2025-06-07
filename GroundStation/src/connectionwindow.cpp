@@ -57,7 +57,7 @@ void ConnectionWindow::on_btn_connect_clicked() {
         ErrorNotifier notifier {e.code()};
         notifier.notify();
     }
-    UARTReceiveTest(static_cast <UnixSerialPortManager &> (*serialPort));
+    UARTConnectionTest(static_cast <UnixSerialPortManager &> (*serialPort));
 }
 
 
@@ -69,5 +69,5 @@ void ConnectionWindow::on_btn_disconnect_clicked() {
 
 
 void ConnectionWindow::on_btn_read_clicked() {
-
+    UARTReceiveTest(static_cast <UnixSerialPortManager &> (*serialPort));
 }
