@@ -4,6 +4,7 @@
 #include <QSystemTrayIcon>
 #include "ErrorNotifier.h"
 #include "AppException.h"
+#include "UARTReceiveTest.h"
 
 ConnectionWindow::ConnectionWindow(ISerialPort *port, QWidget *parent): QDialog(parent)
                                                      , ui(new Ui::ConnectionWindow)
@@ -56,6 +57,7 @@ void ConnectionWindow::on_btn_connect_clicked() {
         ErrorNotifier notifier {e.code()};
         notifier.notify();
     }
+    UARTReceiveTest(static_cast <UnixSerialPortManager &> (*serialPort));
 }
 
 

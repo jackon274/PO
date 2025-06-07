@@ -7,7 +7,7 @@
 
 #include "ISerialPort.h"
 
-#ifdef __APPLE__
+#if defined(__APPLE__) || defined(__linux__)
 #include "UnixSerialPortManager.h"
 #endif
 
@@ -15,7 +15,7 @@
 
 
 ISerialPort* createSerialPort() {
-#ifdef __APPLE__
+#if defined(__APPLE__) || defined(__linux__)
     return new UnixSerialPortManager();
 #endif
 };

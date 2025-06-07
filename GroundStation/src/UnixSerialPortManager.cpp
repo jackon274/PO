@@ -159,27 +159,6 @@ bool UnixSerialPortManager::getSerialPortState() const{
     return true;
 }
 
-
-/*std::vector <uint8_t> SerialPortManager::receive() {
-    if (!openPort) {
-        std::cerr << "Error: openPort is null in uartReceive().\n";
-        return {};
-    }
-    int maxBytes = 256;
-    std::vector <uint8_t> buffer(maxBytes);
-
-    ssize_t bytesRead = read(openPort->serialPortFd, buffer.data(), maxBytes);
-    if (bytesRead < 0) {
-        if (errno != EAGAIN && errno != EWOULDBLOCK) {
-            perror("UART read error");
-        }
-        return {}; // return empty vector on error
-    }
-
-    buffer.resize(bytesRead); // shrink to actual size
-    return buffer;
-}*/
-
 std::vector <uint8_t> UnixSerialPortManager::receive() {
     if (!openPort || !fileUART) {
         std::cerr << "Error" << std::endl;

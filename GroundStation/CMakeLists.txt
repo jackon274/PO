@@ -71,6 +71,8 @@ set(PROJECT_SOURCES
         inc/DataSeries.h
         src/GraphManager.cpp
         inc/GraphManager.h
+        src/tests/UARTReceiveTest.cpp
+        src/tests/UARTReceiveTest.h
 )
 
 
@@ -113,6 +115,7 @@ target_include_directories(GroundStation PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/inc
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         ${CMAKE_CURRENT_SOURCE_DIR}/resources/QCustomPlot
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/tests
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
