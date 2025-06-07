@@ -62,8 +62,13 @@ set(PROJECT_SOURCES
         inc/ErrorCode.h
         src/IDataParser.cpp
         inc/IDataParser.h
-        UIStyler.cpp
-        UIStyler.h
+        src/UIStyler.cpp
+        inc/UIStyler.h
+        src/PlotWidgetController.cpp
+        inc/PlotWidgetController.h
+        src/DataSeries.cpp
+        inc/DataType.h
+        inc/DataSeries.h
 )
 
 

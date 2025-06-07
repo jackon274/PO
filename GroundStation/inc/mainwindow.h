@@ -5,7 +5,7 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QTranslator>
-#include "../UIStyler.h"
+#include "UIStyler.h"
 #include "ISerialPort.h"
 #include "connectionwindow.h"
 

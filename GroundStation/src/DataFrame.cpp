@@ -20,7 +20,7 @@ float DataFrame::get_latitude() const {
     return static_cast <float> (latitude) / (10e7);
 }
 
-float DataFrame::get_height_meters() const {
+float DataFrame::get_altitude_meters() const {
     return static_cast <float> (height) / 100;
 }
 
