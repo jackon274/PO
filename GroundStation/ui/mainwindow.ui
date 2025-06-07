@@ -681,7 +681,7 @@ QPushButton:hover {
             <string notr="true"/>
            </property>
            <property name="text">
-            <string></string>
+            <string notr="true"></string>
            </property>
           </widget>
          </item>
@@ -735,7 +735,7 @@ QPushButton:hover {
             </font>
            </property>
            <property name="text">
-            <string>°C</string>
+            <string notr="true">°C</string>
            </property>
           </widget>
          </item>
@@ -767,7 +767,7 @@ QPushButton:hover {
             <string notr="true"/>
            </property>
            <property name="text">
-            <string></string>
+            <string notr="true"></string>
            </property>
           </widget>
          </item>
@@ -821,7 +821,7 @@ QPushButton:hover {
             </font>
            </property>
            <property name="text">
-            <string>%</string>
+            <string notr="true">%</string>
            </property>
           </widget>
          </item>
@@ -853,7 +853,7 @@ QPushButton:hover {
             <string notr="true"/>
            </property>
            <property name="text">
-            <string></string>
+            <string notr="true"></string>
            </property>
           </widget>
          </item>
@@ -907,7 +907,7 @@ QPushButton:hover {
             </font>
            </property>
            <property name="text">
-            <string>dB</string>
+            <string notr="true">dB</string>
            </property>
           </widget>
          </item>
@@ -939,7 +939,7 @@ QPushButton:hover {
             <string notr="true"/>
            </property>
            <property name="text">
-            <string></string>
+            <string notr="true"></string>
            </property>
           </widget>
          </item>
@@ -993,7 +993,7 @@ QPushButton:hover {
             </font>
            </property>
            <property name="text">
-            <string>dB</string>
+            <string notr="true">dB</string>
            </property>
           </widget>
          </item>
@@ -1025,7 +1025,7 @@ QPushButton:hover {
             <string notr="true"/>
            </property>
            <property name="text">
-            <string></string>
+            <string notr="true"></string>
            </property>
           </widget>
          </item>
@@ -1066,6 +1066,9 @@ QPushButton:hover {
          </item>
          <item>
           <widget class="QLabel" name="label_temperature_out_unit">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -1111,7 +1114,7 @@ QPushButton:hover {
             <string notr="true"/>
            </property>
            <property name="text">
-            <string></string>
+            <string notr="true"></string>
            </property>
           </widget>
          </item>
@@ -1165,7 +1168,7 @@ QPushButton:hover {
             </font>
            </property>
            <property name="text">
-            <string>CPM</string>
+            <string notr="true">CPM</string>
            </property>
           </widget>
          </item>
@@ -1197,7 +1200,7 @@ QPushButton:hover {
             <string notr="true"/>
            </property>
            <property name="text">
-            <string></string>
+            <string notr="true"></string>
            </property>
           </widget>
          </item>
@@ -1238,6 +1241,9 @@ QPushButton:hover {
          </item>
          <item>
           <widget class="QLabel" name="label_time_unit">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -1283,7 +1289,7 @@ QPushButton:hover {
             <string notr="true"/>
            </property>
            <property name="text">
-            <string>landscape</string>
+            <string notr="true">landscape</string>
            </property>
           </widget>
          </item>
@@ -1324,6 +1330,9 @@ QPushButton:hover {
          </item>
          <item>
           <widget class="QLabel" name="label_altitude_unit">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -1360,15 +1369,20 @@ QPushButton:hover {
        <item row="0" column="0">
         <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
-          <widget class="QLabel" name="label_4">
+          <widget class="QLabel" name="label_title_graph1">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="font">
+            <font>
+             <pointsize>18</pointsize>
+            </font>
+           </property>
            <property name="text">
-            <string>TextLabel</string>
+            <string notr="true">TextLabel</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1376,22 +1390,27 @@ QPushButton:hover {
           </widget>
          </item>
          <item>
-          <widget class="QCustomPlot" name="widget" native="true"/>
+          <widget class="QCustomPlot" name="widget_graph1" native="true"/>
          </item>
         </layout>
        </item>
        <item row="0" column="1">
         <layout class="QVBoxLayout" name="verticalLayout_6">
          <item>
-          <widget class="QLabel" name="label_5">
+          <widget class="QLabel" name="label_title_graph2">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="font">
+            <font>
+             <pointsize>18</pointsize>
+            </font>
+           </property>
            <property name="text">
-            <string>TextLabel</string>
+            <string notr="true">TextLabel</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1399,22 +1418,27 @@ QPushButton:hover {
           </widget>
          </item>
          <item>
-          <widget class="QCustomPlot" name="widget_2" native="true"/>
+          <widget class="QCustomPlot" name="widget_graph_2" native="true"/>
          </item>
         </layout>
        </item>
        <item row="1" column="1">
         <layout class="QVBoxLayout" name="verticalLayout_8">
          <item>
-          <widget class="QLabel" name="label_7">
+          <widget class="QLabel" name="label_graph4">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="font">
+            <font>
+             <pointsize>18</pointsize>
+            </font>
+           </property>
            <property name="text">
-            <string>TextLabel</string>
+            <string notr="true">TextLabel</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1422,22 +1446,27 @@ QPushButton:hover {
           </widget>
          </item>
          <item>
-          <widget class="QCustomPlot" name="widget_4" native="true"/>
+          <widget class="QCustomPlot" name="widget_graph4" native="true"/>
          </item>
         </layout>
        </item>
        <item row="1" column="0">
         <layout class="QVBoxLayout" name="verticalLayout_7">
          <item>
-          <widget class="QLabel" name="label_6">
+          <widget class="QLabel" name="label_title_graph3">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="font">
+            <font>
+             <pointsize>18</pointsize>
+            </font>
+           </property>
            <property name="text">
-            <string>TextLabel</string>
+            <string notr="true">TextLabel</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1445,7 +1474,7 @@ QPushButton:hover {
           </widget>
          </item>
          <item>
-          <widget class="QCustomPlot" name="widget_3" native="true"/>
+          <widget class="QCustomPlot" name="widget_graph3" native="true"/>
          </item>
         </layout>
        </item>
@@ -1742,7 +1771,60 @@ QPushButton:hover {
           </spacer>
          </item>
          <item>
-          <widget class="QComboBox" name="box_graph2"/>
+          <widget class="QComboBox" name="box_graph2">
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+        background-color: #ffffff;
+        color: #5C2D91;
+        padding: 5px 2px;
+        border: none;
+        font-size: 15px;
+    }
+    QComboBox::drop-down {
+        subcontrol-origin: padding;
+        subcontrol-position: top right;
+        width: 45px;
+        border-left: none;
+    }
+    QComboBox::down-arrow {
+        image: url(:/Images/dropdown_arrow.svg);  
+        width: 25px;
+        height: 25px;
+    }
+    QComboBox QAbstractItemView {
+		color: #000000;
+		font-weight: normal;
+		selection-color: #000000;
+   		padding: 4px;
+    		margin: 2px;
+    }</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>Temperature in</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Altitude</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Temperature out</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Radiation</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Humidity</string>
+            </property>
+           </item>
+          </widget>
          </item>
         </layout>
        </item>
@@ -1810,17 +1892,15 @@ QPushButton:hover {
             <string notr="true">QComboBox {
         background-color: #ffffff;
         color: #5C2D91;
-        padding: 5px 10px;
-        border: 1px solid #cccccc;
-        border-radius: 4px;
+        padding: 5px 2px;
+        border: none;
         font-size: 15px;
-		width: 60px;
     }
     QComboBox::drop-down {
         subcontrol-origin: padding;
         subcontrol-position: top right;
-        width: 25px;
-        border-left: 1px solid #cccccc;
+        width: 45px;
+        border-left: none;
     }
     QComboBox::down-arrow {
         image: url(:/Images/dropdown_arrow.svg);  
@@ -1828,11 +1908,9 @@ QPushButton:hover {
         height: 25px;
     }
     QComboBox QAbstractItemView {
-		background-color: #ffffff;
-		selection-background-color: #d0d0d0;
+		color: #000000;
+		font-weight: normal;
 		selection-color: #000000;
-		border: none;
-		border-radius: 8px;
    		padding: 4px;
     		margin: 2px;
     }</string>
@@ -1905,7 +1983,60 @@ QPushButton:hover {
           </spacer>
          </item>
          <item>
-          <widget class="QComboBox" name="box_graph1"/>
+          <widget class="QComboBox" name="box_graph1">
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+        background-color: #ffffff;
+        color: #5C2D91;
+        padding: 5px 2px;
+        border: none;
+        font-size: 15px;
+    }
+    QComboBox::drop-down {
+        subcontrol-origin: padding;
+        subcontrol-position: top right;
+        width: 45px;
+        border-left: none;
+    }
+    QComboBox::down-arrow {
+        image: url(:/Images/dropdown_arrow.svg);  
+        width: 25px;
+        height: 25px;
+    }
+    QComboBox QAbstractItemView {
+		color: #000000;
+		font-weight: normal;
+		selection-color: #000000;
+   		padding: 4px;
+    		margin: 2px;
+    }</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>Altitude</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Temperature in</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Temperature out</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Radiation</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Humidity</string>
+            </property>
+           </item>
+          </widget>
          </item>
         </layout>
        </item>
@@ -1966,7 +2097,7 @@ QPushButton:hover {
           <widget class="QComboBox" name="box_languages">
            <property name="font">
             <font>
-             <family>Proximus</family>
+             <family>.AppleSystemUIFont</family>
              <pointsize>-1</pointsize>
             </font>
            </property>
@@ -1976,7 +2107,7 @@ QPushButton:hover {
         color: #5C2D91;
         padding: 5px 2px;
         border: none;
-        font-size: 20px;
+        font-size: 15px;
     }
     QComboBox::drop-down {
         subcontrol-origin: padding;
@@ -2060,29 +2191,25 @@ QPushButton:hover {
             <string notr="true">QComboBox {
         background-color: #ffffff;
         color: #5C2D91;
-        padding: 5px 10px;
-        border: 1px solid #cccccc;
-        border-radius: 4px;
+        padding: 5px 2px;
+        border: none;
         font-size: 15px;
-width: 60px;
     }
     QComboBox::drop-down {
         subcontrol-origin: padding;
         subcontrol-position: top right;
-        width: 25px;
-        border-left: 1px solid #cccccc;
+        width: 45px;
+        border-left: none;
     }
     QComboBox::down-arrow {
         image: url(:/Images/dropdown_arrow.svg);  
-        width: 35px;
+        width: 25px;
         height: 25px;
     }
     QComboBox QAbstractItemView {
-		background-color: #ffffff;
-		selection-background-color: #d0d0d0;
+		color: #000000;
+		font-weight: normal;
 		selection-color: #000000;
-		border: none;
-		border-radius: 8px;
    		padding: 4px;
     		margin: 2px;
     }</string>
@@ -2155,7 +2282,60 @@ width: 60px;
           </spacer>
          </item>
          <item>
-          <widget class="QComboBox" name="box_graph3"/>
+          <widget class="QComboBox" name="box_graph3">
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+        background-color: #ffffff;
+        color: #5C2D91;
+        padding: 5px 2px;
+        border: none;
+        font-size: 15px;
+    }
+    QComboBox::drop-down {
+        subcontrol-origin: padding;
+        subcontrol-position: top right;
+        width: 45px;
+        border-left: none;
+    }
+    QComboBox::down-arrow {
+        image: url(:/Images/dropdown_arrow.svg);  
+        width: 25px;
+        height: 25px;
+    }
+    QComboBox QAbstractItemView {
+		color: #000000;
+		font-weight: normal;
+		selection-color: #000000;
+   		padding: 4px;
+    		margin: 2px;
+    }</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>Radiation</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Altitude</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Temperature in</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Temperature out</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Humidity</string>
+            </property>
+           </item>
+          </widget>
          </item>
         </layout>
        </item>
@@ -2213,7 +2393,60 @@ width: 60px;
           </spacer>
          </item>
          <item>
-          <widget class="QComboBox" name="box_graph4"/>
+          <widget class="QComboBox" name="box_graph4">
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+        background-color: #ffffff;
+        color: #5C2D91;
+        padding: 5px 2px;
+        border: none;
+        font-size: 15px;
+    }
+    QComboBox::drop-down {
+        subcontrol-origin: padding;
+        subcontrol-position: top right;
+        width: 45px;
+        border-left: none;
+    }
+    QComboBox::down-arrow {
+        image: url(:/Images/dropdown_arrow.svg);  
+        width: 25px;
+        height: 25px;
+    }
+    QComboBox QAbstractItemView {
+		color: #000000;
+		font-weight: normal;
+		selection-color: #000000;
+   		padding: 4px;
+    		margin: 2px;
+    }</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>Humidity</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Altitude</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Temperature in</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Temperature out</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Radiation</string>
+            </property>
+           </item>
+          </widget>
          </item>
         </layout>
        </item>
