@@ -29,7 +29,7 @@ MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget
     manager.addPlotWidgetController(ui->widget_graph4, ui->label_title_graph4, ui->box_graph4->currentData().value<DataType>());
 
     QTimer *timer = new QTimer(this);
-    timer->setInterval(1000);
+    timer->setInterval(5000);
     connect(timer, SIGNAL(timeout()), this, SLOT(timerSlot()));
     timer->start();
 }
@@ -115,8 +115,15 @@ void MainWindow::on_btn_rx_mode_clicked() {
 
 void MainWindow::timerSlot() {
     if (*serialPort == ISerialPort::SERIAL_PORT_OPENED) {
-        std::vector<uint8_t> data = serialPort->receive();
-        parser.parseLine(data);
+        std::vector <uint8_t> data = serialPort->receive();
+        if (data.size() > 0) {
+            std::vector <char> dataChar;
+            for (auto a : data) {
+                dataChar.push_back(static_cast <char> (a));
+            }
+            fmt::println("{}", dataChar);
+            parser.parseLine(data);
+        }
     }
 }
 

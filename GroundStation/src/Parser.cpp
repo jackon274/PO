@@ -20,18 +20,20 @@ void UARTParser::parseLine(std::vector <uint8_t> &receivedData) {
                 lines.push_back(line);
             }
         }
-
     }
 
     for (auto &a:lines) {
         if(a.substr(0, 5) == "+TEST") {
             linesTest.push_back(a.substr(7));
+            fmt::println("Linia TEST: {}", linesTest);
         }
         else if(a.substr(0, 5) == "+LOG:") {
             linesLog.push_back(a.substr(6));
+            fmt::println("Linia LOG: {}", linesLog);
         }
         else if(a.substr(0, 5) == "+INFO") {
             linesInfo.push_back(a.substr(7));
+            fmt::println("Linia INFO: {}", linesInfo);
         }
     }
 
@@ -43,10 +45,12 @@ void UARTParser::parseLine(std::vector <uint8_t> &receivedData) {
             std::string key, value;
 
             if(a.substr(0, a.find('"')) == "RX ") {
-                key = "RX";
                 size_t dataFrameBegin = a.find('"') + 1;
                 size_t dataFrameEnd = a.rfind('"');
                 value = a.substr(dataFrameBegin, dataFrameEnd - dataFrameBegin);
+                a = a.substr(separator2 + 2);
+                dfParser.parseString(value);
+                continue;
             }
             else {
                 key = a.substr(0, separator1);
@@ -58,10 +62,12 @@ void UARTParser::parseLine(std::vector <uint8_t> &receivedData) {
             if (key.size() > 6)
                 break;
 
-            parameters.at(key) = stoi(value);
-            //std::cout << "KEY: " << key;
-            //std::cout << ",  VALUE: " << value;
-            //debug only
+            try {
+                parameters.at(key) = stoi(value);
+            } catch (std::out_of_range e) {
+                fmt::println("RXLRPKT: invalid key '{}'", key);
+            }
+
 
             for(auto [key, val] : parameters) {
                 std::cout << "KEY: " << key;
@@ -75,5 +81,7 @@ void UARTParser::parseLine(std::vector <uint8_t> &receivedData) {
             a = a.substr(separator2 + 2);
         }
     }
-
+    linesTest.clear();
+    linesLog.clear();
+    linesInfo.clear();
 }

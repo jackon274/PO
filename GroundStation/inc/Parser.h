@@ -13,12 +13,15 @@
 #include <fmt/ranges.h>
 #include <fmt/std.h>
 
+#include "../DataFrameParser.h"
+
 
 class UARTParser {
     std::vector <std::string> linesTest;
     std::vector <std::string> linesLog;
     std::vector <std::string> linesInfo;
-    std::map <std::string, int> parameters { {"LEN", 0}, {"RSSI", 0}, {"SNR", 0}, {"RX", 0} };
+    std::map <std::string, int> parameters { {"LEN", 0}, {"RSSI", 0}, {"SNR", 0} };
+    DataFrameParser dfParser;
     public:
     void parseLine(std::vector<uint8_t> &receivedData);
 };
