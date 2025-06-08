@@ -34,6 +34,27 @@ void PlotWidgetController::updateDataSeries(DataSeries *series) {
 
     plot->addGraph();
     titleLabel->setText(QString::fromStdString(title));
-    plot->graph(0)->setData(currentSeries->getData(), currentSeries->getTime());
+    plot->graph(0)->setData(currentSeries->getTime(), currentSeries->getData());
+    adjustAxes();
     plot->replot();
+}
+
+void PlotWidgetController::adjustAxes() {
+    double yValueMin, yValueMax, xValueMin, xValueMax;
+    auto yValueMaxPtr = std::max_element(currentSeries->getData().begin(), currentSeries->getData().end());
+    auto yValueMinPtr = std::min_element(currentSeries->getData().begin(), currentSeries->getData().end());
+    if(yValueMaxPtr != nullptr && yValueMinPtr != nullptr) {
+        yValueMax = *yValueMaxPtr;
+        yValueMin = *yValueMinPtr;
+        plot->yAxis->setRange(yValueMin, yValueMax);
+    }
+
+    auto xValueMaxPtr = std::max_element(currentSeries->getTime().begin(), currentSeries->getTime().end());
+    auto xValueMinPtr = std::min_element(currentSeries->getTime().begin(), currentSeries->getTime().end());
+    if(yValueMaxPtr != nullptr && yValueMinPtr != nullptr) {
+        xValueMax = *xValueMaxPtr;
+        xValueMin = *xValueMinPtr;
+        plot->xAxis->setRange(xValueMin, xValueMax);
+    }
+
 }
