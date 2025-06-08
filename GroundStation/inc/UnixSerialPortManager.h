@@ -21,7 +21,7 @@ public:
     bool getSerialPortState() const override;
 
     bool operator== (SerialPortState state) const override;
-    friend void UARTReceiveTest(UnixSerialPortManager &serialPortManager);
+    friend void UARTConnectionTest(UnixSerialPortManager &serialPortManager);
 
     UnixSerialPortManager();
     ~UnixSerialPortManager();

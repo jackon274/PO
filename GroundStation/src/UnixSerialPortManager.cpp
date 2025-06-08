@@ -169,7 +169,7 @@ std::vector <uint8_t> UnixSerialPortManager::receive() {
 
     if (bytesRead == 0) {
         if (feof(fileUART)) {
-            std::cerr << "EOF reached on UART stream\n";
+            //std::cerr << "EOF reached on UART stream\n";
             clearerr(fileUART);
         } else if (ferror(fileUART)) {
             perror("UART fread error");

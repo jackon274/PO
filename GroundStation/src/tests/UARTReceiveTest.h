@@ -6,6 +6,7 @@
 #define UARTRECEIVETEST_H
 #include "UnixSerialPortManager.h"
 
+void UARTConnectionTest(UnixSerialPortManager &serialPortManager);
 void UARTReceiveTest(UnixSerialPortManager &serialPortManager);
 
 #endif //UARTRECEIVETEST_H
