@@ -4,6 +4,7 @@
 
 #include "DataSeries.h"
 
+
 void DataSeries::appendData(DataFrame &frame) {
     switch(dataType) {
         case TEMPERATURE_IN:
@@ -21,10 +22,15 @@ void DataSeries::appendData(DataFrame &frame) {
         case RADIATION:
             data.push_back(frame.getRadiationCPM());
     }
+    time.push_back(timeTest++);
 }
 
 const QVector<double> &DataSeries::getData() const {
     return data;
+}
+
+const std::vector<double> & DataSeries::getDataVec() const {
+    return dataVec;
 }
 
 DataSeries::DataSeries(const DataType &type) : dataType(type) {

@@ -13,6 +13,7 @@
 #include <fmt/ranges.h>
 #include <fmt/std.h>
 
+#include "GraphManager.h"
 #include "../DataFrameParser.h"
 
 
@@ -23,7 +24,7 @@ class UARTParser {
     std::map <std::string, int> parameters { {"LEN", 0}, {"RSSI", 0}, {"SNR", 0} };
     DataFrameParser dfParser;
     public:
-    void parseLine(std::vector<uint8_t> &receivedData);
+    void parseLine(std::vector<uint8_t> &receivedData, GraphManager &manager);
 };
 
 #endif //PARSER_H

@@ -5,6 +5,7 @@
 #include "PlotWidgetController.h"
 
 
+
 PlotWidgetController::PlotWidgetController(QCustomPlot *ptrPlot, DataSeries *ptrSeries, QLabel *ptrLabel) {
     plot = ptrPlot;
     titleLabel = ptrLabel;
@@ -40,21 +41,25 @@ void PlotWidgetController::updateDataSeries(DataSeries *series) {
 }
 
 void PlotWidgetController::adjustAxes() {
-    double yValueMin, yValueMax, xValueMin, xValueMax;
+    double yValueMin = 0, yValueMax = 0, xValueMin = 0, xValueMax = 0;
+
     auto yValueMaxPtr = std::max_element(currentSeries->getData().begin(), currentSeries->getData().end());
     auto yValueMinPtr = std::min_element(currentSeries->getData().begin(), currentSeries->getData().end());
-    if(yValueMaxPtr != nullptr && yValueMinPtr != nullptr) {
+    if (yValueMaxPtr != nullptr && yValueMinPtr != nullptr) {
         yValueMax = *yValueMaxPtr;
         yValueMin = *yValueMinPtr;
-        plot->yAxis->setRange(yValueMin, yValueMax);
     }
 
     auto xValueMaxPtr = std::max_element(currentSeries->getTime().begin(), currentSeries->getTime().end());
     auto xValueMinPtr = std::min_element(currentSeries->getTime().begin(), currentSeries->getTime().end());
-    if(yValueMaxPtr != nullptr && yValueMinPtr != nullptr) {
+    if (xValueMaxPtr != nullptr && xValueMinPtr != nullptr) {
         xValueMax = *xValueMaxPtr;
         xValueMin = *xValueMinPtr;
-        plot->xAxis->setRange(xValueMin, xValueMax);
     }
-
+    if( (yValueMin - yValueMax) < 0.1) {
+        yValueMax = 1.1 * yValueMax;
+        yValueMin = 0.9 * yValueMin;
+    }
+    plot->xAxis->setRange(xValueMin, xValueMax);
+    plot->yAxis->setRange(yValueMin, yValueMax);
 }

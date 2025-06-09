@@ -4,6 +4,9 @@
 
 #include "GraphManager.h"
 #include <iostream>
+#include <fmt/ranges.h>
+#include "fmt/base.h"
+
 GraphManager::GraphManager() {
     dataSeries.insert({TEMPERATURE_IN, new DataSeries(TEMPERATURE_IN)});
     dataSeries.insert({TEMPERATURE_OUT, new DataSeries(TEMPERATURE_OUT)});
@@ -24,4 +27,15 @@ void GraphManager::updatePlotWidgetController(int index, DataType type) {
         return;
     }
     plotWidgetControllerPointers.at(index)->updateDataSeries(dataSeries.at(type));
+}
+
+void GraphManager::updateDataSeries(DataFrame &frame) {
+    for (auto a:dataSeries) {
+        fmt::println("Got temp: {}", frame.getTemperatureInsideCentigrade());
+        a.second->appendData(frame);
+        fmt::println("{}", a.second->getData());
+    }
+    for (auto a:plotWidgetControllerPointers) {
+        a->updateDataSeries(dataSeries.at(controllersTypes.at(a)));
+    }
 }

@@ -4,7 +4,7 @@
 
 #include "Parser.h"
 
-void UARTParser::parseLine(std::vector <uint8_t> &receivedData) {
+void UARTParser::parseLine(std::vector <uint8_t> &receivedData, GraphManager &manager) {
     std::vector <std::string> lines;
     std::vector <uint8_t>::iterator lineBegin = receivedData.end();
     std::vector <uint8_t>::iterator lineEnd = receivedData.end();
@@ -44,12 +44,20 @@ void UARTParser::parseLine(std::vector <uint8_t> &receivedData) {
             auto separator2 = a.find(',');
             std::string key, value;
 
+            //TEST ONLY!
+            //std::string testData = "3231332C3436372C3531323535303638302C3232353230303739302C323035313130302C2D333931352C3232312C37352C323030302C312C323133373639";
+            //dfParser.parseString(testData, manager);
+
+
             if(a.substr(0, a.find('"')) == "RX ") {
                 size_t dataFrameBegin = a.find('"') + 1;
                 size_t dataFrameEnd = a.rfind('"');
                 value = a.substr(dataFrameBegin, dataFrameEnd - dataFrameBegin);
                 a = a.substr(separator2 + 2);
-                dfParser.parseString(value);
+                fmt::println("RX Found!");
+                //std::string testData = "3231332C3436372C3531323535303638302C3232353230303739302C323035313130302C2D333931352C3232312C37352C323030302C312C323133373639";
+                dfParser.parseString(value, manager);
+                //dfParser.parseString(testData, manager);
                 continue;
             }
             else {

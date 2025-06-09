@@ -20,6 +20,7 @@ class GraphManager {
       GraphManager();
     void addPlotWidgetController(QCustomPlot *ptrPlot, QLabel *ptrLabel, DataType type);
     void updatePlotWidgetController(int index, DataType type);
+    void updateDataSeries(DataFrame &frame);
 };
 
 
