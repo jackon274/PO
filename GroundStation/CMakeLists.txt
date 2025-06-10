@@ -64,13 +64,13 @@ set(PROJECT_SOURCES
         inc/IDataParser.h
         src/UIStyler.cpp
         inc/UIStyler.h
-        src/PlotWidgetController.cpp
-        inc/PlotWidgetController.h
+        src/PlotWidgetView.cpp
+        inc/PlotWidgetView.h
         src/DataSeries.cpp
         inc/DataType.h
         inc/DataSeries.h
-        src/GraphManager.cpp
-        inc/GraphManager.h
+        src/GraphController.cpp
+        inc/GraphController.h
         src/tests/UARTReceiveTest.cpp
         src/tests/UARTReceiveTest.h
         src/DataFrameParser.cpp

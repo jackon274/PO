@@ -2,17 +2,17 @@
 // Created by Jacek Konderak on 06/06/2025.
 //
 
-#include "PlotWidgetController.h"
+#include "PlotWidgetView.h"
 
 
 
-PlotWidgetController::PlotWidgetController(QCustomPlot *ptrPlot, DataSeries *ptrSeries, QLabel *ptrLabel) {
+PlotWidgetView::PlotWidgetView(QCustomPlot *ptrPlot, DataSeries *ptrSeries, QLabel *ptrLabel) {
     plot = ptrPlot;
     titleLabel = ptrLabel;
     updateDataSeries(ptrSeries);
 }
 
-void PlotWidgetController::updateDataSeries(DataSeries *series) {
+void PlotWidgetView::updateDataSeries(DataSeries *series) {
     currentSeries = series;
 
     switch (currentSeries->getDataType()) {
@@ -40,7 +40,7 @@ void PlotWidgetController::updateDataSeries(DataSeries *series) {
     plot->replot();
 }
 
-void PlotWidgetController::adjustAxes() {
+void PlotWidgetView::adjustAxes() {
     double yValueMin = 0, yValueMax = 0, xValueMin = 0, xValueMax = 0;
 
     auto yValueMaxPtr = std::max_element(currentSeries->getData().begin(), currentSeries->getData().end());

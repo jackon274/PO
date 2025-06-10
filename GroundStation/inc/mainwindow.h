@@ -8,8 +8,8 @@
 #include "UIStyler.h"
 #include "ISerialPort.h"
 #include "connectionwindow.h"
-#include "PlotWidgetController.h"
-#include "GraphManager.h"
+#include "PlotWidgetView.h"
+#include "GraphController.h"
 
 namespace Ui {
 class MainWindow;
@@ -77,7 +77,7 @@ private:
     QTranslator *translator;
     QApplication *application;
     UARTParser parser;
-    GraphManager manager;
+    GraphController manager;
 };
 
 #endif // MAINWINDOW_H

@@ -4,7 +4,7 @@
 
 #include "Parser.h"
 
-void UARTParser::parseLine(std::vector <uint8_t> &receivedData, GraphManager &manager) {
+void UARTParser::parseLine(std::vector <uint8_t> &receivedData, GraphController &manager) {
     std::vector <std::string> lines;
     std::vector <uint8_t>::iterator lineBegin = receivedData.end();
     std::vector <uint8_t>::iterator lineEnd = receivedData.end();

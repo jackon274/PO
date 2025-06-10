@@ -10,16 +10,16 @@
 #include "qcustomplot.h"
 
 
-class PlotWidgetController {
+class PlotWidgetView {
 std::string title;
 std::string xAxisTitle = "t";
 std::string yAxisTitle;
 QCustomPlot *plot = nullptr;
 QLabel *titleLabel = nullptr;
-    DataSeries *currentSeries = nullptr;
+DataSeries *currentSeries = nullptr;
 
 public:
-    PlotWidgetController(QCustomPlot *ptrPlot, DataSeries *ptrSeries, QLabel *ptrLabel);
+    PlotWidgetView(QCustomPlot *ptrPlot, DataSeries *ptrSeries, QLabel *ptrLabel);
     void updateDataSeries(DataSeries *series);
     void adjustAxes();
 
