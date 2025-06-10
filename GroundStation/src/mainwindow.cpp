@@ -23,16 +23,16 @@ MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget
     Map map(ui->map);
 
     connect (&window, &ConnectionWindow::signalSerialPortConnected, this, &MainWindow::SerialPortConnected);
-    manager.addPlotWidgetView(ui->widget_graph1, ui->label_title_graph1, ui->box_graph1->currentData().value<DataType>());
-    manager.addPlotWidgetView(ui->widget_graph2, ui->label_title_graph2, ui->box_graph2->currentData().value<DataType>());
-    manager.addPlotWidgetView(ui->widget_graph3, ui->label_title_graph3, ui->box_graph3->currentData().value<DataType>());
-    manager.addPlotWidgetView(ui->widget_graph4, ui->label_title_graph4, ui->box_graph4->currentData().value<DataType>());
+    controller.addPlotWidgetView(ui->widget_graph1, ui->label_title_graph1, ui->box_graph1->currentData().value<DataType>());
+    controller.addPlotWidgetView(ui->widget_graph2, ui->label_title_graph2, ui->box_graph2->currentData().value<DataType>());
+    controller.addPlotWidgetView(ui->widget_graph3, ui->label_title_graph3, ui->box_graph3->currentData().value<DataType>());
+    controller.addPlotWidgetView(ui->widget_graph4, ui->label_title_graph4, ui->box_graph4->currentData().value<DataType>());
 
-    manager.addDataValueLabelView(TEMPERATURE_IN, ui->label_temperature_in_value, ui->label_temperature_in_unit);
-    manager.addDataValueLabelView(TEMPERATURE_OUT, ui->label_temperature_out_value, ui->label_temperature_out_unit);
-    manager.addDataValueLabelView(HUMIDITY, ui->label_humidity_value, ui->label_humidity_unit);
-    manager.addDataValueLabelView(RADIATION, ui->label_radiation_value, ui->label_radiation_unit);
-    manager.addDataValueLabelView(ALTITUDE, ui->label_altitude_value, ui->label_altitude_unit);
+    controller.addDataValueLabelView(TEMPERATURE_IN, ui->label_temperature_in_value, ui->label_temperature_in_unit);
+    controller.addDataValueLabelView(TEMPERATURE_OUT, ui->label_temperature_out_value, ui->label_temperature_out_unit);
+    controller.addDataValueLabelView(HUMIDITY, ui->label_humidity_value, ui->label_humidity_unit);
+    controller.addDataValueLabelView(RADIATION, ui->label_radiation_value, ui->label_radiation_unit);
+    controller.addDataValueLabelView(ALTITUDE, ui->label_altitude_value, ui->label_altitude_unit);
 
 
 
@@ -131,25 +131,25 @@ void MainWindow::timerSlot() {
                 dataChar.push_back(static_cast <char> (a));
             }
             fmt::println("{}", dataChar);*/
-            parser.parseLine(data, manager);
+            parser.parseLine(data, controller);
         }
     }
 }
 
 void MainWindow::on_box_graph1_currentIndexChanged(int index) {
-    manager.updatePlotWidgetView(0, ui->box_graph1->currentData().value<DataType>());
+    controller.updatePlotWidgetView(0, ui->box_graph1->currentData().value<DataType>());
 }
 
 void MainWindow::on_box_graph2_activated(int index) {
-    manager.updatePlotWidgetView(1, ui->box_graph2->currentData().value<DataType>());
+    controller.updatePlotWidgetView(1, ui->box_graph2->currentData().value<DataType>());
 }
 
 void MainWindow::on_box_graph3_activated(int index) {
-    manager.updatePlotWidgetView(2, ui->box_graph3->currentData().value<DataType>());
+    controller.updatePlotWidgetView(2, ui->box_graph3->currentData().value<DataType>());
 }
 
 void MainWindow::on_box_graph4_activated(int index) {
-    manager.updatePlotWidgetView(3, ui->box_graph4->currentData().value<DataType>());
+    controller.updatePlotWidgetView(3, ui->box_graph4->currentData().value<DataType>());
 }
 
 
@@ -174,6 +174,6 @@ void MainWindow::on_btn_light_off_clicked() {
 
 
 void MainWindow::on_box_units_currentIndexChanged(int index) {
-    manager.changeUnitSystem(ui->box_units->currentData().value<UnitSystem>());
+    controller.changeUnitSystem(ui->box_units->currentData().value<UnitSystem>());
 }
 

@@ -79,7 +79,7 @@ private:
     QTranslator *translator;
     QApplication *application;
     UARTParser parser;
-    GraphController manager;
+    GraphController controller;
 };
 
 #endif // MAINWINDOW_H
