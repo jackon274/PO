@@ -4,7 +4,7 @@
 #include <QDialog>
 #include "UnixSerialPortManager.h"
 #include <string>
-#include "Parser.h"
+#include "UARTParser.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

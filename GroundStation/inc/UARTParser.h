@@ -23,7 +23,7 @@ class UARTParser {
     std::map <std::string, int> parameters { {"LEN", 0}, {"RSSI", 0}, {"SNR", 0} };
     DataFrameParser dfParser;
     public:
-    void parseLine(std::vector<uint8_t> &receivedData, GraphController &manager);
+    void parseLine(std::vector<uint8_t> &receivedData, GraphController &controller);
 };
 
 #endif //PARSER_H

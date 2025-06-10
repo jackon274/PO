@@ -2,9 +2,9 @@
 // Created by Jacek Konderak on 30/05/2025.
 //
 
-#include "Parser.h"
+#include "UARTParser.h"
 
-void UARTParser::parseLine(std::vector <uint8_t> &receivedData, GraphController &manager) {
+void UARTParser::parseLine(std::vector <uint8_t> &receivedData, GraphController &controller) {
     std::vector <std::string> lines;
     std::vector <uint8_t>::iterator lineBegin = receivedData.end();
     std::vector <uint8_t>::iterator lineEnd = receivedData.end();
@@ -51,9 +51,7 @@ void UARTParser::parseLine(std::vector <uint8_t> &receivedData, GraphController 
                 value = a.substr(dataFrameBegin, dataFrameEnd - dataFrameBegin);
                 a = a.substr(separator2 + 2);
                 fmt::println("RX Found!");
-                //std::string testData = "3231332C3436372C3531323535303638302C3232353230303739302C323035313130302C2D333931352C3232312C37352C323030302C312C323133373639";
-                dfParser.parseString(value, manager);
-                //dfParser.parseString(testData, manager);
+                dfParser.parseString(value, controller);
                 continue;
             }
             else {

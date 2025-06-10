@@ -118,11 +118,11 @@ void MainWindow::timerSlot() {
     if (*serialPort == ISerialPort::SERIAL_PORT_OPENED) {
         std::vector <uint8_t> data = serialPort->receive();
         if (data.size() > 0) {
-            std::vector <char> dataChar;
+            /*std::vector <char> dataChar;
             for (auto a : data) {
                 dataChar.push_back(static_cast <char> (a));
             }
-            fmt::println("{}", dataChar);
+            fmt::println("{}", dataChar);*/
             parser.parseLine(data, manager);
         }
     }
