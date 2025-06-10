@@ -13,6 +13,9 @@ GraphController::GraphController() {
     dataSeries.insert({ALTITUDE, new DataSeries(ALTITUDE)});
     dataSeries.insert({HUMIDITY, new DataSeries(HUMIDITY)});
     dataSeries.insert({RADIATION, new DataSeries(RADIATION)});
+    dataSeries.insert({ELAPSED_TIME, new DataSeries(ELAPSED_TIME)});
+    dataSeries.insert({SNR, new DataSeries(SNR)});
+    dataSeries.insert({RSSI, new DataSeries(RSSI)});
 }
 
 void GraphController::addPlotWidgetView(QCustomPlot *ptrPlot, QLabel *ptrLabel, DataType type) {
