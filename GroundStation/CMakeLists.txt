@@ -52,16 +52,14 @@ set(PROJECT_SOURCES
         inc/Map.h
         resources/QCustomPlot/qcustomplot.cpp
         resources/QCustomPlot/qcustomplot.h
-        src/Parser.cpp
-        inc/Parser.h
+        src/UARTParser.cpp
+        inc/UARTParser.h
         inc/ISerialPort.h
         inc/SerialPortCreator.h
         src/ErrorNotifier.cpp
         inc/ErrorNotifier.h
         inc/AppException.h
         inc/ErrorCode.h
-        src/IDataParser.cpp
-        inc/IDataParser.h
         src/UIStyler.cpp
         inc/UIStyler.h
         src/PlotWidgetView.cpp
@@ -75,6 +73,8 @@ set(PROJECT_SOURCES
         src/tests/UARTReceiveTest.h
         src/DataFrameParser.cpp
         inc/DataFrameParser.h
+        src/StatsController.cpp
+        inc/StatsController.h
 )
 
 
