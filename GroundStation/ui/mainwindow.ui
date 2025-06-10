@@ -617,7 +617,7 @@ QPushButton:hover {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page_map">
      <widget class="QWebEngineView" name="map" native="true">
@@ -1482,22 +1482,34 @@ QPushButton:hover {
      </widget>
     </widget>
     <widget class="QWidget" name="page_config">
-     <widget class="QPushButton" name="btn_testmode">
+     <widget class="QWidget" name="gridLayoutWidget_4">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>50</y>
-        <width>151</width>
-        <height>31</height>
+        <x>120</x>
+        <y>190</y>
+        <width>701</width>
+        <height>185</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>15</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
+      <layout class="QGridLayout" name="gridLayout_4">
+       <property name="leftMargin">
+        <number>5</number>
+       </property>
+       <property name="rightMargin">
+        <number>7</number>
+       </property>
+       <property name="bottomMargin">
+        <number>10</number>
+       </property>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="btn_configuration">
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
     background-color: rgba(92, 45, 145, 0.16);
     color: #5C2D91;
     border: none;
@@ -1513,22 +1525,21 @@ QPushButton:hover {
 	color: #5C2D91;
 	border: 2px solid #5C2D91;
 }</string>
-      </property>
-      <property name="text">
-       <string> Enter TEST Mode </string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_test">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>50</y>
-        <width>131</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
+         </property>
+         <property name="text">
+          <string>Send Config</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="btn_testmode">
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
     background-color: rgba(92, 45, 145, 0.16);
     color: #5C2D91;
     border: none;
@@ -1544,27 +1555,16 @@ QPushButton:hover {
 	color: #5C2D91;
 	border: 2px solid #5C2D91;
 }</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_rx_mode">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>100</y>
-        <width>151</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>15</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
+         </property>
+         <property name="text">
+          <string> Enter TEST Mode </string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="btn_light_on">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
     background-color: rgba(92, 45, 145, 0.16);
     color: #5C2D91;
     border: none;
@@ -1580,27 +1580,21 @@ QPushButton:hover {
 	color: #5C2D91;
 	border: 2px solid #5C2D91;
 }</string>
-      </property>
-      <property name="text">
-       <string>RX mode</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_configuration">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>100</y>
-        <width>131</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>15</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
+         </property>
+         <property name="text">
+          <string>LIGHT ON</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btn_rx_mode">
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
     background-color: rgba(92, 45, 145, 0.16);
     color: #5C2D91;
     border: none;
@@ -1616,10 +1610,93 @@ QPushButton:hover {
 	color: #5C2D91;
 	border: 2px solid #5C2D91;
 }</string>
-      </property>
-      <property name="text">
-       <string>Send Config</string>
-      </property>
+         </property>
+         <property name="text">
+          <string>RX mode</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="btn_tx_mode">
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: rgba(92, 45, 145, 0.16);
+    color: #5C2D91;
+    border: none;
+   border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 8px 16px;
+}
+
+QPushButton:hover {
+	background-color: #f5f1fb;
+	color: #5C2D91;
+	border: 2px solid #5C2D91;
+}</string>
+         </property>
+         <property name="text">
+          <string>TX mode</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="btn_buzz">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: rgba(92, 45, 145, 0.16);
+    color: #5C2D91;
+    border: none;
+   border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 8px 16px;
+}
+
+QPushButton:hover {
+	background-color: #f5f1fb;
+	color: #5C2D91;
+	border: 2px solid #5C2D91;
+}</string>
+         </property>
+         <property name="text">
+          <string>BUZZER</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QPushButton" name="btn_light_off">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: rgba(92, 45, 145, 0.16);
+    color: #5C2D91;
+    border: none;
+   border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 8px 16px;
+}
+
+QPushButton:hover {
+	background-color: #f5f1fb;
+	color: #5C2D91;
+	border: 2px solid #5C2D91;
+}</string>
+         </property>
+         <property name="text">
+          <string>LIGHT OFF</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="page_about">

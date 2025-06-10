@@ -14,6 +14,7 @@ protected:
     int baudRate;
     SerialPort *openPort;
     FILE * fileUART;
+    virtual bool getSerialPortState() const = 0;
 
 public:
     virtual void checkAvailableSerialPorts() = 0;
@@ -24,7 +25,6 @@ public:
     virtual int send(const std::string &message) = 0;
     virtual std::vector <uint8_t> receive() = 0;
     virtual const std::string &getOpenSerialPort() const = 0;
-    virtual bool getSerialPortState() const = 0;
 
 
     enum SerialPortState {

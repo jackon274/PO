@@ -111,6 +111,7 @@ void MainWindow::on_btn_configuration_clicked() {
 
 void MainWindow::on_btn_rx_mode_clicked() {
     serialPort->send("AT+TEST=RXLRPKT");
+    styler.enableReceive();
 }
 
 void MainWindow::timerSlot() {
@@ -122,7 +123,7 @@ void MainWindow::timerSlot() {
                 dataChar.push_back(static_cast <char> (a));
             }
             fmt::println("{}", dataChar);
-            parser.parseLine(data);
+            parser.parseLine(data, manager);
         }
     }
 }
@@ -141,5 +142,25 @@ void MainWindow::on_box_graph3_activated(int index) {
 
 void MainWindow::on_box_graph4_activated(int index) {
     manager.updatePlotWidgetController(3, ui->box_graph4->currentData().value<DataType>());
+}
+
+
+void MainWindow::on_btn_tx_mode_clicked() {
+    styler.enableTransmit();
+}
+
+
+void MainWindow::on_btn_buzz_clicked() {
+
+}
+
+
+void MainWindow::on_btn_light_on_clicked() {
+
+}
+
+
+void MainWindow::on_btn_light_off_clicked() {
+
 }
 

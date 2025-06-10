@@ -11,14 +11,12 @@
 
 class DataSeries {
     QVector <double> data;
-    std::vector <double> dataVec;
     QVector <double> time;
     const DataType dataType;
     int timeTest = 0;
     public:
     void appendData(DataFrame &frame);
     const QVector <double> &getData() const;
-    const std::vector <double> &getDataVec() const;
     const QVector <double> &getDataImperial() const;
     explicit DataSeries(const DataType &type);
     const DataType &getDataType() const;

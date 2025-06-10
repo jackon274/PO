@@ -44,10 +44,6 @@ void UARTParser::parseLine(std::vector <uint8_t> &receivedData, GraphManager &ma
             auto separator2 = a.find(',');
             std::string key, value;
 
-            //TEST ONLY!
-            //std::string testData = "3231332C3436372C3531323535303638302C3232353230303739302C323035313130302C2D333931352C3232312C37352C323030302C312C323133373639";
-            //dfParser.parseString(testData, manager);
-
 
             if(a.substr(0, a.find('"')) == "RX ") {
                 size_t dataFrameBegin = a.find('"') + 1;
@@ -78,9 +74,7 @@ void UARTParser::parseLine(std::vector <uint8_t> &receivedData, GraphManager &ma
 
 
             for(auto [key, val] : parameters) {
-                std::cout << "KEY: " << key;
-                std::cout << ",  VALUE: " << val;
-                std::cout << std::endl;
+                //fmt::println("KEY: {},  VALUE: {}", key, val);
             }
 
             if(separator2 == std::string::npos) {

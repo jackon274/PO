@@ -11,6 +11,18 @@ void UIStyler::highlightSelectedButtonLabel(const int index) const {
     sidebarButtonLabels.at(index)->setStyleSheet(sidebarTextStyleSelected);
 }
 
+void UIStyler::enableTransmit() const {
+    for (auto a:transmitDataButtons) {
+        a->setEnabled(true);
+    }
+}
+
+void UIStyler::enableReceive() const {
+    for (auto a:transmitDataButtons) {
+        a->setEnabled(false);
+    }
+}
+
 UIStyler::UIStyler(Ui::MainWindow *ptrUi) {
     ui = ptrUi;
     sidebarButtonsGroup = new QButtonGroup;
@@ -90,6 +102,10 @@ void UIStyler::applyStyle() {
     settingsLabelsIcon.push_back(ui->label_graph2_icon);
     settingsLabelsIcon.push_back(ui->label_graph3_icon);
     settingsLabelsIcon.push_back(ui->label_graph4_icon);
+
+    transmitDataButtons.push_back(ui->btn_buzz);
+    transmitDataButtons.push_back(ui->btn_light_off);
+    transmitDataButtons.push_back(ui->btn_light_on);
 
 
 

@@ -16,6 +16,7 @@ class UIStyler {
 
     QButtonGroup *sidebarButtonsGroup;
     std::vector <QPushButton *> sidebarButtons;
+    std::vector <QPushButton *> transmitDataButtons;
     std::vector <QLabel *> sidebarButtonLabels;
     std::vector <QLabel *> settingsLabels;
     std::vector <QLabel *> statsLabelsText;
@@ -44,6 +45,8 @@ public:
     ~UIStyler();
     void applyStyle();
     void highlightSelectedButtonLabel(const int index) const;
+    void enableTransmit() const;
+    void enableReceive() const;
 };
 
 

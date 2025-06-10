@@ -29,10 +29,6 @@ const QVector<double> &DataSeries::getData() const {
     return data;
 }
 
-const std::vector<double> & DataSeries::getDataVec() const {
-    return dataVec;
-}
-
 DataSeries::DataSeries(const DataType &type) : dataType(type) {
 
 }

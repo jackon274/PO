@@ -61,6 +61,14 @@ private slots:
 
     void on_box_graph4_activated(int index);
 
+    void on_btn_tx_mode_clicked();
+
+    void on_btn_buzz_clicked();
+
+    void on_btn_light_on_clicked();
+
+    void on_btn_light_off_clicked();
+
 private:
     Ui::MainWindow *ui;
     UIStyler styler;

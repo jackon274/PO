@@ -73,8 +73,8 @@ set(PROJECT_SOURCES
         inc/GraphManager.h
         src/tests/UARTReceiveTest.cpp
         src/tests/UARTReceiveTest.h
-        DataFrameParser.cpp
-        DataFrameParser.h
+        src/DataFrameParser.cpp
+        inc/DataFrameParser.h
 )
 
 

@@ -12,8 +12,6 @@
 
 class GraphManager {
     std::unordered_map <DataType, DataSeries*> dataSeries;
-    /*std::vector <PlotWidgetController> plotWidgetControllers;
-    std::vector <QCustomPlot*> plots;*/
     std::unordered_map <PlotWidgetController*, DataType> controllersTypes;
     std::vector <PlotWidgetController*> plotWidgetControllerPointers;
     public:
