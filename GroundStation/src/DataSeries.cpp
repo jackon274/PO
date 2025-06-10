@@ -4,6 +4,8 @@
 
 #include "DataSeries.h"
 
+#include "fmt/base.h"
+
 
 void DataSeries::appendData(DataFrame &frame) {
     switch(dataType) {
@@ -26,6 +28,17 @@ void DataSeries::appendData(DataFrame &frame) {
             data.push_back(frame.getElapsedTime());
     }
     time.push_back(timeTest++);
+}
+
+void DataSeries::appendData (std::map <std::string, int> &params) {
+    switch (dataType) {
+        case SNR:
+            data.push_back(params.at("SNR"));
+        break;
+        case RSSI:
+            data.push_back(params.at("RSSI"));
+        break;
+    }
 }
 
 const QVector<double> &DataSeries::getData() const {

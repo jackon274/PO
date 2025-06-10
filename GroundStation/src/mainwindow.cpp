@@ -35,7 +35,7 @@ MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget
     controller.addDataValueLabelView(ALTITUDE, ui->label_altitude_value, ui->label_altitude_unit);
     controller.addDataValueLabelView(SNR, ui->label_SNR_value, ui->label_SNR_unit);
     controller.addDataValueLabelView(RSSI, ui->label_RSSI_value, ui->label_RSSI_unit);
-    controller.addDataValueLabelView(ELAPSED_TIME, ui->label_time_text, ui->label_time_unit);
+    controller.addDataValueLabelView(ELAPSED_TIME, ui->label_time_value, ui->label_time_unit);
 
 
 
