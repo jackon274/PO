@@ -12,6 +12,7 @@ PlotWidgetView::PlotWidgetView(QCustomPlot *ptrPlot, DataSeries *ptrSeries, QLab
     updateDataSeries(ptrSeries);
 }
 
+
 void PlotWidgetView::updateDataSeries(DataSeries *series) {
     currentSeries = series;
 

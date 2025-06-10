@@ -617,7 +617,7 @@ QPushButton:hover {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="page_map">
      <widget class="QWebEngineView" name="map" native="true">

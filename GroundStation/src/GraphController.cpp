@@ -21,11 +21,18 @@ void GraphController::addPlotWidgetView(QCustomPlot *ptrPlot, QLabel *ptrLabel, 
     plotWidgetViewPointers.push_back(ptrPlotWidgetView);
 }
 
+void GraphController::addDataValueLabelView(DataType type, QLabel *labelVal, QLabel *labelUnit) {
+    DataValueLabelView *ptrDataValueLabelView = new DataValueLabelView(labelVal, labelUnit, dataSeries.at(type));
+    dataValueViewsTypes.insert({ptrDataValueLabelView, type});
+    dataValueLabelViewPointers.push_back(ptrDataValueLabelView);
+}
+
 void GraphController::updatePlotWidgetView(int index, DataType type) {
     if(index >= static_cast <int> (plotWidgetViewPointers.size())) {
         return;
     }
     plotWidgetViewPointers.at(index)->updateDataSeries(dataSeries.at(type));
+    dataValueLabelViewPointers.at(index)->updateDataSeries(dataSeries.at(type));
 }
 
 void GraphController::updateDataSeries(DataFrame &frame) {
@@ -34,5 +41,17 @@ void GraphController::updateDataSeries(DataFrame &frame) {
     }
     for (auto a:plotWidgetViewPointers) {
         a->updateDataSeries(dataSeries.at(viewsTypes.at(a)));
+    }
+    for (auto a:dataValueLabelViewPointers) {
+        a->updateDataSeries(dataSeries.at(dataValueViewsTypes.at(a)));
+    }
+}
+
+void GraphController::changeUnitSystem(UnitSystem unitSystem) {
+    currentUnitSystem = unitSystem;
+    for (auto a:dataValueLabelViewPointers) {
+        a->changeUnits(unitSystem);
+        if(unitSystem == IMPERIAL)
+            fmt::println("Switching to hamburgers!");
     }
 }

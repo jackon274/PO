@@ -168,6 +168,7 @@ void UIStyler::applyStyle() {
     ui->widget_sidebar_labels->setVisible(false);
 
     qRegisterMetaType <DataType> ();
+    qRegisterMetaType <UnitSystem> ();
     std::vector <QComboBox*> graphsComboBoxes;
     graphsComboBoxes.push_back(ui->box_graph1);
     graphsComboBoxes.push_back(ui->box_graph2);
@@ -186,5 +187,9 @@ void UIStyler::applyStyle() {
     graphsComboBoxes.at(1)->setCurrentIndex(1);
     graphsComboBoxes.at(2)->setCurrentIndex(3);
     graphsComboBoxes.at(3)->setCurrentIndex(2);
+
+    ui->box_units->clear();
+    ui->box_units->addItem("Metric", QVariant::fromValue(METRIC));
+    ui->box_units->addItem("Imperial", QVariant::fromValue(IMPERIAL));
 
 }

@@ -69,6 +69,8 @@ private slots:
 
     void on_btn_light_off_clicked();
 
+    void on_box_units_currentIndexChanged(int index);
+
 private:
     Ui::MainWindow *ui;
     UIStyler styler;

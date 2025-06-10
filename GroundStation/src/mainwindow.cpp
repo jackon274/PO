@@ -28,6 +28,14 @@ MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget
     manager.addPlotWidgetView(ui->widget_graph3, ui->label_title_graph3, ui->box_graph3->currentData().value<DataType>());
     manager.addPlotWidgetView(ui->widget_graph4, ui->label_title_graph4, ui->box_graph4->currentData().value<DataType>());
 
+    manager.addDataValueLabelView(TEMPERATURE_IN, ui->label_temperature_in_value, ui->label_temperature_in_unit);
+    manager.addDataValueLabelView(TEMPERATURE_OUT, ui->label_temperature_out_value, ui->label_temperature_out_unit);
+    manager.addDataValueLabelView(HUMIDITY, ui->label_humidity_value, ui->label_humidity_unit);
+    manager.addDataValueLabelView(RADIATION, ui->label_radiation_value, ui->label_radiation_unit);
+    manager.addDataValueLabelView(ALTITUDE, ui->label_altitude_value, ui->label_altitude_unit);
+
+
+
     QTimer *timer = new QTimer(this);
     timer->setInterval(5000);
     connect(timer, SIGNAL(timeout()), this, SLOT(timerSlot()));
@@ -162,5 +170,10 @@ void MainWindow::on_btn_light_on_clicked() {
 
 void MainWindow::on_btn_light_off_clicked() {
 
+}
+
+
+void MainWindow::on_box_units_currentIndexChanged(int index) {
+    manager.changeUnitSystem(ui->box_units->currentData().value<UnitSystem>());
 }
 

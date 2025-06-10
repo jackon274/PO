@@ -73,8 +73,9 @@ set(PROJECT_SOURCES
         src/tests/UARTReceiveTest.h
         src/DataFrameParser.cpp
         inc/DataFrameParser.h
-        src/StatsController.cpp
-        inc/StatsController.h
+        src/DataValueLabelView.cpp
+        inc/DataValueLabelView.h
+        src/DataType.cpp
 )
 
 
