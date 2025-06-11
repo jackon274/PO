@@ -66,8 +66,3 @@ void ConnectionWindow::on_btn_disconnect_clicked() {
     ui->btn_connect->setEnabled(true);
     ui->btn_disconnect->setEnabled(false);
 }
-
-
-void ConnectionWindow::on_btn_read_clicked() {
-    UARTReceiveTest(static_cast <UnixSerialPortManager &> (*serialPort));
-}
