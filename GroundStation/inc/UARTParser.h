@@ -12,7 +12,7 @@
 #include <fmt/format.h>
 #include <fmt/ranges.h>
 #include <fmt/std.h>
-#include "GraphController.h"
+#include "DataDisplayController.h"
 #include "DataFrameParser.h"
 
 
@@ -21,9 +21,11 @@ class UARTParser {
     std::vector <std::string> linesLog;
     std::vector <std::string> linesInfo;
     std::map <std::string, int> parameters { {"LEN", 0}, {"RSSI", 0}, {"SNR", 0} };
-    DataFrameParser dfParser;
+    std::string rxFrameString;
     public:
-    void parseLine(std::vector<uint8_t> &receivedData, GraphController &controller);
+    void parseLine(std::vector<uint8_t> &receivedData);
+    const std::map <std::string, int> &getParameters() const;
+    const std::string &getRxFrameString() const;
 };
 
 #endif //PARSER_H

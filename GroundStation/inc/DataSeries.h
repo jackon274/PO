@@ -17,7 +17,7 @@ class DataSeries {
     int timeTest = 0;
     public:
     void appendData(DataFrame &frame);
-    void appendData (std::map <std::string, int> &params);
+    void appendData (const std::map <std::string, int> &params);
     const QVector <double> &getData() const;
     const QVector <double> &getDataImperial() const;
     explicit DataSeries(const DataType &type);

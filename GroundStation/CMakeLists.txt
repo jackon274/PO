@@ -67,8 +67,8 @@ set(PROJECT_SOURCES
         src/DataSeries.cpp
         inc/DataType.h
         inc/DataSeries.h
-        src/GraphController.cpp
-        inc/GraphController.h
+        src/DataDisplayController.cpp
+        inc/DataDisplayController.h
         src/tests/UARTReceiveTest.cpp
         src/tests/UARTReceiveTest.h
         src/DataFrameParser.cpp

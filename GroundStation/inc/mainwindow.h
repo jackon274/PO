@@ -9,7 +9,7 @@
 #include "ISerialPort.h"
 #include "connectionwindow.h"
 #include "PlotWidgetView.h"
-#include "GraphController.h"
+#include "DataDisplayController.h"
 
 namespace Ui {
 class MainWindow;
@@ -79,7 +79,8 @@ private:
     QTranslator *translator;
     QApplication *application;
     UARTParser parser;
-    GraphController controller;
+    DataFrameParser dfParser;
+    DataDisplayController controller;
 };
 
 #endif // MAINWINDOW_H

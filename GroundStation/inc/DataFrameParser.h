@@ -8,7 +8,7 @@
 #include <string>
 
 #include "DataFrame.h"
-#include "GraphController.h"
+#include "DataDisplayController.h"
 
 
 class DataFrameParser {
@@ -18,7 +18,8 @@ class DataFrameParser {
     using PointerVariant = std::variant<uint8_t*, int16_t*, uint16_t*, int32_t*, uint32_t*>;
     std::vector <PointerVariant> dataPointers;
     public:
-    void parseString(std::string &dataString, GraphController &manager);
+    void parseString(const std::string &dataString);
+    DataFrame &getDataFrame();
 };
 
 

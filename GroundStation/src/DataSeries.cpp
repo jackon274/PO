@@ -30,7 +30,7 @@ void DataSeries::appendData(DataFrame &frame) {
     time.push_back(timeTest++);
 }
 
-void DataSeries::appendData (std::map <std::string, int> &params) {
+void DataSeries::appendData (const std::map <std::string, int> &params) {
     switch (dataType) {
         case SNR:
             data.push_back(params.at("SNR"));

@@ -11,7 +11,6 @@ void DataValueLabelView::updateDataSeries(DataSeries *series) {
     currentSeries = series;
     if(currentSeries->getData().empty())
         return;
-    fmt::println("Not empty!");
     labelValue->setText(QString::number(currentSeries->getData().back()));
 }
 

@@ -5,7 +5,7 @@
 #include "DataFrameParser.h"
 #include "fmt/xchar.h"
 
-void DataFrameParser::parseString(std::string &dataString, GraphController &manager) {
+void DataFrameParser::parseString(const std::string &dataString) {
     fmt::println("Parsing data string received: {}", dataString);
     for(auto a = dataString.begin(); a != dataString.end(); a+=2) {
         std::string singleCharacter = dataString.substr(a - dataString.begin(), 2);
@@ -23,12 +23,13 @@ void DataFrameParser::parseString(std::string &dataString, GraphController &mana
             ss >> temp;
             ss >> separator;
             *ptr = temp;
-            fmt::println("{}, appended value {}", sizeof(*ptr), *ptr);
+            //fmt::println("{}, appended value {}", sizeof(*ptr), *ptr);
         }, dataPointers.at(i) );
-        fmt::println("Exited for!");
     }
     ss.str("");
     ss.clear();
-    fmt::println("Exited for!");
-    manager.updateDataSeries(frame);
+}
+
+DataFrame & DataFrameParser::getDataFrame() {
+    return frame;
 }

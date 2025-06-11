@@ -4,7 +4,7 @@
 
 #include "UARTParser.h"
 
-void UARTParser::parseLine(std::vector <uint8_t> &receivedData, GraphController &controller) {
+void UARTParser::parseLine(std::vector <uint8_t> &receivedData) {
     std::vector <std::string> lines;
     std::vector <uint8_t>::iterator lineBegin = receivedData.end();
     std::vector <uint8_t>::iterator lineEnd = receivedData.end();
@@ -37,21 +37,18 @@ void UARTParser::parseLine(std::vector <uint8_t> &receivedData, GraphController 
         }
     }
 
-
     for (auto &a:linesTest) {
         while(a.size() > 0) {
             auto separator1 = a.find(':');
             auto separator2 = a.find(',');
             std::string key, value;
 
-
             if(a.substr(0, a.find('"')) == "RX ") {
                 size_t dataFrameBegin = a.find('"') + 1;
                 size_t dataFrameEnd = a.rfind('"');
-                value = a.substr(dataFrameBegin, dataFrameEnd - dataFrameBegin);
+                rxFrameString = a.substr(dataFrameBegin, dataFrameEnd - dataFrameBegin);
                 a = a.substr(separator2 + 2);
                 fmt::println("RX Found!");
-                dfParser.parseString(value, controller);
                 continue;
             }
             else {
@@ -84,4 +81,12 @@ void UARTParser::parseLine(std::vector <uint8_t> &receivedData, GraphController 
     linesTest.clear();
     linesLog.clear();
     linesInfo.clear();
+}
+
+const std::map<std::string, int> &UARTParser::getParameters() const {
+    return parameters;
+}
+
+const std::string & UARTParser::getRxFrameString() const {
+    return rxFrameString;
 }

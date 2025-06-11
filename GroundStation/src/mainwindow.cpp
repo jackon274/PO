@@ -135,7 +135,10 @@ void MainWindow::timerSlot() {
                 dataChar.push_back(static_cast <char> (a));
             }
             fmt::println("{}", dataChar);*/
-            parser.parseLine(data, controller);
+            parser.parseLine(data);
+            dfParser.parseString(parser.getRxFrameString());
+            controller.updateDataSeries(dfParser.getDataFrame());
+            controller.updateDataSeries(parser.getParameters());
         }
     }
 }

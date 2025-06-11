@@ -2,12 +2,12 @@
 // Created by Jacek Konderak on 07/06/2025.
 //
 
-#include "GraphController.h"
+#include "DataDisplayController.h"
 #include <iostream>
 #include <fmt/ranges.h>
 #include "fmt/base.h"
 
-GraphController::GraphController() {
+DataDisplayController::DataDisplayController() {
     dataSeries.insert({TEMPERATURE_IN, new DataSeries(TEMPERATURE_IN)});
     dataSeries.insert({TEMPERATURE_OUT, new DataSeries(TEMPERATURE_OUT)});
     dataSeries.insert({ALTITUDE, new DataSeries(ALTITUDE)});
@@ -18,19 +18,19 @@ GraphController::GraphController() {
     dataSeries.insert({RSSI, new DataSeries(RSSI)});
 }
 
-void GraphController::addPlotWidgetView(QCustomPlot *ptrPlot, QLabel *ptrLabel, DataType type) {
+void DataDisplayController::addPlotWidgetView(QCustomPlot *ptrPlot, QLabel *ptrLabel, DataType type) {
     PlotWidgetView* ptrPlotWidgetView = new PlotWidgetView(ptrPlot, dataSeries.at(type), ptrLabel);
     viewsTypes.insert({ptrPlotWidgetView, type});
     plotWidgetViewPointers.push_back(ptrPlotWidgetView);
 }
 
-void GraphController::addDataValueLabelView(DataType type, QLabel *labelVal, QLabel *labelUnit) {
+void DataDisplayController::addDataValueLabelView(DataType type, QLabel *labelVal, QLabel *labelUnit) {
     DataValueLabelView *ptrDataValueLabelView = new DataValueLabelView(labelVal, labelUnit, dataSeries.at(type));
     dataValueViewsTypes.insert({ptrDataValueLabelView, type});
     dataValueLabelViewPointers.push_back(ptrDataValueLabelView);
 }
 
-void GraphController::updatePlotWidgetView(int index, DataType type) {
+void DataDisplayController::updatePlotWidgetView(int index, DataType type) {
     if(index >= static_cast <int> (plotWidgetViewPointers.size())) {
         return;
     }
@@ -38,7 +38,7 @@ void GraphController::updatePlotWidgetView(int index, DataType type) {
     dataValueLabelViewPointers.at(index)->updateDataSeries(dataSeries.at(type));
 }
 
-void GraphController::updateDataSeries(DataFrame &frame) {
+void DataDisplayController::updateDataSeries(DataFrame &frame) {
     for (auto a:dataSeries) {
         a.second->appendData(frame);
     }
@@ -50,7 +50,16 @@ void GraphController::updateDataSeries(DataFrame &frame) {
     }
 }
 
-void GraphController::changeUnitSystem(UnitSystem unitSystem) {
+void DataDisplayController::updateDataSeries(const std::map <std::string, int> &params) {
+    for (auto a:dataSeries) {
+        a.second->appendData(params);
+    }
+    for (auto a:dataValueLabelViewPointers) {
+        a->updateDataSeries(dataSeries.at(dataValueViewsTypes.at(a)));
+    }
+}
+
+void DataDisplayController::changeUnitSystem(UnitSystem unitSystem) {
     currentUnitSystem = unitSystem;
     for (auto a:dataValueLabelViewPointers) {
         a->changeUnits(unitSystem);
