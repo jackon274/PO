@@ -14,8 +14,8 @@ class DataValueLabelView {
     DataSeries *currentSeries = nullptr;
     UnitSystem currentUnitSystem = METRIC;
 public:
-    void updateDataSeries(DataSeries *series);
-    void changeUnits(UnitSystem unitSystem) const;
+    void updateDataSeries(DataSeries *series = nullptr);
+    void changeUnits(UnitSystem unitSystem);
     DataValueLabelView(QLabel *ptrlabelValue, QLabel *ptrlabelUnit, DataSeries *ptrSeries);
 };
 

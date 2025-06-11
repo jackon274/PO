@@ -8,13 +8,14 @@
 #include "fmt/format.h"
 
 void DataValueLabelView::updateDataSeries(DataSeries *series) {
-    currentSeries = series;
+    if (series != nullptr)
+        currentSeries = series;
     if(currentSeries->getData().empty())
         return;
     labelValue->setText(QString::number(currentSeries->getData().back()));
 }
 
-void DataValueLabelView::changeUnits(UnitSystem unitSystem) const {
+void DataValueLabelView::changeUnits(UnitSystem unitSystem) {
     if (currentSeries == nullptr)
         return;
 
@@ -27,7 +28,7 @@ void DataValueLabelView::changeUnits(UnitSystem unitSystem) const {
             break;
     }
     fmt::println("Changing unit to {}", UnitsImperial.at(currentSeries->getDataType()).toStdString());
-    labelValue->setText(QString::number(currentSeries->getData().back()));
+    updateDataSeries();
 }
 
 DataValueLabelView::DataValueLabelView(QLabel *ptrlabelValue, QLabel *ptrlabelUnit, DataSeries *ptrSeries) {
