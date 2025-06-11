@@ -17,11 +17,13 @@ class PlotWidgetView {
     QCustomPlot *plot = nullptr;
     QLabel *titleLabel = nullptr;
     DataSeries *currentSeries = nullptr;
+    UnitSystem currentUnitSystem = METRIC;
 
 public:
     PlotWidgetView(QCustomPlot *ptrPlot, DataSeries *ptrSeries, QLabel *ptrLabel);
-    void updateDataSeries(DataSeries *series);
+    void updateDataSeries(DataSeries *series = nullptr);
     void adjustAxes();
+    void changeUnitSystem(UnitSystem unitSystem);
 };
 
 

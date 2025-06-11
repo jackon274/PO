@@ -13,12 +13,13 @@
 
 class DataDisplayController {
     std::unordered_map <DataType, DataSeries*> dataSeries;
+    std::unordered_map <DataType, DataSeries*> dataSeriesImperial;
     std::unordered_map <PlotWidgetView*, DataType> viewsTypes;
     std::unordered_map <DataValueLabelView*, DataType> dataValueViewsTypes;
     std::vector <PlotWidgetView*> plotWidgetViewPointers;
     std::vector <DataValueLabelView*> dataValueLabelViewPointers;
 
-    UnitSystem currentUnitSystem = METRIC;
+
     public:
       DataDisplayController();
     void addPlotWidgetView(QCustomPlot *ptrPlot, QLabel *ptrLabel, DataType type);

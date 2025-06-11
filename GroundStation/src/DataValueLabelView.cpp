@@ -12,7 +12,17 @@ void DataValueLabelView::updateDataSeries(DataSeries *series) {
         currentSeries = series;
     if(currentSeries->getData().empty())
         return;
-    labelValue->setText(QString::number(currentSeries->getData().back()));
+    if (currentUnitSystem == METRIC)
+        labelValue->setText(QString::number(currentSeries->getData().back()));
+    else if (currentUnitSystem == IMPERIAL) {
+        QVector <double> dataImperial(currentSeries->getData().size());
+        if(currentSeries->getDataType() == TEMPERATURE_IN || currentSeries->getDataType() == TEMPERATURE_OUT)
+            std::transform(currentSeries->getData().begin(), currentSeries->getData().end(), dataImperial.begin(), [](double temp) {return 1.8*temp + 32;});
+        else if (currentSeries->getDataType() == ALTITUDE)
+            std::transform(currentSeries->getData().begin(), currentSeries->getData().end(), dataImperial.begin(), [](double alt) {return 3.2808399*alt;});
+        labelValue->setText(QString::number(dataImperial.back()));
+    }
+
 }
 
 void DataValueLabelView::changeUnits(UnitSystem unitSystem) {
@@ -27,6 +37,7 @@ void DataValueLabelView::changeUnits(UnitSystem unitSystem) {
             labelUnit->setText(UnitsImperial.at(currentSeries->getDataType()));
             break;
     }
+    currentUnitSystem = unitSystem;
     fmt::println("Changing unit to {}", UnitsImperial.at(currentSeries->getDataType()).toStdString());
     updateDataSeries();
 }

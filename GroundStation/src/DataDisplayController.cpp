@@ -60,7 +60,9 @@ void DataDisplayController::updateDataSeries(const std::map <std::string, int> &
 }
 
 void DataDisplayController::changeUnitSystem(UnitSystem unitSystem) {
-    currentUnitSystem = unitSystem;
+    for(auto a:plotWidgetViewPointers) {
+        a->changeUnitSystem(unitSystem);
+    }
     for (auto a:dataValueLabelViewPointers) {
         a->changeUnits(unitSystem);
         if(unitSystem == IMPERIAL)

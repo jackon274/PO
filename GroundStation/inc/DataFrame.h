@@ -36,7 +36,6 @@ class DataFrame {
     int getChecksum() const;
     DataFrame();
     const std::vector <PointerVariant> &getDataPointers() const;
-
 };
 
 

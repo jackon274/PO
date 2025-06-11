@@ -14,7 +14,8 @@ PlotWidgetView::PlotWidgetView(QCustomPlot *ptrPlot, DataSeries *ptrSeries, QLab
 
 
 void PlotWidgetView::updateDataSeries(DataSeries *series) {
-    currentSeries = series;
+    if(series != nullptr)
+        currentSeries = series;
 
     switch (currentSeries->getDataType()) {
         case TEMPERATURE_IN:
@@ -36,7 +37,16 @@ void PlotWidgetView::updateDataSeries(DataSeries *series) {
 
     plot->addGraph();
     titleLabel->setText(QString::fromStdString(title));
-    plot->graph(0)->setData(currentSeries->getTime(), currentSeries->getData());
+    if (currentUnitSystem == METRIC)
+        plot->graph(0)->setData(currentSeries->getTime(), currentSeries->getData());
+    else if (currentUnitSystem == IMPERIAL) {
+        QVector <double> dataImperial(currentSeries->getData().size());
+        if(currentSeries->getDataType() == TEMPERATURE_IN || currentSeries->getDataType() == TEMPERATURE_OUT)
+            std::transform(currentSeries->getData().begin(), currentSeries->getData().end(), dataImperial.begin(), [](double temp) {return 1.8*temp + 32;});
+        else if (currentSeries->getDataType() == ALTITUDE)
+            std::transform(currentSeries->getData().begin(), currentSeries->getData().end(), dataImperial.begin(), [](double alt) {return 3.2808399*alt;});
+        plot->graph(0)->setData(currentSeries->getTime(), dataImperial);
+    }
     adjustAxes();
     plot->replot();
 }
@@ -63,4 +73,9 @@ void PlotWidgetView::adjustAxes() {
     }
     plot->xAxis->setRange(xValueMin, xValueMax);
     plot->yAxis->setRange(yValueMin, yValueMax);
+}
+
+void PlotWidgetView::changeUnitSystem(UnitSystem unitSystem) {
+    currentUnitSystem = unitSystem;
+    updateDataSeries();
 }
