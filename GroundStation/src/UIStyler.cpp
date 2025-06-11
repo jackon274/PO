@@ -88,7 +88,6 @@ void UIStyler::applyStyle() {
     statsLabelsUnits.push_back(ui->label_SNR_unit);
 
     settingsLabelsText.push_back(ui->label_languages_text);
-    settingsLabelsText.push_back(ui->label_theme_text);
     settingsLabelsText.push_back(ui->label_units_text);
     settingsLabelsText.push_back(ui->label_graph1_text);
     settingsLabelsText.push_back(ui->label_graph2_text);
@@ -96,7 +95,6 @@ void UIStyler::applyStyle() {
     settingsLabelsText.push_back(ui->label_graph4_text);
 
     settingsLabelsIcon.push_back(ui->label_languages_icon);
-    settingsLabelsIcon.push_back(ui->label_theme_icon);
     settingsLabelsIcon.push_back(ui->label_units_icon);
     settingsLabelsIcon.push_back(ui->label_graph1_icon);
     settingsLabelsIcon.push_back(ui->label_graph2_icon);
@@ -159,7 +157,6 @@ void UIStyler::applyStyle() {
     ui->box_graph2->setStyle(QStyleFactory::create("Fusion"));
     ui->box_graph3->setStyle(QStyleFactory::create("Fusion"));
     ui->box_graph4->setStyle(QStyleFactory::create("Fusion"));
-    ui->box_theme->setStyle(QStyleFactory::create("Fusion"));
 
 
     QPainterPath path;
