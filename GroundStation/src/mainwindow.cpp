@@ -12,21 +12,23 @@
 
 MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow),
-    styler(ui),
-    window (serialPort = createSerialPort()),
-    translator(ptrTranslator),
-    application(ptrApp)
-{
+      , ui(new Ui::MainWindow),
+      styler(ui),
+      window(serialPort = createSerialPort()),
+      translator(ptrTranslator),
+      application(ptrApp) {
     ui->setupUi(this);
+    map = new Map(ui->map);
     styler.applyStyle();
-    Map map(ui->map);
-
-    connect (&window, &ConnectionWindow::signalSerialPortConnected, this, &MainWindow::SerialPortConnected);
-    controller.addPlotWidgetView(ui->widget_graph1, ui->label_title_graph1, ui->box_graph1->currentData().value<DataType>());
-    controller.addPlotWidgetView(ui->widget_graph2, ui->label_title_graph2, ui->box_graph2->currentData().value<DataType>());
-    controller.addPlotWidgetView(ui->widget_graph3, ui->label_title_graph3, ui->box_graph3->currentData().value<DataType>());
-    controller.addPlotWidgetView(ui->widget_graph4, ui->label_title_graph4, ui->box_graph4->currentData().value<DataType>());
+    connect(&window, &ConnectionWindow::signalSerialPortConnected, this, &MainWindow::SerialPortConnected);
+    controller.addPlotWidgetView(ui->widget_graph1, ui->label_title_graph1,
+                                 ui->box_graph1->currentData().value<DataType>());
+    controller.addPlotWidgetView(ui->widget_graph2, ui->label_title_graph2,
+                                 ui->box_graph2->currentData().value<DataType>());
+    controller.addPlotWidgetView(ui->widget_graph3, ui->label_title_graph3,
+                                 ui->box_graph3->currentData().value<DataType>());
+    controller.addPlotWidgetView(ui->widget_graph4, ui->label_title_graph4,
+                                 ui->box_graph4->currentData().value<DataType>());
 
     controller.addDataValueLabelView(TEMPERATURE_IN, ui->label_temperature_in_value, ui->label_temperature_in_unit);
     controller.addDataValueLabelView(TEMPERATURE_OUT, ui->label_temperature_out_value, ui->label_temperature_out_unit);
@@ -36,8 +38,6 @@ MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget
     controller.addDataValueLabelView(SNR, ui->label_SNR_value, ui->label_SNR_unit);
     controller.addDataValueLabelView(RSSI, ui->label_RSSI_value, ui->label_RSSI_unit);
     controller.addDataValueLabelView(ELAPSED_TIME, ui->label_time_value, ui->label_time_unit);
-
-
 
 
     QTimer *timer = new QTimer(this);
@@ -139,6 +139,10 @@ void MainWindow::timerSlot() {
             dfParser.parseString(parser.getRxFrameString());
             controller.updateDataSeries(dfParser.getDataFrame());
             controller.updateDataSeries(parser.getParameters());
+            /*auto latitude = dfParser.getDataFrame().getLatitude();
+            auto longitude = dfParser.getDataFrame().getLongitude();
+            fmt::println("LON: {}, LAT: {}", longitude, latitude);*/
+            map->updateLocation(dfParser.getDataFrame().getLatitude(), dfParser.getDataFrame().getLongitude());
         }
     }
 }

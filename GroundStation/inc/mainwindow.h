@@ -10,6 +10,7 @@
 #include "connectionwindow.h"
 #include "PlotWidgetView.h"
 #include "DataDisplayController.h"
+#include "Map.h"
 
 namespace Ui {
 class MainWindow;
@@ -81,6 +82,7 @@ private:
     UARTParser parser;
     DataFrameParser dfParser;
     DataDisplayController controller;
+    Map *map = nullptr;
 };
 
 #endif // MAINWINDOW_H
