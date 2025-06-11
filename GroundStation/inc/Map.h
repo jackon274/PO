@@ -21,6 +21,7 @@ class Map {
     public:
     QWebEngineView* view;
     Map(QWebEngineView* ptrView);
+    void updateLocation(double latitude, double longitude);
 };
 
 
