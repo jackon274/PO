@@ -12,7 +12,7 @@ class ISerialPort {
 protected:
     std::vector <SerialPort *> availableSerialPorts;
     int baudRate;
-    SerialPort *openPort;
+    SerialPort *openPort = nullptr;
     FILE * fileUART = nullptr;
     virtual bool getSerialPortState() const = 0;
 
