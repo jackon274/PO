@@ -29,8 +29,7 @@ void UnixSerialPortManager::checkAvailableSerialPorts() {
     while ((entry = readdir(dir)) != nullptr) {
         std::string name = entry->d_name;
 
-        // Check for typical macOS serial device prefixes
-        if (name.find("cu.") == 0 || name.find("ttys") == 0) {
+        if (name.find(serialPortPath) == 0 || name.find(serialPortPathVirtual) == 0) {
             std::string fullPath = devPath + name;
             struct stat st;
             if (stat(fullPath.c_str(), &st) == 0 && S_ISCHR(st.st_mode)) {

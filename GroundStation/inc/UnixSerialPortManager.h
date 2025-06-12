@@ -9,6 +9,14 @@
 
 
 class UnixSerialPortManager :public ISerialPort {
+    #ifdef __APPLE__
+        std::string serialPortPath = "cu.";
+        std::string serialPortPathVirtual = "ttys";
+    #endif
+    #ifdef __linux__
+    std::string serialPortPath = "tty";
+    std::string serialPortPathVirtual = "pts";
+    #endif
 public:
     std::vector <SerialPort *> getAvailableSerialPorts() override;
     void checkAvailableSerialPorts() override;
