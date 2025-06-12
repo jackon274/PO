@@ -13,7 +13,7 @@ protected:
     std::vector <SerialPort *> availableSerialPorts;
     int baudRate;
     SerialPort *openPort;
-    FILE * fileUART;
+    FILE * fileUART = nullptr;
     virtual bool getSerialPortState() const = 0;
 
 public:
