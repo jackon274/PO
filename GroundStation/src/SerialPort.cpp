@@ -23,3 +23,19 @@ SerialPort::SerialPort(const std::string& name, const std::string& dispName) {
     portName = name;
     displayName = dispName;
 }
+
+std::string &SerialPort::getDisplayName() {
+    return displayName;
+}
+
+std::string &SerialPort::getPortName() {
+    return portName;
+}
+
+int SerialPort::getSerialPortFd() {
+    return serialPortFd;
+}
+
+void SerialPort::setSerialPortFd(int fd) {
+    serialPortFd = fd;
+}

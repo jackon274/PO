@@ -35,7 +35,7 @@ void ConnectionWindow::on_btn_refresh_clicked() {
 
     serialPort->checkAvailableSerialPorts();
     for(auto port:serialPort->getAvailableSerialPorts()) {
-        ui->box_ports->addItem(QString::fromStdString(port->displayName), QVariant::fromValue(port));
+        ui->box_ports->addItem(QString::fromStdString(port->getDisplayName()), QVariant::fromValue(port));
     }
 }
 
@@ -46,7 +46,7 @@ void ConnectionWindow::on_btn_connect_clicked() {
     if(selectedPort == nullptr) {
         return;
     }
-    std::cout << selectedPort->displayName << std::endl; //debug only
+    std::cout << selectedPort->getDisplayName() << std::endl; //debug only
     try {
         serialPort->open(selectedPort);
         ui->btn_connect->setEnabled(false);

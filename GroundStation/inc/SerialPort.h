@@ -11,12 +11,16 @@
 
 
 class SerialPort {
-public:
     int serialPortFd;
     std::string portName;
     std::string displayName;
+public:
     explicit SerialPort(const std::string& name);
     SerialPort(const std::string& name, const std::string& dispName);
+    std::string &getDisplayName();
+    std::string &getPortName();
+    int getSerialPortFd();
+    void setSerialPortFd(int fd);
 };
 
 Q_DECLARE_METATYPE(SerialPort*)

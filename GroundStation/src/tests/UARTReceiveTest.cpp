@@ -15,7 +15,7 @@
 void UARTConnectionTest(UnixSerialPortManager &serialPortManager) {
    fmt::println("Wykryto {} portów!", serialPortManager.availableSerialPorts.size());
    if(serialPortManager.openPort != nullptr)
-      fmt::println("Wybrano port {} ", serialPortManager.openPort->displayName);
+      fmt::println("Wybrano port {} ", serialPortManager.openPort->getDisplayName());
 }
 
 void UARTReceiveTest(UnixSerialPortManager &serialPortManager) {

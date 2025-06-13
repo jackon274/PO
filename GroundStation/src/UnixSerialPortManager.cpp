@@ -47,7 +47,7 @@ void UnixSerialPortManager::checkAvailableSerialPorts() {
 
 
 int UnixSerialPortManager::open(SerialPort *port) {
-    int serialPortFd = ::open(port->portName.c_str(), O_RDWR | O_NOCTTY | O_NDELAY);
+    int serialPortFd = ::open(port->getPortName().c_str(), O_RDWR | O_NOCTTY | O_NDELAY);
 
     if(serialPortFd < 0)
         throw AppException(PORT_OPEN_FAILED);
@@ -121,7 +121,7 @@ int UnixSerialPortManager::open(SerialPort *port) {
     // Disable buffering
     setvbuf(fileUART, NULL, _IONBF, 0);
     openPort = port;
-    port->serialPortFd = serialPortFd;
+    port->setSerialPortFd(serialPortFd);
     return 0;
 }
 
@@ -149,7 +149,7 @@ int UnixSerialPortManager::send(const std::string &message) {
 }
 
 const std::string &UnixSerialPortManager::getOpenSerialPort() const{
-    return openPort->displayName;
+    return openPort->getDisplayName();
 }
 
 bool UnixSerialPortManager::getSerialPortState() const{
