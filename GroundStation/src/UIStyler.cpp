@@ -50,6 +50,7 @@ void UIStyler::applyStyle() {
     sidebarButtonLabels.push_back(ui->label_config);
     sidebarButtonLabels.push_back(ui->label_info);
     sidebarButtonLabels.push_back(ui->label_settings);
+    sidebarButtonLabels.push_back(ui->label_menu);
 
     statsLabelsText.push_back(ui->label_temperature_in_text);
     statsLabelsText.push_back(ui->label_temperature_out_text);

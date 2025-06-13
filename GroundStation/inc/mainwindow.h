@@ -27,6 +27,7 @@ public:
 private slots:
 
     void SerialPortConnected() const;
+    void SerialPortDisconnected() const;
 
     void on_btn_connect_clicked();
 

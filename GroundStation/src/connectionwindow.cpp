@@ -58,4 +58,5 @@ void ConnectionWindow::on_btn_disconnect_clicked() {
     serialPort->close();
     ui->btn_connect->setEnabled(true);
     ui->btn_disconnect->setEnabled(false);
+    emit signalSerialPortDisonnected();
 }

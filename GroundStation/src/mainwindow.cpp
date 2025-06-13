@@ -21,6 +21,8 @@ MainWindow::MainWindow(QTranslator *ptrTranslator, QApplication *ptrApp, QWidget
     map = new Map(ui->map);
     styler.applyStyle();
     connect(&window, &ConnectionWindow::signalSerialPortConnected, this, &MainWindow::SerialPortConnected);
+    connect(&window, &ConnectionWindow::signalSerialPortDisonnected, this, &MainWindow::SerialPortDisconnected);
+
     controller.addPlotWidgetView(ui->widget_graph1, ui->label_title_graph1,
                                  ui->box_graph1->currentData().value<DataType>());
     controller.addPlotWidgetView(ui->widget_graph2, ui->label_title_graph2,
@@ -54,6 +56,12 @@ void MainWindow::SerialPortConnected() const {
     ui->label_serial_port_name->setText(QString::fromStdString(serialPort->getOpenSerialPort()));
     ui->label_connection_status->setText("");
 }
+
+void MainWindow::SerialPortDisconnected() const {
+    ui->label_connection_status->setText("");
+    ui->label_serial_port_name->setText("Disconnected");
+}
+
 
 
 void MainWindow::on_btn_connect_clicked() {

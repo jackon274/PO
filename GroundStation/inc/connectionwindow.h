@@ -23,6 +23,7 @@ public:
 
     signals:
     void signalSerialPortConnected() const;
+    void signalSerialPortDisonnected() const;
 
 private slots:
     void on_btn_refresh_clicked();
