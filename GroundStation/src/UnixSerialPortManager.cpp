@@ -168,7 +168,6 @@ std::vector <uint8_t> UnixSerialPortManager::receive() {
 
     if (bytesRead == 0) {
         if (feof(fileUART)) {
-            //std::cerr << "EOF reached on UART stream\n";
             clearerr(fileUART);
         } else if (ferror(fileUART)) {
             perror("UART fread error");
@@ -179,8 +178,6 @@ std::vector <uint8_t> UnixSerialPortManager::receive() {
     buffer.resize(bytesRead);
     return buffer;
 }
-
-#endif
 
 
 bool UnixSerialPortManager::operator==(SerialPortState state) const {
@@ -203,12 +200,13 @@ void UnixSerialPortManager::setBaudRate(int newBaudRate) {
 }
 
 UnixSerialPortManager::UnixSerialPortManager() {
-    checkAvailableSerialPorts();
+    UnixSerialPortManager::checkAvailableSerialPorts();
 }
 
 UnixSerialPortManager::~UnixSerialPortManager() {
     for (auto port:availableSerialPorts)
         delete port;
-    close();
+    UnixSerialPortManager::close();
     openPort = nullptr;
 }
+#endif
