@@ -25,7 +25,7 @@ void DataSeries::appendData(DataFrame &frame) {
             data.push_back(frame.getRadiationCPM());
         break;
         case ELAPSED_TIME:
-            data.push_back(frame.getElapsedTime());
+            data.push_back(frame.getElapsedTimeMinutes());
     }
     time.push_back(timeTest++);
 }

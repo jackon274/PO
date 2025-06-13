@@ -9,8 +9,8 @@ uint32_t DataFrame::getFrameCount() const {
     return frameCount;
 }
 
-uint32_t DataFrame::getElapsedTime() const {
-    return elapsedTime;
+uint32_t DataFrame::getElapsedTimeMinutes() const {
+    return elapsedTime/60;
 }
 
 float DataFrame::getLongitude() const {

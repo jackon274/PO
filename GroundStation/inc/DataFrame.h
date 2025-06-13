@@ -25,7 +25,7 @@ class DataFrame {
     std::vector <PointerVariant> dataPointers;
     public:
     uint32_t getFrameCount() const;
-    uint32_t getElapsedTime() const;
+    uint32_t getElapsedTimeMinutes() const;
     float getLongitude() const;
     float getLatitude() const;
     float getAltitudeMeters() const;
