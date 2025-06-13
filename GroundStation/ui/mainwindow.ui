@@ -37,6 +37,10 @@
   <property name="windowTitle">
    <string>Ground Station</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../resources/Resources.qrc">
+    <normaloff>:/Images/icon.png</normaloff>:/Images/icon.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(244, 244, 244);</string>
   </property>
@@ -617,7 +621,7 @@ QPushButton:hover {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page_map">
      <widget class="QWebEngineView" name="map" native="true">
