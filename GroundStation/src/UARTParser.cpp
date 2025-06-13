@@ -9,11 +9,18 @@ void UARTParser::parseLine(std::vector <uint8_t> &receivedData) {
     std::vector <uint8_t>::iterator lineBegin = receivedData.end();
     std::vector <uint8_t>::iterator lineEnd = receivedData.end();
 
+#ifdef __APPLE__
+    char lineEndChar = '\r';
+#endif
+#ifdef __linux__
+    char lineEndChar = '\n';
+#endif //Linux używa innych znaków zakończenia linii
+
     for (auto a = receivedData.begin(); a != receivedData.end(); a++) {
         if(*a == '+') {
             lineBegin = a;
         }
-        else if(*a == '\r') {
+        else if(*a == lineEndChar) {
             lineEnd = a;
             if (lineBegin != receivedData.end()) {
                 std::string line(lineBegin, lineEnd);
