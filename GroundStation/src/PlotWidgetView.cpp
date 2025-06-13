@@ -41,12 +41,17 @@ void PlotWidgetView::updateDataSeries(DataSeries *series) {
         plot->graph(0)->setData(currentSeries->getTime(), currentSeries->getData());
     else if (currentUnitSystem == IMPERIAL) {
         QVector <double> dataImperial(currentSeries->getData().size());
-        if(currentSeries->getDataType() == TEMPERATURE_IN || currentSeries->getDataType() == TEMPERATURE_OUT)
+        if(currentSeries->getDataType() == TEMPERATURE_IN || currentSeries->getDataType() == TEMPERATURE_OUT) {
             std::transform(currentSeries->getData().begin(), currentSeries->getData().end(), dataImperial.begin(), [](double temp) {return 1.8*temp + 32;});
-        else if (currentSeries->getDataType() == ALTITUDE)
+            plot->graph(0)->setData(currentSeries->getTime(), dataImperial);
+        }
+        else if (currentSeries->getDataType() == ALTITUDE) {
             std::transform(currentSeries->getData().begin(), currentSeries->getData().end(), dataImperial.begin(), [](double alt) {return 3.2808399*alt;});
-        plot->graph(0)->setData(currentSeries->getTime(), dataImperial);
-    }
+            plot->graph(0)->setData(currentSeries->getTime(), dataImperial);
+        }
+        else
+            plot->graph(0)->setData(currentSeries->getTime(), currentSeries->getData());
+        }
     adjustAxes();
     plot->replot();
 }
