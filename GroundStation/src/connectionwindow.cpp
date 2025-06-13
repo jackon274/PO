@@ -15,11 +15,9 @@ ConnectionWindow::ConnectionWindow(ISerialPort *port, QWidget *parent): QDialog(
 
 #ifdef _WIN32
     ui->btn_refresh->setEnabled(false);
-    ui->box_ports->addItem("Simulation");
 #endif
     ui->btn_connect->setEnabled(false);
     ui->btn_disconnect->setEnabled(false);
-
 }
 
 
@@ -31,7 +29,6 @@ ConnectionWindow::~ConnectionWindow() {
 void ConnectionWindow::on_btn_refresh_clicked() {
     ui->btn_connect->setEnabled(true);
     ui->box_ports->clear();
-    ui->box_ports->addItem("Simulation", QVariant::fromValue(nullptr));
 
     serialPort->checkAvailableSerialPorts();
     for(auto port:serialPort->getAvailableSerialPorts()) {
