@@ -16,11 +16,18 @@ void DataValueLabelView::updateDataSeries(DataSeries *series) {
         labelValue->setText(QString::number(currentSeries->getData().back()));
     else if (currentUnitSystem == IMPERIAL) {
         QVector <double> dataImperial(currentSeries->getData().size());
-        if(currentSeries->getDataType() == TEMPERATURE_IN || currentSeries->getDataType() == TEMPERATURE_OUT)
+        if(currentSeries->getDataType() == TEMPERATURE_IN || currentSeries->getDataType() == TEMPERATURE_OUT) {
             std::transform(currentSeries->getData().begin(), currentSeries->getData().end(), dataImperial.begin(), [](double temp) {return 1.8*temp + 32;});
-        else if (currentSeries->getDataType() == ALTITUDE)
+            labelValue->setText(QString::number(dataImperial.back()));
+        }
+        else if (currentSeries->getDataType() == ALTITUDE) {
             std::transform(currentSeries->getData().begin(), currentSeries->getData().end(), dataImperial.begin(), [](double alt) {return 3.2808399*alt;});
-        labelValue->setText(QString::number(dataImperial.back()));
+            labelValue->setText(QString::number(dataImperial.back()));
+        }
+        else
+            labelValue->setText(QString::number(currentSeries->getData().back()));
+
+
     }
 
 }
