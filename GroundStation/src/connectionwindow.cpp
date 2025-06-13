@@ -20,11 +20,9 @@ ConnectionWindow::ConnectionWindow(ISerialPort *port, QWidget *parent): QDialog(
     ui->btn_disconnect->setEnabled(false);
 }
 
-
 ConnectionWindow::~ConnectionWindow() {
     delete ui;
 }
-
 
 void ConnectionWindow::on_btn_refresh_clicked() {
     ui->btn_connect->setEnabled(true);
@@ -43,7 +41,6 @@ void ConnectionWindow::on_btn_connect_clicked() {
     if(selectedPort == nullptr) {
         return;
     }
-    std::cout << selectedPort->getDisplayName() << std::endl; //debug only
     try {
         serialPort->open(selectedPort);
         ui->btn_connect->setEnabled(false);
@@ -56,7 +53,6 @@ void ConnectionWindow::on_btn_connect_clicked() {
     }
     UARTConnectionTest(static_cast <UnixSerialPortManager &> (*serialPort));
 }
-
 
 void ConnectionWindow::on_btn_disconnect_clicked() {
     serialPort->close();
