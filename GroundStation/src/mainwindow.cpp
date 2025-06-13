@@ -136,13 +136,14 @@ void MainWindow::timerSlot() {
             }
             fmt::println("{}", dataChar);*/
             parser.parseLine(data);
+            if(parser.getRxFrameString() != "") {
             dfParser.parseString(parser.getRxFrameString());
             controller.updateDataSeries(dfParser.getDataFrame());
             controller.updateDataSeries(parser.getParameters());
             /*auto latitude = dfParser.getDataFrame().getLatitude();
             auto longitude = dfParser.getDataFrame().getLongitude();
             fmt::println("LON: {}, LAT: {}", longitude, latitude);*/
-            map->updateLocation(dfParser.getDataFrame().getLatitude(), dfParser.getDataFrame().getLongitude());
+            map->updateLocation(dfParser.getDataFrame().getLatitude(), dfParser.getDataFrame().getLongitude());}
         }
     }
 }
